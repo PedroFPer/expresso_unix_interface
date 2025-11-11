@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+#home-page{
+    width: 25em;
+    height: 28em;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    padding: 1em;
+
+    overflow: hidden;
+}
+
+#home-page .btn{
+    width: 70%;
+    height: 3em;
+
+    display: grid;
+    place-items: center; 
+    text-align: center
+}
