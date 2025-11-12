@@ -1,10 +1,10 @@
 import './styles/CustomerHomePage.css';
-import HeaderMobile from '../../../common-components/header-mobile/HeaderMobile';
+import HeaderHomeMobile from '../../../common-components/header-mobile/HeaderHomeMobile';
 
 export default function CustomerHomePage(){
     return(
         <div id="customer-home-page">
-            <HeaderMobile />
+            <HeaderHomeMobile id={"header-home-mobile"}  />
         </div>
     )
 }

@@ -4,5 +4,19 @@
     width: 100%;
     height: 100%;
 
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 18em 3fr;
+
     background: linear-gradient(to bottom, #077BFF, #042C50);
+}
+
+#header-home-mobile{
+    display: grid;
+    grid-area: 1/1/2/2;
+
+    margin: 0%;
+    padding: 0%;
+
+    overflow: hidden;
 }
