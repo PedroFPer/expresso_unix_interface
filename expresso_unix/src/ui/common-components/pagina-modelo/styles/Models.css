@@ -1,0 +1,33 @@
+.Models{
+    width: 50vw;
+    background-color: rgb(126, 126, 126);
+}
+
+.ButtonsModel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.TextAndButtonSection{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 10px;
+}
+.InputPlaceTripModel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.inputPlace{
+    
+}
+
+.DatesInputModel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.TimeInputModel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

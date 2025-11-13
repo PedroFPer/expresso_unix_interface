@@ -5,7 +5,7 @@ import "./styles/Home.css";
 function Home() {
     return (
         <div className="GridGeral">
-            <SideBar />
+            <SideBar/>
             <main>
                 <PopUp Title="Confirmar Funcionario" Description="Você deseja confirmar o cadastro deste funcionário?"/> 
 

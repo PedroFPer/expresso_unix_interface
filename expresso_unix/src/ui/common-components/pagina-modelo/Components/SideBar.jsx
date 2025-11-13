@@ -1,6 +1,7 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/SideBar.css";
 import { useState } from "react";
+import logo from "../../../../assets/logo.png";
 
 function SideBar(){
 
@@ -10,55 +11,54 @@ function SideBar(){
     let sidebarClass = "sidebar closed";
 
     if (SideBarIsOpen) {
-    sidebarClass = "SideBar Open";
+    sidebarClass = "side-bar open";
   } else {
-    sidebarClass = "SideBar Closed";
+    sidebarClass = "side-bar closed";
   }
 
     return(
-        <div className="BT">
+        <div className="layout-sidebar">
             <aside className={sidebarClass}>
 
-                <img src="" alt="Logo" /> {/* lembrar de voltar aq pois nao estou conseguimdo colocar img*/}
+                <img src={logo} alt="logo" className={`empresa-logo ${SideBarIsOpen ? "open" : "closed"}`} />
+                <p className="empresa-name">{NomeDaEmpresa}</p>
 
-                    <p className="EmpresaName">{NomeDaEmpresa}</p>
-
-                <button className={`ButtonMenu ${SideBarIsOpen ? "Open" : "Closed"}`}>
+                <button className={`button-menu copy-button ${SideBarIsOpen ? "open " : "closed"}`}>
                     {SideBarIsOpen?(<p>Catalogo de Viagens Ativo</p>):(<p></p>)}
                     <i class="bi bi-copy"></i>
                 </button>
 
-                <button className={`ButtonMenu ButtonTrip ${SideBarIsOpen ? "Open" : "Closed"}`}>
+                <button className={`button-menu trip-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i className="bi-suitcase"></i>
                     {SideBarIsOpen?(<p>Catalogo de Viagens</p>):(<p></p>)}
                 </button>
 
-                <button className={`ButtonMenu ButtonEmployees ${SideBarIsOpen ? "Open" : "Closed"}`}>
+                <button className={`button-menu employees-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i className="bi-person-vcard"></i>
                     {SideBarIsOpen?(<p>Gerenciar Funcionarios</p>):(<p></p>)}
                 </button>
 
-                <button className={`ButtonMenu ButtonCustom ${SideBarIsOpen ? "Open" : "Closed"}`}>
+                <button className={`button-menu custom-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i className="bi-pencil"></i>
                     {SideBarIsOpen?(<p>Customização</p>):(<p></p>)}
                 </button>
 
-                <button className={`ButtonMenu ButtonAccount ${SideBarIsOpen ? "Open" : "Closed"}`}>
+                <button className={`button-menu account-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i class="bi bi-person-circle"></i>
                     {SideBarIsOpen?(<p>Minha Conta</p>):(<p></p>)}
                 </button>
 
-                <button className={`ButtonMenu ButtonSettings ${SideBarIsOpen ? "Open" : "Closed"}`}>
+                <button className={`button-menu settings-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i class="bi bi-gear"></i>
                     {SideBarIsOpen?(<p>Configuração</p>):(<p></p>)}
                 </button>
 
-                <button className={`ButtonMenu ButtonSuport ${SideBarIsOpen ? "Open" : "Closed"}`}>
-                    <i class="bi bi-person-circle"></i>
+                <button className={`button-menu suport-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                    <i class="bi bi-headset"></i>
                     {SideBarIsOpen?(<p>Suporte</p>):(<p></p>)}
                 </button>
 
-                <button className={`ButtonMenu ButtonOut ${SideBarIsOpen ? "Open" : "Closed"}`}>
+                <button className={`button-menu out-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i class="bi bi-box-arrow-right"></i>
                     {SideBarIsOpen?(<p>Sair</p>):(<p></p>)}
                 </button>
@@ -66,7 +66,7 @@ function SideBar(){
 
             </aside>
 
-            <button onClick={() => setSideBarIsOpen(!SideBarIsOpen)} className={'ButtonOpenSideBar'}>
+            <button onClick={() => setSideBarIsOpen(!SideBarIsOpen)} className={'button-open-sidebar'}>
                 {SideBarIsOpen?(<i class="bi bi-caret-left"></i>):<i class="bi bi-caret-right"></i>}
             </button>
         </div>

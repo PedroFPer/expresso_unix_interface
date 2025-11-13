@@ -1,29 +1,47 @@
-
-*{
-    margin: 0;
-    padding: 0;
+.empresa-logo.open{
+  padding: auto;  
+  margin: auto;
+  margin-top: 10px;
+  width: 80%;    
+  height: auto;   
+  transition: all 0.9s ease;   
 }
-.SideBar{
+.empresa-logo.closed{
+  padding: auto;  
+  margin: auto;
+  margin-top: 1.5rem;
+  width: 100%;    
+  height: auto;  
+  transition: all 0.5s ease;  
+}
+
+.side-bar{
     height: 100%;
     background-color: #0F529E;
     display: grid;
     grid-template-columns: auto;     
     grid-auto-rows: 30px;
     gap: 20px;
-    transition: width 0.5s ease;
+    transition: all 0.5s ease;
+    
 }
 
-.SideBar.Closed {
+.side-bar.closed {
      
     width: 5rem;
+    transition: all 0.5s ease-out;  
 }
 
-.SideBar.Open {
+.side-bar.open {
 
   width: 15rem;
   
 }
-.BT{
+.layout-sidebar{
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
     display: grid;
     grid-template-columns: auto auto;
 }
@@ -47,7 +65,7 @@ button:hover {
     
    
 } 
-.ButtonOpenSideBar{
+.button-open-sidebar{
     background-color: #0F529E;
     margin-top: 1rem;
     margin-left: 0.1rem;
@@ -59,38 +77,71 @@ button:hover {
 }
 
 
-.ButtonMenu.Open {
+.button-menu.open {
     padding: 8px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.6s ease;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.7s ease ; 
+}
+.button-menu.closed {
+
+    transition: all 0.7s ease ; 
 }
 
 
-.ButtonTrip{
+
+
+.copy-button.closed{
+    width: 3rem;
+    
+    background-color: #00C234;
+    border-radius: 10px;
+}
+
+.copy-button.open{
+    background-color: white;
+    box-shadow: #00C234 0px 5px 0;
+    border-radius: 10px;
+
+}
+.copy-button.open p{
+    color: #00C234;
+    transition: all 2s ease;
+}
+.copy-button.open i{
+    color: #00C234;
+
+}
+.copy-button.open:hover{
+    box-shadow: #00A828 0px 5px 0;
+    background-color: #E0FFE5;
+}
+
+
+.trip-button{
 
    margin-top: 10%;
     
 }
-.ButtonEmployees{
+.employees-button{
     margin-top: 5%;
 }
-.ButtonCustom{
+.custom-button{
     margin-top: 2%;
 }
 
-.ButtonAccount{
+.account-button{
     margin-top: 60%;
 }
-.ButtonSettings{
+.settings-button{
     margin-top: 60%;
 }
-.ButtonSuport{
+.suport-button{
     margin-top: 60%;
 }
-.ButtonOut{
+.out-button{
     margin-top: 60%;
 }
 
@@ -106,12 +157,13 @@ p{
     font-weight: 600;
     padding: auto;
     margin: auto;
+    
 }
 i{
     font-size:17px;
 }
-.EmpresaName{
+.empresa-name{
     font-size: 14px;
     margin-bottom: 10px;
-    margin-top: 5px;
+    margin-top: 1rem;
 }
