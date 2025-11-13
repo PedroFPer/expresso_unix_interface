@@ -4,13 +4,13 @@ function PopUP({Title, Description}){
     
 
     return(
-        <div className="PopUp">
-            <h3 className="TitlePopUp">{Title}</h3>
-            <p className="Description">{Description}</p>
+        <div className="layout-pop-up">
+            <h3 className="title">{Title}</h3>
+            <p className="description">{Description}</p>
 
-            <div className="ButtonsPopUpLayout">
-                <button className="ButtonPopUp ConfirmButton">Confirmar</button>
-                <button className="ButtonPopUp CancelButton">Cancelar</button>
+            <div className="layout-buttons">
+                <button className="button confirm-button">Confirmar</button>
+                <button className="button cancel-button">Cancelar</button>
             </div>
         </div>
     )

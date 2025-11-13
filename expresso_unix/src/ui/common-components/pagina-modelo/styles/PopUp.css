@@ -1,11 +1,10 @@
 *{
-    margin: 0;
-    padding: 0;
+
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
-.PopUp{
+.layout-pop-up{
     background-color: white;
     padding: 0px 0px;
     border-radius: 8px;
@@ -19,7 +18,7 @@
     transform: translate(-50%, -50%); /*isso daqui az com que realmete fique no centro*/
     
 }
-.TitlePopUp{
+.title{
     height: 20%;
     font-size: 1rem;
     font-weight: 400;
@@ -31,7 +30,7 @@
     margin: 0px;
 
 }
-.Description{
+.description{
     height: 60%;
     font-size: 0.8rem;
     color: #000000;
@@ -42,7 +41,7 @@
     align-content: center;
 }
 
-.ButtonPopUpLayout{
+.layout-buttons{
     height: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -50,33 +49,35 @@
     
 }
 
-.ButtonPopUp{
-    max-width: 50%;
-    padding: auto;
-    border-top: #1565C0 2px solid;
+.button{
+    width: 100%;
+    padding: 0.25rem;
+    margin: 0px;
+    border-top: #1565C0 1px solid;
     font-size: 0.9rem;
     
 }
 
 
-.ConfirmButton{
+.confirm-button{
     border-radius: 0px 0px 0px 8px;
     background-color: #ffffff;
     color: #1565C0;
     
 }
 
-.ConfirmButton:hover{
+.confirm-button:hover{
     
     background-color: #e4e4e4;
     
 }
 
-.CancelButton{
+.cancel-button{
     border-radius: 0px 0px 8px 0px;
     background-color: #1565C0;
+    border: #1565C0 1px solid;
 }
-.CancelButton:hover{
+.cancel-button:hover{
 
     background-color: #13529b;
 }
