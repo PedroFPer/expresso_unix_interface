@@ -1,6 +1,6 @@
 import "../styles/PopUp.css"
 
-function PopUP({Title, Description}){
+function PopUP({Title, Description, onConfirm, onCancel}) {
     
 
     return(
@@ -9,8 +9,8 @@ function PopUP({Title, Description}){
             <p className="description">{Description}</p>
 
             <div className="layout-buttons">
-                <button className="button confirm-button">Confirmar</button>
-                <button className="button cancel-button">Cancelar</button>
+                <button className="button confirm-button" onClick={()=> {onConfirm(true); onCancel(false)}}>Confirmar</button>
+                <button className="button cancel-button" onClick={()=>{onCancel(true) ; onConfirm(false)}}>Cancelar</button>
             </div>
         </div>
     )

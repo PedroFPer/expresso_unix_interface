@@ -1,33 +1,126 @@
-.Models{
+.models{
     width: 50vw;
-    background-color: rgb(126, 126, 126);
+    background-color: #b9b9b9;
+    border: black 1px solid;
 }
 
-.ButtonsModel{
+.title-model-layout{
+    border-bottom: black 1px solid;
+    height: 4rem;
+    margin: auto;
+    
+    padding: auto;
+    text-align: start;
+}
+.title-model{
+    margin-left: 10px;
+    height: auto;
+    padding-top: 10px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.buttons-Details-Previa{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
 
 }
 
-.TextAndButtonSection{
+.button-details{
+    background-color: transparent;
+    color: #949494;
+
+    
+}
+.button-details.clicked{
+    text-decoration: underline 2px; 
+    color: #1565C0;
+    font-weight: 600;
+    
+    
+}
+.button-details:hover{
+    background-color: transparent
+    
+}
+
+.button-previa{
+    background-color: transparent;
+    color: #949494;
+
+    
+}
+
+.button-previa.clicked{
+    text-decoration: underline 2px; 
+    color: #1565C0;
+    font-weight: 600;
+    
+    
+}
+
+.button-previa:hover{
+    background-color: transparent
+    
+}
+
+
+.text-and-button-section{
+    margin-left: 1rem;
+    margin-right: 1rem;
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     gap: 10px;
+    border-bottom: #949494 1px solid;
 }
-.InputPlaceTripModel{
+.input-place-trip-model{
+    width: 90%;
+    margin: auto;
+    padding: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
 }
-.inputPlace{
+.input-place-trip-model p{
+    width: 90%;
+    text-align: start;
+    font-size: 95%;
+    color: black;
+    font-weight: 600;
     
 }
 
-.DatesInputModel{
+.input-place-trip-model input{
+    border-radius: 10px;
+    border: 1px solid black;
+
+    padding: 0.3rem;
+    width: 90%;
+    height: 2.5rem;
+    gap: 5%;
+}
+.input-place-model{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: grid;
+    grid-template-columns: auto;
+    
+}
+
+.input-place-model input{
+    border-radius: 10px;
+    padding: 0.3rem;
+    border: 1px solid black;
+    height: 2rem;
+    
+}
+.dates-input-model{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.TimeInputModel{
+.time-input-model{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }

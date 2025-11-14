@@ -1,6 +1,8 @@
 import { Button } from "bootstrap";
 import { useState } from "react";
+import PopUP from "./PopUp";
 import "../styles/Models.css";
+
 
 function Models({TitleButton, TitleModel}) {
 const [ModelsIsClosed, setModelsIsClosed] = useState(true);
@@ -8,22 +10,25 @@ const [TrechoIdaIsClosed, setTrechoIdaIsClosed] = useState(true);
 const [TrechoVoltaIsClosed, setTrechoVoltaIsClosed] = useState(true);
 const [DetalhesIsClicked, setDetalhesIsClicked] = useState(true);
 const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
 
     return (
         <div>
             {ModelsIsClosed ? (
-                <button className="AddButton" onClick={() => setModelsIsClosed(false)}>{TitleButton}</button>
+                <button className="add-button" onClick={() => setModelsIsClosed(false)}>{TitleButton}</button>
             ):(
-                <div className="Models">
-                    <h2>{TitleModel}</h2>
+                <div className="models">
+                    <div className="title-model-layout">
+                        <h2 className="title-model">{TitleModel}</h2>
+                    </div>
                     <div>
-                        <div className="ButtonsModel">
-                             <button 
+                        <div className="buttons-Details-Previa">
+                             <button className={`button-details ${DetalhesIsClicked ? 'clicked' : 'not-clicked'}`}
                              onClick={()=>{ setDetalhesIsClicked(true);setPreviaIsClicked(false);}}
                              > Detalhes
                             </button>
 
-                             <button 
+                             <button className={`button-previa ${PreviaIsClicked ? 'clicked' : 'not-clicked'}`}
                              onClick={()=>{ setPreviaIsClicked(true); setDetalhesIsClicked(false);}}
                              >Previa
                              </button>
@@ -31,7 +36,7 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                         {DetalhesIsClicked ?
                         (
                             <div>
-                                <div className="TextAndButtonSection">
+                                <div className="text-and-button-section">
                                     <p>Trecho da ida</p>
                                     <button onClick={
                                         () => setTrechoIdaIsClosed(!TrechoIdaIsClosed)}>{TrechoIdaIsClosed?(<i class="bi bi-caret-down"></i>):(<i class="bi bi-caret-up"></i>)}
@@ -40,14 +45,14 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                                 {TrechoIdaIsClosed ? ( <p></p> ):
                                 (
                                     <section>
-                                        <div className="InputPlaceTripModel">
-                                        <p>Origem(Obrigatorio)</p>
-                                        <p>Destino(obrigatorio)</p>
+                                        <div className="input-place-trip-model">
+                                        <p>Origem</p>
+                                        <p>Destino</p>
                                         <input type="text" />
                                         <input type="text" />
                                         </div>
 
-                                        <div className="InputPlaceModel">
+                                        <div className="input-place-model">
                                             <p>Embarque(obrigatorio)</p>
                                             <input type="text" />
 
@@ -55,7 +60,7 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                                             <input type="text" />
 
                                         </div>
-                                        <div className="DatesInputModel">
+                                        <div className="dates-input-model">
                                             <p>Data de Saida (obrigatorio)</p>
                                             <p>Data de Chegada (obrigatorio)</p>
 
@@ -64,7 +69,7 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
 
                                         </div>
 
-                                        <div className="TimeInputModel">
+                                        <div className="time-input-model">
                                             <p>Hora de Saida (obrigatorio)</p>
                                             <p>Hora de Chegada (obrigatorio)</p>
 
@@ -76,7 +81,7 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                             
 
                         
-                                <div className="TextAndButtonSection">
+                                <div className="text-and-button-section">
                                     <p>Trecho Volta</p>
                                     <button onClick={
                                         () => setTrechoVoltaIsClosed(!TrechoVoltaIsClosed)}>{TrechoVoltaIsClosed?(<i class="bi bi-caret-down"></i>):(<i class="bi bi-caret-up"></i>)}
@@ -85,14 +90,14 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                                 {TrechoVoltaIsClosed ? ( <p></p> ):
                                 (
                                     <section>
-                                        <div className="InputPlaceTripModel">
+                                        <div className="input-place-trip-model">
                                         <p>Origem(Obrigatorio)</p>
                                         <p>Destino(obrigatorio)</p>
                                         <input type="text" />
                                         <input type="text" />
                                         </div>
 
-                                        <div className="InputPlaceModel">
+                                        <div className="input-place-model">
                                             <p>Embarque(obrigatorio)</p>
                                             <input type="text" />
 
@@ -100,7 +105,7 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                                             <input type="text" />
 
                                         </div>
-                                        <div className="DatesInputModel">
+                                        <div className="dates-input-model">
                                             <p>Data de Saida (obrigatorio)</p>
                                             <p>Data de Chegada (obrigatorio)</p>
 
@@ -109,7 +114,7 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
 
                                         </div>
 
-                                        <div className="TimeInputModel">
+                                        <div className="time-input-model">
                                             <p>Hora de Saida (obrigatorio)</p>
                                             <p>Hora de Chegada (obrigatorio)</p>
 
@@ -119,9 +124,10 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                                     </section>
                                 )}
 
-                                <div className="ButtonsModel">
-                                    <button></button>
-                                    <button></button>
+                                <div className="buttons-model">
+                                    <button onClick={() => setShowPopup(true)}>Cancelar</button>
+                                    
+                                    <button>Confirmar</button>
                                 </div>
                             </div>
                         ):( <h1></h1> )}
@@ -131,9 +137,22 @@ const [PreviaIsClicked, setPreviaIsClicked] = useState(false);
                     </div>
 
 
-                    <button onClick={() => setModelsIsClosed(true)}>Fechar</button>
+                    
                 </div>
             ) }
+
+            {showPopup && (
+                <PopUP
+                    Title="Cancelar Modelo"
+                    Description="Tem certeza que deseja cancelar?"
+                    onConfirm={() => {
+                        setShowPopup(false);
+                        setModelsIsClosed(false);
+                    }}
+                    
+                    onCancel={() => {setShowPopup(false); setModelsIsClosed(true)}}
+                />
+            )}
             
         </div>
         
