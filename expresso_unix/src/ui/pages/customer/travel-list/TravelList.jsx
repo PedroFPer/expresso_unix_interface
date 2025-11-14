@@ -1,7 +1,10 @@
+import { useLocation } from "react-router-dom";
+
 export default function TravelList(){
+    const { state } = useLocation();
     return(
         <div>
-            <h1>Futura Travel List</h1>
+            <pre>{JSON.stringify(state?.response, null, 2)}</pre>
         </div>
     )
 }
