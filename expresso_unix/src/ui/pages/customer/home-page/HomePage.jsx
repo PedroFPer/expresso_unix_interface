@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import HeaderHomeMobile from '../../../common-components/header-mobile/HeaderHomeMobile';
 import TravelSearchCard from './Components/TravelSearchCard'
-import { tripValidations } from '../../../../infrastructure/validators/tripValidations';
 import './styles/HomePage.css';
 
 export default function HomePage() {
@@ -13,7 +12,6 @@ export default function HomePage() {
         tripType: ""
     })
 
-    const [errors, setErrors] = useState({});
 
     return (
         <div id="customer-home-page">
@@ -22,8 +20,7 @@ export default function HomePage() {
                 id={"travel-search-card"}
                 formData={formData}
                 setFormData={setFormData}
-                errors={errors}
-                setErrors={setErrors} />
+                 />
         </div>
     )
 }

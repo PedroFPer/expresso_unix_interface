@@ -4,15 +4,24 @@ import { formUtils } from '../../../../../infrastructure/utils/formUtils';
 import { sendTravelSearchTeste } from '../../../../../infrastructure/teste/sendTravelSearchTeste';
 import '../styles/TravelSearchCard.css';
 
-export default function TravelSearchCard({id, formData, setFormData }) {
+export default function TravelSearchCard({ id, formData, setFormData }) {
 
     const navigate = useNavigate();
     const url = "/customer/travel-list";
 
     const [tripType, setTripType] = useState("one-way");
-    
+    const [errors, setErrors] = useState({});
+
     async function handleSubmit(e) {
         e.preventDefault();
+
+        const validationErrors = formUtils.getTravelSearchErrors(formData);
+
+        setErrors(validationErrors);
+
+        if (Object.keys(validationErrors).length > 0) {
+            return;
+        }
 
         try {
             const response = await sendTravelSearchTeste(formData);
@@ -26,6 +35,7 @@ export default function TravelSearchCard({id, formData, setFormData }) {
         }
     }
 
+
     return (
         <section id={id}>
             <h2>Onde será sua próxima aventura?</h2>
@@ -34,7 +44,7 @@ export default function TravelSearchCard({id, formData, setFormData }) {
 
                 <div id='form-group-origin' className="form-group">
                     <label className="form-label">Origem</label>
-                    <input 
+                    <input
                         className="form-control"
                         type="text"
                         placeholder='De onde você vai sair?'
@@ -42,9 +52,14 @@ export default function TravelSearchCard({id, formData, setFormData }) {
                         value={formData.cityOrigin}
                         onChange={(e) => formUtils.handleChange(e, setFormData)}
                     />
+                    <p className="input-error">
+                        {errors.cityOrigin || " "}
+                    </p>
                 </div>
-  
-      {/*           <div id='form-group-destination' className="form-group">
+
+
+
+                {/*           <div id='form-group-destination' className="form-group">
                     <label class="form-label">Destino</label>
                     <input class="form-control " type="text" placeholder='Para onde você vai?' />
                 </div>
@@ -75,13 +90,13 @@ export default function TravelSearchCard({id, formData, setFormData }) {
                     </label>
                 </div>*/}
 
-                <button 
+                <button
                     id='btn-search-travels'
                     className="btn btn-primary"
                     type="submit"
                 >
                     Buscar
-                </button>	
+                </button>
 
             </form>
         </section>
