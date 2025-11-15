@@ -1,5 +1,6 @@
 import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
-import TravelDayCarousel from "../../../common-components/pagina-modelo copy/TravelDayCarousel"
+import TravelDayCarousel from "../../../common-components/travel-day-carousel/TravelDayCarousel"
+import TravelCardModel from "../../../common-components/travel-card-model/TravelCardModel"
 import "./styles/TravelResults.css"
 
 export default function TravelResults(){
@@ -10,6 +11,7 @@ export default function TravelResults(){
         <div id="travel-results">
             <HeaderBaseMobile textHeader={textHeader}  />
             <TravelDayCarousel />
+            <TravelCardModel />
         </div>
     )
 }

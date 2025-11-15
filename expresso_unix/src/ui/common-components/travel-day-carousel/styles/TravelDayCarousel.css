@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#travel-day-carousel{
+    border: 1px white solid;
+    
+    color: white;
+}
+
+#travel-day-carousel h1{
+    
+    font-size: 1em;
+    text-align: center;
+}
