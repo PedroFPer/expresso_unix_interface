@@ -17,5 +17,27 @@ export class tripValidations {
         return { valid: true };
     }
 
+    static validateDate(dateString) {
+        const date = new Date(dateString);
+        const today = new Date();
+
+
+        if (isNaN(date.getTime())) {
+            return { valid: false, message: "*Data inválida." };
+        }
+
+
+        date.setHours(0, 0, 0, 0);
+        today.setHours(0, 0, 0, 0);
+
+
+        if (date < today) {
+            return { valid: false, message: "*A data não pode ser anterior a hoje." };
+        }
+
+
+        return { valid: true };
+    }
+
 
 }

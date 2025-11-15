@@ -1,14 +1,12 @@
 import { Routes, Route, Navigate  } from 'react-router-dom'
-import HomePage from '../../ui/pages/customer/home-page/HomePage'
-import TravelList from '../../ui/pages/customer/travel-list/TravelList'
+import TravelResults from '../../ui/pages/customer/travel-results/TravelResults'
 
 export default function CustomerRoutes() {
   return (
     <Routes>
-      <Route index element={<Navigate to="home-page" replace />} />
+      <Route index element={<Navigate to="travel-results" replace />} />
       
-      <Route path="home-page" element={<HomePage />} /> 
-      <Route path="travel-list" element={<TravelList />} /> 
+      <Route path="travel-results" element={<TravelResults />} /> 
     </Routes>
   )
 }

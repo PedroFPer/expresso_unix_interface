@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#header-base-mobile{
+    width: 100%;
+    
+    grid-area: 1/1/2/2;
+    display: grid;
+    
+    grid-template-columns: 1fr 6fr;
+
+    place-items: center;
+}
+
+
+#header-base-mobile i{
+    grid-area: 1/1/2/2;
+
+    font-size: 1.3em;
+    color: white;
+}
+
+#header-base-mobile p{
+    grid-area: 1/1/2/3;
+
+    margin: 0%;
+
+    font-size: 0.8em;
+    text-align: center;
+
+    color: white;
+}
