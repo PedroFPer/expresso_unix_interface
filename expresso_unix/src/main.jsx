@@ -8,7 +8,7 @@ import AppRoutes from './infrastructure/routes/AppRoutes.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/expresso_unix_interface">
       <AppRoutes />
     </BrowserRouter>
   </StrictMode>,
