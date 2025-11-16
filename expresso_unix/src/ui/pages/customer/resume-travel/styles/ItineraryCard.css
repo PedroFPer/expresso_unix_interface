@@ -3,7 +3,6 @@
 #itinerary-card {
     width: 95%;
 
-    
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;          
