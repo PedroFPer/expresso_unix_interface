@@ -1,10 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import "./styles/HeaderBaseMobile.css"
 
-export default function HeaderBaseMobile({textHeader}){
+export default function HeaderBaseMobile({ textHeader }) {
+    const navigate = useNavigate();
 
-    return(
+    return (
         <header id="header-base-mobile">
-            <i className="bi bi-arrow-left-circle"></i>
+            <i 
+                className="bi bi-arrow-left-circle" 
+                onClick={() => navigate(-1)} 
+                style={{ cursor: 'pointer' }} // indica que é clicável
+            ></i>
             <p>{textHeader}</p>
         </header>
     );

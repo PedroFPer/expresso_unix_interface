@@ -2,13 +2,14 @@
 
 #header-base-mobile{
     width: 100%;
+    height: 100%;
     
     grid-area: 1/1/2/2;
     display: grid;
-    
     grid-template-columns: 1fr 6fr;
-
     place-items: center;
+
+    background-color: #0E87F2;
 }
 
 
