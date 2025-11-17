@@ -2,13 +2,17 @@
     display: grid;
     grid-template-columns: auto auto;
     height: 100%;
-    width: 1fr;
+    width: auto;
+    position: sticky;
+    top: 0;
     
 }
 
 .side-bar{
-    height: 100%;
+    min-height: 60rem;
+    max-width: 100%;
     width: 100%;
+    
     background-color: #0F529E;
     display: grid;
     grid-template-columns: auto;     

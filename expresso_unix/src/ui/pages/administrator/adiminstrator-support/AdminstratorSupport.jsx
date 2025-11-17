@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import SideBar from "../../../common-components/pagina-modelo/Components/SideBar";
 import { useState } from 'react';
+import SideBar from "../../../common-components/pagina-modelo/Components/SideBar";
 import "./styles/AdminstratorSupport.css";
 
 function AdminstratorSupport(){
