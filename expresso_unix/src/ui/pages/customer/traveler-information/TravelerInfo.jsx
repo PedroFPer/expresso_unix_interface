@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream:expresso_unix/src/ui/pages/customer/traveler-information/TravelerInformation.jsx
-import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
-
-export default function TravelerInformation(){
-=======
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile.jsx"
@@ -13,14 +8,9 @@ import { travelerValidations } from "../../../../infrastructure/validators/trave
 import "./styles/TravelerInfo.css"
 
 export default function TravelerInfo() {
->>>>>>> Stashed changes:expresso_unix/src/ui/pages/customer/traveler-information/TravelerInfo.jsx
     const textHeader = "Dados do Passageiro"
+    const navigate = useNavigate();
 
-<<<<<<< Updated upstream:expresso_unix/src/ui/pages/customer/traveler-information/TravelerInformation.jsx
-    return(
-        <div>
-            <HeaderBaseMobile textHeader={textHeader} />
-=======
     const infoCardAvailableSeats ={
         titleCard: "Assentos Disponiveis" ,
         describe: "10"
@@ -95,7 +85,6 @@ export default function TravelerInfo() {
 
 
             <button onClick={handleGoToPayment} className="btn btn-primary btn-custom">Ir para pagamento</button>
->>>>>>> Stashed changes:expresso_unix/src/ui/pages/customer/traveler-information/TravelerInfo.jsx
         </div>
     )
 }
