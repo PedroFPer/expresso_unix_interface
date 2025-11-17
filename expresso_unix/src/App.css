@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+#conteiner{
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0%;
+    padding: 0%;
+
+    display: grid;
+    place-content: center;
+}
+
 #home-page{
     width: 25em;
     height: 28em;
