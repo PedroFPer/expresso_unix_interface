@@ -16,148 +16,162 @@ const[QuestionSixIsClicked, setQuestionSixIsClicked] = useState(false);
         <div className="grid-geral">
             <SideBar/>
             
-            <main>
-                <div className='title-support'>
-                    <h1>Suport</h1>
-                </div>
-
-                <div>
-                    <div className='question-layout' >
-                        <p className='title-question'>Primeira Pergunta</p>
-
-                        <button className='button-question' onClick={
-                            () => setQuestionOneIsClicked(!QuestionOneIsClicked)}>{QuestionOneIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
-                        </button>
+            <div>
+                <main>
+                    <div className='title-support'>
+                        <h1>Suporte</h1>
                     </div>
-                    {QuestionOneIsClicked ? (
+
+                    <p className='text-faq'>Perguntas Frequentes</p>
+
+                    <div>
+                        <div className='question-layout' >
+                            <p className='title-question'>Pergunta Aleatoria 1</p>
+
+                            <button className='button-question' onClick={
+                                () => setQuestionOneIsClicked(!QuestionOneIsClicked)}>{QuestionOneIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
+                            </button>
+                        </div>
+                        {QuestionOneIsClicked ? (
 
 
-                        <div className='text-question'>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>  
+                            <div className='text-question'>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>  
 
-                    ):( <p ></p> )}
-                </div>
-                <div>
-                    <div className='question-layout' >
-                        <p className='title-question'>Segunda Pergunta</p>
-
-                        <button className='button-question' onClick={
-                            () => setQuestionTwoIsClicked(!QuestionTwoIsClicked)}>{QuestionTwoIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
-                        </button>
+                        ):( <p ></p> )}
                     </div>
-                    {QuestionTwoIsClicked ? (
+                    <div>
+                        <div className='question-layout' >
+                            <p className='title-question'>Pergunta Aleatoria 2</p>
+
+                            <button className='button-question' onClick={
+                                () => setQuestionTwoIsClicked(!QuestionTwoIsClicked)}>{QuestionTwoIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
+                            </button>
+                        </div>
+                        {QuestionTwoIsClicked ? (
 
 
-                        <div className='text-question'>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>  
+                            <div className='text-question'>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div> 
 
-                    ):( <p></p> )}
-                </div>
-
-                <div>
-                    <div className='question-layout' >
-                        <p className='title-question'>Terceira Pergunta</p>
-
-                        <button className='button-question' onClick={
-                            () => setQuestionTreeIsClicked(!QuestionTreeIsClicked)}>{QuestionTreeIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
-                        </button>
+                        ):( <p></p> )}
                     </div>
-                    {QuestionTreeIsClicked ? (
+
+                    <div>
+                        <div className='question-layout' >
+                            <p className='title-question'>Pergunta Aleatoria 3</p>
+
+                            <button className='button-question' onClick={
+                                () => setQuestionTreeIsClicked(!QuestionTreeIsClicked)}>{QuestionTreeIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
+                            </button>
+                        </div>
+                        {QuestionTreeIsClicked ? (
 
 
-                        <div className='text-question'>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>  
+                            <div className='text-question'>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>  
 
-                    ):( <p></p> )}
-                </div>
-                <div>
-                    <div className='question-layout' >
-                        <p className='title-question'>Quarta Pergunta</p>
-
-                        <button className='button-question' onClick={
-                            () => setQuestionFourIsClicked(!QuestionFourIsClicked)}>{QuestionFourIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
-                        </button>
+                        ):( <p></p> )}
                     </div>
-                    {QuestionFourIsClicked ? (
+                    <div>
+                        <div className='question-layout' >
+                            <p className='title-question'>Pergunta Aleatoria 4</p>
+
+                            <button className='button-question' onClick={
+                                () => setQuestionFourIsClicked(!QuestionFourIsClicked)}>{QuestionFourIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
+                            </button>
+                        </div>
+                        {QuestionFourIsClicked ? (
 
 
-                        <div className='text-question'>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>  
+                            <div className='text-question'>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div> 
 
-                    ):( <p></p> )}
-                </div>
-                <div>
-                    <div  className='question-layout' >
-                        <p className='title-question'>Quinta Pergunta</p>
-
-                        <button className='button-question'  onClick={
-                            () => setQuestionFiveIsClicked(!QuestionFiveIsClicked)}>{QuestionFiveIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
-                        </button>
+                        ):( <p></p> )}
                     </div>
-                    {QuestionFiveIsClicked ? (
+                    <div>
+                        <div  className='question-layout' >
+                            <p className='title-question'>Pergunta Aleatoria 5</p>
+
+                            <button className='button-question'  onClick={
+                                () => setQuestionFiveIsClicked(!QuestionFiveIsClicked)}>{QuestionFiveIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
+                            </button>
+                        </div>
+                        {QuestionFiveIsClicked ? (
 
 
-                        <div className='text-question'>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>  
+                            <div className='text-question'>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>   
 
-                    ):( <p></p> )}
-                </div>
-                <div>
-                    <div className='question-layout' >
-                        <p className='title-question'>Sexta Pergunta</p>
-
-                        <button className='button-question' onClick={
-                            () => setQuestionSixIsClicked(!QuestionSixIsClicked)}>{QuestionSixIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
-                        </button>
+                        ):( <p></p> )}
                     </div>
-                    {QuestionSixIsClicked ? (
+                    <div>
+                        <div className='question-layout' >
+                            <p className='title-question'>Pergunta Aleatoria 6</p>
+
+                            <button className='button-question' onClick={
+                                () => setQuestionSixIsClicked(!QuestionSixIsClicked)}>{QuestionSixIsClicked?(<i class="bi bi-caret-up"></i>):(<i class="bi bi-caret-down"></i>)}
+                            </button>
+                        </div>
+                        {QuestionSixIsClicked ? (
 
 
-                        <div className='text-question'>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>  
+                            <div className='text-question'>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>  
 
-                    ):( <p></p> )}
-                </div>
+                        ):( <p></p> )}
+                    </div>
 
+                        
                     
-                
-                 
+                    
 
-            </main>
+                </main>
 
-            <footer>
-                <div>
-                    <p>Não encontrou o que buscava ?</p>
-                    <p>Então entre em contato com conosco atráves de nossos canais de atendimentos</p>
-                </div>
-                <div>
+                <footer>
+                    <div className='text-footer'>
+                        <p className='text-find'>Não encontrou o que buscava ?</p>
+                        <p className='text-channel'>Então entre em contato com conosco <br />
+                             atráves de nossos canais de atendimentos
+                        </p>
+                    </div>
+                    <div className='layout-icon-text'>
+                        <div className='whatsapp-text'>
+                            <i class="bi bi-whatsapp"></i>
+                            <p>75983588878</p>
+                        </div>
+                        <div className='email-text'>
+                            <i class="bi bi-envelope"></i>
+                            <p>ExpressoUnixSuporte@gmail.com</p>
+                        </div>
 
-                </div>
-            </footer>
+                    </div>
+                </footer>
+            </div>
             
         </div>
     )
