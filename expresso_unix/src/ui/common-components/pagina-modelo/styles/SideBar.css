@@ -1,3 +1,35 @@
+.layout-sidebar{
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 100vh;
+    width: 1fr;
+    
+}
+
+.side-bar{
+    height: 100%;
+    width: 100%;
+    background-color: #0F529E;
+    display: grid;
+    grid-template-columns: auto;     
+    grid-auto-rows: 30px;
+    gap: 20px;
+    transition: all 0.5s ease;
+    
+}
+
+.side-bar.closed {
+     
+    width: 5rem;
+    transition: all 0.5s ease-out;  
+}
+
+.side-bar.open {
+  width: 15rem;
+  
+}
+
+
 .empresa-logo.open{
   padding: auto;  
   margin: auto;
@@ -15,36 +47,13 @@
   transition: all 0.5s ease;  
 }
 
-.side-bar{
-    height: 100%;
-    background-color: #0F529E;
-    display: grid;
-    grid-template-columns: auto;     
-    grid-auto-rows: 30px;
-    gap: 20px;
-    transition: all 0.5s ease;
-    
+.empresa-name{
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 1rem;
 }
 
-.side-bar.closed {
-     
-    width: 5rem;
-    transition: all 0.5s ease-out;  
-}
 
-.side-bar.open {
-
-  width: 15rem;
-  
-}
-.layout-sidebar{
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: auto auto;
-}
 
 button{
     width: 80%;
@@ -65,12 +74,14 @@ button:hover {
     
    
 } 
+ 
+
 .button-open-sidebar{
     background-color: #0F529E;
     margin-top: 1rem;
     margin-left: 0.1rem;
-    height: 2rem;
-    width: 1.3rem;
+    height: 4%;
+    width: auto;
     border-radius: 0px 5px 5px 0px;
     padding: 2px;
 
@@ -81,7 +92,7 @@ button:hover {
     padding: 8px;
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center;
+    align-items: start;
     gap: 0.5rem;
     transition: all 0.7s ease ; 
 }
@@ -90,12 +101,14 @@ button:hover {
     transition: all 0.7s ease ; 
 }
 
-
+.copy-button{
+    position: relative;
+    top: 100%;
+}
 
 
 .copy-button.closed{
     width: 3rem;
-    
     background-color: #00C234;
     border-radius: 10px;
 }
@@ -121,28 +134,43 @@ button:hover {
 
 
 .trip-button{
-
-   margin-top: 10%;
-    
+    position: relative;
+    top: 300%;
 }
 .employees-button{
-    margin-top: 5%;
+    position: relative;
+    top: 300%;
 }
 .custom-button{
-    margin-top: 2%;
+    position: relative;
+    top: 300%;
 }
 
 .account-button{
-    margin-top: 60%;
+    position: relative;
+    top: 1300%;
 }
 .settings-button{
-    margin-top: 60%;
+    position: relative;
+    top: 1300%;
 }
 .suport-button{
-    margin-top: 60%;
+    position: relative;
+    top: 1300%;
 }
 .out-button{
-    margin-top: 60%;
+    position: relative;
+    top: 1300%;
+}
+
+.button-text{
+    width: 100%;
+    text-align: left;
+    padding: auto;
+    margin: auto;
+}
+.button-text-trip p {
+    font-size: 10px;
 }
 
 img{
@@ -152,18 +180,11 @@ img{
 }
 p{
     color: white;
-    font-size: 10px;
-    text-align: center;
+    font-size: 13px;    
     font-weight: 600;
     padding: auto;
     margin: auto;
-    
 }
 i{
-    font-size:17px;
-}
-.empresa-name{
-    font-size: 14px;
-    margin-bottom: 10px;
-    margin-top: 1rem;
+    font-size:120%;
 }

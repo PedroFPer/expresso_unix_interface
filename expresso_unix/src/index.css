@@ -16,6 +16,16 @@ html, body, #root {
 body {
   overflow: hidden;
 }
+main{
+  padding: 2rem;
+}
+.grid-geral{
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  width: 100%;
+  
+}
+
 
 #root{
   display: grid;

@@ -24,43 +24,43 @@ function SideBar(){
                 <p className="empresa-name">{NomeDaEmpresa}</p>
 
                 <button className={`button-menu copy-button ${SideBarIsOpen ? "open " : "closed"}`}>
-                    {SideBarIsOpen?(<p>Catalogo de Viagens Ativo</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text-trip">Catalogo de Viagens Ativo</p>):(<p></p>)}
                     <i class="bi bi-copy"></i>
                 </button>
 
                 <button className={`button-menu trip-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i className="bi-suitcase"></i>
-                    {SideBarIsOpen?(<p>Catalogo de Viagens</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text">Catalogo de Viagens</p>):(<p></p>)}
                 </button>
 
                 <button className={`button-menu employees-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i className="bi-person-vcard"></i>
-                    {SideBarIsOpen?(<p>Gerenciar Funcionarios</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text">Gerenciar Funcionarios</p>):(<p></p>)}
                 </button>
 
                 <button className={`button-menu custom-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i className="bi-pencil"></i>
-                    {SideBarIsOpen?(<p>Customização</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text">Customização</p>):(<p></p>)}
                 </button>
 
                 <button className={`button-menu account-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i class="bi bi-person-circle"></i>
-                    {SideBarIsOpen?(<p>Minha Conta</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text">Minha Conta</p>):(<p></p>)}
                 </button>
 
                 <button className={`button-menu settings-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i class="bi bi-gear"></i>
-                    {SideBarIsOpen?(<p>Configuração</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text">Configuração</p>):(<p></p>)}
                 </button>
 
                 <button className={`button-menu suport-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i class="bi bi-headset"></i>
-                    {SideBarIsOpen?(<p>Suporte</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text">Suporte</p>):(<p></p>)}
                 </button>
 
                 <button className={`button-menu out-button ${SideBarIsOpen ? "open" : "closed"}`}>
                     <i class="bi bi-box-arrow-right"></i>
-                    {SideBarIsOpen?(<p>Sair</p>):(<p></p>)}
+                    {SideBarIsOpen?(<p className="button-text">Sair</p>):(<p></p>)}
                 </button>
                 
 

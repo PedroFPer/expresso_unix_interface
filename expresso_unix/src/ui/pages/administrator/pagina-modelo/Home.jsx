@@ -10,7 +10,7 @@ function Home() {
             <SideBar/>
             <main>
                 {/*<PopUp Title="Confirmar Funcionario" Description="Você deseja confirmar o cadastro deste funcionário?"/>*/}
-                <Models TitleButton="Adicionar Viagem" TitleModel="Adicionar Viagem"/>
+
                     
                 
                  
