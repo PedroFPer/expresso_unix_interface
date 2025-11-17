@@ -51,7 +51,7 @@ export default function ResumeTravel() {
             <InfoCardModel infoCard ={infoCardPrice} />
             <InfoCardModel infoCard ={infoCardAvailableSeats} />
 
-            <Link to={"/customer/traveler-information"} className="btn btn-primary btn-custom  ">Continuar</Link>
+            <Link to={"/customer/traveler-info"} className="btn btn-primary btn-custom  ">Continuar</Link>
         </div>
     )
 }
