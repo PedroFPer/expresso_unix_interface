@@ -9,7 +9,7 @@ export default function HeaderBaseMobile({ textHeader }) {
             <i 
                 className="bi bi-arrow-left-circle" 
                 onClick={() => navigate(-1)} 
-                style={{ cursor: 'pointer' }} // indica que é clicável
+                style={{ cursor: 'pointer' }} 
             ></i>
             <p>{textHeader}</p>
         </header>
