@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#traveler-information{
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto; 
+    
+    margin: 0%;
+    padding: 0%;
+
+    padding-bottom: 2em;
+
+    display: grid;
+    grid-template-rows: 3em auto auto;
+    grid-template-columns: 100%;
+    place-items: start center;
+    gap: 2em;
+
+    background-color: #F9F9F9;
+
+}
+
+.btn-custom {
+    width: 90%;
+    height: 3em;
+
+
+    display: grid;
+    place-items: center;
+    
+    margin: auto;
+
+    color: white;
+    background-color: #0E87F2;
+    transition: background-color .2s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0C78D6;
+}

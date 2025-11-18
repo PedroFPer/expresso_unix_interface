@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 #itinerary-card {
-    width: 95%;
+    width: 90%;
 
     display: grid;
     grid-template-columns: 1fr;
