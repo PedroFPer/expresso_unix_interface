@@ -59,7 +59,7 @@ export class travelerValidations {
         if (!value) return { valid: false, message: "Campo obrigatório" };
 
         const digits = value.replace(/\D/g, "");
-        if (digits.length < 10 || digits.length > 11)
+        if (digits.length <= 10 || digits.length > 12)
             return { valid: false, message: "Telefone inválido" };
 
         return { valid: true, message: "" };
