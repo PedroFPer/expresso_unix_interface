@@ -1,13 +1,20 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
-import BuyerInformationCard from "./Components/BuyerInformationCard"
+import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile.jsx"
+import BuyerInfoCard from "./Components/BuyerInfoCard.jsx"
+import InfoCardModel from "../../../common-components/info-card-model/InfoCardModel.jsx"
+import PassengerInfoCard from "./Components/PassengerInfoCard.jsx"
 import { travelerValidations } from "../../../../infrastructure/validators/travelerValidations.js"
-import "./styles/TravelerInformation.css"
+import "./styles/TravelerInfo.css"
 
-export default function TravelerInformation() {
+export default function TravelerInfo() {
     const textHeader = "Dados do Passageiro"
     const navigate = useNavigate();
+
+    const infoCardAvailableSeats ={
+        titleCard: "Assentos Disponiveis" ,
+        describe: "10"
+    }
 
     const [errors, setErrors] = useState({
         name: "",
@@ -16,19 +23,25 @@ export default function TravelerInformation() {
         phoneNumber: "",
     });
 
-    const [travelerInformationList, setTravelerInformationList] = useState([{
+
+    const [travelerInfoList, setTravelerInfoList] = useState([{
+        travelerId: crypto.randomUUID(),
         name: "",
         cpf: "",
         email: "",
         phoneNumber: "",
+        typeTraveler: "buyer"
     }])
 
 
-    const handleInputChange = (field, value) => {
-        setTravelerInformationList([{
-            ...travelerInformationList[0],
-            [field]: value
-        }]);
+    const handleInputChange = (travelerId, field, value) => {
+        setTravelerInfoList(prev =>
+            prev.map(item =>
+                item.id === travelerId
+                ? {... item, [field]: value}
+                :item
+            )
+        )
 
         const validation = travelerValidations.validateField(field, value);
 
@@ -40,7 +53,7 @@ export default function TravelerInformation() {
 
 
     const handleGoToPayment = () => {
-        const traveler = travelerInformationList[0];
+        const traveler = travelerInfoList[0];
         const fields = ["name", "cpf", "email", "phoneNumber"];
         const newErrors = {};
 
@@ -54,21 +67,22 @@ export default function TravelerInformation() {
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length === 0) {
-            navigate("/customer/payment-information", { state: { travelerInformationList } });
+            navigate("/customer/payment-information", { state: { travelerInfoList } });
         }
     };
-
-
 
 
     return (
         <div id="traveler-information">
             <HeaderBaseMobile textHeader={textHeader} />
-            <BuyerInformationCard
+            <BuyerInfoCard
                 handleInputChange={handleInputChange}
-                travelerInformationList={travelerInformationList}
+                travelerInfoList={travelerInfoList}
                 errors={errors}
             />
+            <InfoCardModel infoCard={infoCardAvailableSeats} />
+            <PassengerInfoCard />
+
 
             <button onClick={handleGoToPayment} className="btn btn-primary btn-custom">Ir para pagamento</button>
         </div>

@@ -3,13 +3,13 @@ import "./styles/PaymentInformation.css"
 
 export default function PaymentInformation() {
     const location = useLocation();
-    const travelerInformationList = location.state?.travelerInformationList || [];
+    const travelerInfoList = location.state?.travelerInfoList || [];
 
     return (
         <div>
             <h1>Dados do Passageiro</h1>
-            {travelerInformationList.length > 0 ? (
-                travelerInformationList.map((traveler, index) => (
+            {travelerInfoList.length > 0 ? (
+                travelerInfoList.map((traveler, index) => (
                     <div key={index}>
                         <p>Nome: {traveler.name || ""}</p>
                         <p>CPF: {traveler.cpf || ""}</p>

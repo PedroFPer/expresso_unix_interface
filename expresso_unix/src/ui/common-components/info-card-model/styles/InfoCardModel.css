@@ -17,13 +17,14 @@
 
 
 #info-card-model strong{
-
+    font-size: 0.8em;
     margin-right: auto;
 
 }
 
 
 #info-card-model p{
+    font-size: 0.8em;
     font-weight: 600;
 
     margin: auto;

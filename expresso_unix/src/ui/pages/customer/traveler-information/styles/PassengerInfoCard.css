@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#passenger-info-card{
+    display: none;
+}
+
+.btn-custom {
+    width: 90%;
+    height: 3.5em;
+
+
+    display: grid;
+    place-items: center;
+    
+    margin: auto;
+
+    background-color: #0E87F2;
+    transition: background-color .2s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0C78D6;
+}
