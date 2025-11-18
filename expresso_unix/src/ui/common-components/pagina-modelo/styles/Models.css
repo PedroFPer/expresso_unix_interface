@@ -1,126 +1,41 @@
-.models{
-    width: 50vw;
-    background-color: #b9b9b9;
-    border: black 1px solid;
+.background-container {
+  position: relative;
 }
 
-.title-model-layout{
-    border-bottom: black 1px solid;
-    height: 4rem;
-    margin: auto;
-    
-    padding: auto;
-    text-align: start;
-}
-.title-model{
-    margin-left: 10px;
-    height: auto;
-    padding-top: 10px;
-    font-size: 1.5rem;
-    color: black;
-}
-
-.buttons-Details-Previa{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
-
-}
-
-.button-details{
-    background-color: transparent;
-    color: #949494;
-
-    
-}
-.button-details.clicked{
-    text-decoration: underline 2px; 
-    color: #1565C0;
-    font-weight: 600;
-    
-    
-}
-.button-details:hover{
-    background-color: transparent
-    
-}
-
-.button-previa{
-    background-color: transparent;
-    color: #949494;
-
-    
-}
-
-.button-previa.clicked{
-    text-decoration: underline 2px; 
-    color: #1565C0;
-    font-weight: 600;
-    
-    
-}
-
-.button-previa:hover{
-    background-color: transparent
-    
+/* FUNDO ESCURECIDO */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* escurece */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
 
-.text-and-button-section{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    gap: 10px;
-    border-bottom: #949494 1px solid;
-}
-.input-place-trip-model{
-    width: 90%;
-    margin: auto;
-    padding: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-}
-.input-place-trip-model p{
-    width: 90%;
-    text-align: start;
-    font-size: 95%;
-    color: black;
-    font-weight: 600;
-    
+.models {
+  width: 60%;
+  max-width: 900px;
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
-.input-place-trip-model input{
-    border-radius: 10px;
-    border: 1px solid black;
 
-    padding: 0.3rem;
-    width: 90%;
-    height: 2.5rem;
-    gap: 5%;
+.button-open-model {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #0F529E;
+  
 }
-.input-place-model{
-    margin-left: 2rem;
-    margin-right: 2rem;
-    display: grid;
-    grid-template-columns: auto;
-    
-}
+.button-open-model:hover{
+    background-color: #064081;
 
-.input-place-model input{
-    border-radius: 10px;
-    padding: 0.3rem;
-    border: 1px solid black;
-    height: 2rem;
-    
-}
-.dates-input-model{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.time-input-model{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }

@@ -10,13 +10,16 @@
 
 html, body, #root {
   width: 100%;
+  height: 100%;
 }
 
 body {
   overflow-y: auto;
 }
 main{
+  
   padding: 2rem;
+  margin-left: 5rem;
   margin-bottom: 7%;
   margin-top: 2%;
 
@@ -29,7 +32,8 @@ footer{
 
 .grid-geral{
   display: grid;
-  grid-template-columns: 1fr 11fr;
+  grid-template-columns: auto 1fr; /* sidebar + conteúdo */
+  height: 100vh;                   /* ocupa a altura da tela */
   width: 100%;
   
 }

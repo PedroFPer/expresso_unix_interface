@@ -1,3 +1,5 @@
+import { Routes, Route, Navigate  } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/SideBar.css";
 import { useState } from "react";
@@ -17,51 +19,72 @@ function SideBar(){
   }
 
     return(
+        
+
+        
         <div className="layout-sidebar">
             <aside className={sidebarClass}>
 
                 <img src={logo} alt="logo" className={`empresa-logo ${SideBarIsOpen ? "open" : "closed"}`} />
                 <p className="empresa-name">{NomeDaEmpresa}</p>
 
+                
                 <button className={`button-menu copy-button ${SideBarIsOpen ? "open " : "closed"}`}>
                     {SideBarIsOpen?(<p className="button-text-trip">Catalogo de Viagens Ativo</p>):(<p></p>)}
                     <i class="bi bi-copy"></i>
                 </button>
+                
 
-                <button className={`button-menu trip-button ${SideBarIsOpen ? "open" : "closed"}`}>
-                    <i className="bi-suitcase"></i>
-                    {SideBarIsOpen?(<p className="button-text">Catalogo de Viagens</p>):(<p></p>)}
-                </button>
+                <Link to="/admin/modelo">
+                    <button className={`button-menu trip-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                        <i className="bi-suitcase"></i>
+                        {SideBarIsOpen?(<p className="button-text">Catalogo de Viagens</p>):(<p></p>)}
+                    </button>
+                </Link>
 
-                <button className={`button-menu employees-button ${SideBarIsOpen ? "open" : "closed"}`}>
-                    <i className="bi-person-vcard"></i>
-                    {SideBarIsOpen?(<p className="button-text">Gerenciar Funcionarios</p>):(<p></p>)}
-                </button>
+                <Link>
+                    <button className={`button-menu employees-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                        <i className="bi-person-vcard"></i>
+                        {SideBarIsOpen?(<p className="button-text">Gerenciar Funcionarios</p>):(<p></p>)}
+                    </button>
+                </Link>
 
-                <button className={`button-menu custom-button ${SideBarIsOpen ? "open" : "closed"}`}>
-                    <i className="bi-pencil"></i>
-                    {SideBarIsOpen?(<p className="button-text">Customização</p>):(<p></p>)}
-                </button>
+                <Link to="/admin/perfil">
+                    <button className={`button-menu custom-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                        <i className="bi-pencil"></i>
+                        {SideBarIsOpen?(<p className="button-text">Customização</p>):(<p></p>)}
+                    </button>
+                </Link>
 
-                <button className={`button-menu account-button ${SideBarIsOpen ? "open" : "closed"}`}>
-                    <i class="bi bi-person-circle"></i>
-                    {SideBarIsOpen?(<p className="button-text">Minha Conta</p>):(<p></p>)}
-                </button>
+                <div>
+                    <Link to="/admin/account">
+                        <button className={`button-menu account-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                            <i class="bi bi-person-circle"></i>
+                            {SideBarIsOpen?(<p className="button-text">Minha Conta</p>):(<p></p>)}
+                        </button>
+                    </Link>
 
-                <button className={`button-menu settings-button ${SideBarIsOpen ? "open" : "closed"}`}>
-                    <i class="bi bi-gear"></i>
-                    {SideBarIsOpen?(<p className="button-text">Configuração</p>):(<p></p>)}
-                </button>
+                    <Link>
+                        <button className={`button-menu settings-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                            <i class="bi bi-gear"></i>
+                            {SideBarIsOpen?(<p className="button-text">Configuração</p>):(<p></p>)}
+                        </button>
+                    </Link>
 
-                <button className={`button-menu suport-button ${SideBarIsOpen ? "open" : "closed"}`}>
-                    <i class="bi bi-headset"></i>
-                    {SideBarIsOpen?(<p className="button-text">Suporte</p>):(<p></p>)}
-                </button>
+                    <Link to="/admin/support">
+                        <button className={`button-menu suport-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                            <i class="bi bi-headset"></i>
+                            {SideBarIsOpen?(<p className="button-text">Suporte</p>):(<p></p>)}
+                        </button>
+                    </Link>
 
-                <button className={`button-menu out-button ${SideBarIsOpen ? "open" : "closed"}`}>
-                    <i class="bi bi-box-arrow-right"></i>
-                    {SideBarIsOpen?(<p className="button-text">Sair</p>):(<p></p>)}
-                </button>
+                    <Link>
+                        <button className={`button-menu out-button ${SideBarIsOpen ? "open" : "closed"}`}>
+                            <i class="bi bi-box-arrow-right"></i>
+                            {SideBarIsOpen?(<p className="button-text">Sair</p>):(<p></p>)}
+                        </button>
+                    </Link>
+                </div>
                 
 
             </aside>

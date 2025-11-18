@@ -3,15 +3,16 @@
     grid-template-columns: auto auto;
     height: 100%;
     width: auto;
-    position: sticky;
-    top: 0;
+    
     
 }
 
 .side-bar{
-    min-height: 60rem;
+    min-height: 100vh;
     max-width: 100%;
     width: 100%;
+    position: fixed;
+    top: 0;
     
     background-color: #0F529E;
     display: grid;
@@ -88,6 +89,9 @@ button:hover {
     width: auto;
     border-radius: 0px 5px 5px 0px;
     padding: 2px;
+    position: fixed;
+    top: 0;
+    left: 4rem;
 
 }
 

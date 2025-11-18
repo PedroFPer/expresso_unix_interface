@@ -6,10 +6,11 @@ import "./styles/Home.css";
 
 function Home() {
     return (
-        <div className="GridGeral">
+        <div className="grid-geral">
             <SideBar/>
             <main>
-                {/*<PopUp Title="Confirmar Funcionario" Description="Você deseja confirmar o cadastro deste funcionário?"/>*/}
+                
+                <Models></Models>
 
                     
                 

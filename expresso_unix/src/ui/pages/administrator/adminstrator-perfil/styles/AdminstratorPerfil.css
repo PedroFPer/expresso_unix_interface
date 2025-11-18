@@ -1,0 +1,12 @@
+.buttons-chosse-component-show{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.buttons-chosse-component-show button{
+    color: black;
+
+}
+.buttons-chosse-component-show button:hover{
+    background-color: transparent;
+
+}
