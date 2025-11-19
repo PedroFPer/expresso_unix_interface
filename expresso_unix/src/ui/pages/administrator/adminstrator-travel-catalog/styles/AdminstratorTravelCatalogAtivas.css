@@ -1,68 +1,57 @@
-.lista-viagens{
-    border: 1px solid black;
-    padding: 1rem;
-}
-.layout-title-viagens{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 1rem;
-    border-bottom: 2px solid #00000052 ;
+.topo {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dcdcdc;
 }
 
-.layout-title-viagens button{
-    background-color: transparent;
-    color: #0E87F2;
-    border-radius: 10px;
-    border: #0E87F2 2px solid;
-    width: auto;
-    padding: 0.5rem;
-    font-weight: 500;
-}
-.toggle-button{
-    width: 40px;
-    height: auto;
-    background-color: transparent;
-    color: black;
-    border-radius: 10px;
-    border: 1px #444444 solid;
-
-}
-.toggle-button i{
-    font-size: 20px;
-    font-weight: bold;
-}
-.toggle-button:hover{
-    background-color: transparent;
-}
-.layout-inputs-informations{
+.inputs-area {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    padding: 1rem;
-    border-bottom: 2px solid #00000052 ;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #dcdcdc;
 }
-.layout-inputs-informations p{
-    color: black;
+.input-block input{
+    border: none;
+}
+.input-block p {
     font-weight: 600;
-    font-size: 1rem;
+    color: #333;
 }
 
-
-.inputs-informations-button{
-    color: white;
-    background-color: #0E87F2;
+.input-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #aaa;
+    padding: 6px;
     border-radius: 10px;
 }
-.layout-choose-date{
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    text-align: center;
-}
-.button-choose-date{
-    color: black;
-    background-color: transparent;
+
+.swap {
+    background: transparent;
+    border: 1px solid #555;
+    border-radius: 10px;
 }
 
-.button-choose-date:hover{
-    color: black;
-    background-color: transparent;
+.buscar {
+    background: #0E87F2;
+    color: white;
+    border-radius: 10px;
+}
+
+.datas {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.dia-selecionado {
+    font-size: 18px;
+}
+
+.cards-lista {
+    margin-top: 20px;
 }

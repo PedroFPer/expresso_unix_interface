@@ -1,68 +1,29 @@
-
-.layout-title-travel-catalog{
-
-    width: 100%;
-}
-
-.titulo-principal {
-    font-size: 28px;
-    margin-bottom: 25px;
-}
-
-.area-botoes-catalogo {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.area-botoes-catalogo button {
-    padding: 10px 16px;
-    background-color: #d9d9d9;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.lista-viagens {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.card-viagem {
-    display: flex;
-    background-color: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-}
-
-.imagem-viagem {
-    width: 180px;
-    height: 120px;
-    object-fit: cover;
-}
-
-.conteudo-viagem {
-    padding: 15px 20px;
-}
-
-.titulo-viagem {
-    font-size: 22px;
+.title-catalogo h1 {
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
-.texto-informacao {
-    font-size: 15px;
-    margin-bottom: 5px;
+.tabs {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 15px;
 }
 
-.botao-ver-mais {
-    margin-top: 10px;
-    padding: 8px 14px;
-    background-color: #0F529E;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
+.tab {
+    background: transparent;
+    font-size: 18px;
+    color: #5A5A5A;
+}
+
+.tab.active {
+    font-weight: 600;
+    color: #0F529E;
+    text-decoration: underline 2px #0F529E;
+}
+
+.catalogo-box {
+    border: 1px solid #d9d9d9;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
 }

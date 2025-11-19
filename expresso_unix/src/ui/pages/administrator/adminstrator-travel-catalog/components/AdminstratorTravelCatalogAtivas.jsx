@@ -1,89 +1,104 @@
 import { useState } from "react";
-import "../styles/AdminstratorTravelCatalogAtivas.css"
 import AdminstratorTravelCatalogCard from "./AdminstratorTravelCatalogCard";
+import Models from "../../../../common-components/pagina-modelo/Components/Models";
+import "../styles/AdminstratorTravelCatalogAtivas.css";
 
 const cardsList = [
-  { origem: "São Paulo", destino: "Rio", duracao: "6h", price: "R$ 120",goAndGoback:"go" },
-  { origem: "Curitiba", destino: "Florianópolis", duracao: "4h", price: "R$ 95",goAndGoback:"go" },
-  { origem: "BH", destino: "Vitória", duracao: "5h", price: "R$ 110",goAndGoback:"" },
+  { origem: "Feira de Santana, BA - 07:00", destino: "Salvador, BA - 09:00", duracao: "2:00", price: "R$ 80,00", goAndGoback: "go" },
+  { origem: "Feira de Santana, BA - 08:00", destino: "Cachoeira, BA - 10:30", duracao: "2:30", price: "R$ 75,00", goAndGoback: "" }
 ];
 
 function AdminstratorTravelCatalogAtivas() {
-const [ButtonToggleTripIsClicked, setButtonToggleTripIsClicked] = useState(false)
-const on="20"
-const after="21"
-const before="19"
+  const [toggle, setToggle] = useState(false);
 
+  return (
+    <div className="catalogo-atividades">
+      <div className="topo">
+        <h2>Viagens</h2>
+        <Models TitleButton={"+ Adicionar Viagem"} TitleModel={"Adicionar Viagem"} />
+      </div>
 
-
-
-    return (
-        <div className="lista-viagens">
-
-            <div>
-                <div className="layout-title-viagens">
-                    <h2>Viagens</h2>
-                    <button>+ Adicionar Viagem</button>
-                </div>
-                {ButtonToggleTripIsClicked? (
-                    <div className="layout-inputs-informations">
-                        <div className="layout-input-trip">
-                            <p>Destino</p>
-                            <input type="text" />
-                        </div>
-                        <button className="toggle-button" onClick={()=> setButtonToggleTripIsClicked(!ButtonToggleTripIsClicked)}> <i class="bi bi-arrow-left-right"></i></button>
-                        <div className="layout-input-trip">
-                            
-                            <p>Origem</p>
-                            <input type="text" />
-                        </div>
-                        <div className="layout-input-trip">
-                            <p>Data de saida</p>
-                            <input type="date" />
-                        </div>
-                        <button className="inputs-informations-button">Buscar</button>
-                    </div>
-
-                ):(
-                    <div className="layout-inputs-informations">
-                        <div className="layout-input-trip">
-                            <p>Origem</p>
-                            <input type="text" />
-                        </div>
-                        <button className="toggle-button" onClick={()=> setButtonToggleTripIsClicked(!ButtonToggleTripIsClicked)}> <i class="bi bi-arrow-left-right"></i></button>
-                        <div className="layout-input-trip">
-                            <p>Destino</p>
-                            <input type="text" />
-                        </div>
-                        <div className="layout-input-trip">
-                            <p>Data de saida</p>
-                            <input type="date" />
-                        </div>
-                        <button className="inputs-informations-button">Buscar</button>
-                    </div>
-                )}
-                <div className="layout-choose-date">
-                    <button className="button-choose-date"><i class="bi bi-arrow-left-circle"></i></button>
-                    <div>{before} {on} {after}</div>
-                    <button className="button-choose-date"><i class="bi bi-arrow-right-circle"></i></button>
-                </div>
-            </div>
-            <div>
-            {cardsList.map((item, index) => (
-                <AdminstratorTravelCatalogCard
-                    key={index}
-                    origem={item.origem}
-                    destino={item.destino}
-                    duracao={item.duracao}
-                    price={item.price}
-                    goAndGoback={item.goAndGoback}
-                    />
-                ))}
+      <div className="inputs-area">
+        {!toggle ? (
+          <>
+            <div className="input-block">
+              <p>Origem</p>
+              <div className="input-icon">
+                <i className="bi bi-geo-alt"></i>
+                <input type="text" />
+              </div>
             </div>
 
-        
-        </div>
-    );
+            <button className="swap" onClick={() => setToggle(true)}>
+              <i className="bi bi-arrow-left-right"></i>
+            </button>
+
+            <div className="input-block">
+              <p>Destino</p>
+              <div className="input-icon">
+                <i className="bi bi-flag"></i>
+                <input type="text" />
+              </div>
+            </div>
+
+            <div className="input-block">
+              <p>Data de Saída</p>
+              <input type="date" />
+            </div>
+
+            <button className="buscar">Buscar</button>
+          </>
+        ) : (
+          <>
+            <div className="input-block">
+              <p>Destino</p>
+              <div className="input-icon">
+                <i className="bi bi-flag"></i>
+                <input type="text" />
+              </div>
+            </div>
+
+            <button className="swap" onClick={() => setToggle(false)}>
+              <i className="bi bi-arrow-left-right"></i>
+            </button>
+
+            <div className="input-block">
+              <p>Origem</p>
+              <div className="input-icon">
+                <i className="bi bi-geo-alt"></i>
+                <input type="text" />
+              </div>
+            </div>
+
+            <div className="input-block">
+              <p>Data de Saída</p>
+              <input type="date" />
+            </div>
+
+            <button className="buscar">Buscar</button>
+          </>
+        )}
+      </div>
+
+      <div className="datas">
+        <button className="seta">
+          <i className="bi bi-arrow-left-circle"></i>
+        </button>
+
+        <div className="dia-selecionado">Sábado, 24/10</div>
+
+        <button className="seta">
+          <i className="bi bi-arrow-right-circle"></i>
+        </button>
+      </div>
+
+      <div className="cards-lista">
+        {cardsList.map((item, index) => (
+          <AdminstratorTravelCatalogCard key={index} {...item} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default AdminstratorTravelCatalogAtivas;

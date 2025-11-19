@@ -31,7 +31,7 @@ function SideBar(){
                 </div>
 
                 <div className='layout-buttons-1'>
-                    <Link to="/admin/modelo">
+                    <Link to="/">
                         <button className={`button-menu home-button ${SideBarIsOpen ? "open" : "closed"}`}>
                             <i class="bi bi-house-door"></i>
                             {SideBarIsOpen ? (<p className="button-text">Inicio</p>) : (<p></p>)}
@@ -58,7 +58,7 @@ function SideBar(){
                 </div>
 
                 <div className='layout-buttons-2'>
-                    <Link>
+                    <Link to="/admin/manage-employees">
                         <button className={`button-menu employees-button ${SideBarIsOpen ? "open" : "closed"}`}>
                             <i className="bi-person-vcard"></i>
                             {SideBarIsOpen ? (<p className="button-text">Gerenciar Funcionarios</p>) : (<p></p>)}

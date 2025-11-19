@@ -6,14 +6,14 @@ function Models({ TitleButton, TitleModel }) {
 
   return (
     <div className="background-container">
-
-      {ModelsIsClosed ? (
-        <button 
+      <button 
           className="button-open-model" 
           onClick={() => setModelsIsClosed(false)}
         >
-          Abrir
+          {TitleButton}
         </button>
+      {ModelsIsClosed ? (
+        <div></div>
       ) : (
         <div 
           className="background-overlay" 
@@ -24,7 +24,7 @@ function Models({ TitleButton, TitleModel }) {
             onClick={(e) => e.stopPropagation()}  
           >
             
-            <h1>Modelo aberto</h1>
+            <h1>{TitleModel}</h1>
           </div>
         </div>
       )}
