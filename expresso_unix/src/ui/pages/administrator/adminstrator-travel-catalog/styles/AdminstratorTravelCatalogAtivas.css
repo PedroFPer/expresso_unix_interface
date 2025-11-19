@@ -1,0 +1,68 @@
+.lista-viagens{
+    border: 1px solid black;
+    padding: 1rem;
+}
+.layout-title-viagens{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    border-bottom: 2px solid #00000052 ;
+}
+
+.layout-title-viagens button{
+    background-color: transparent;
+    color: #0E87F2;
+    border-radius: 10px;
+    border: #0E87F2 2px solid;
+    width: auto;
+    padding: 0.5rem;
+    font-weight: 500;
+}
+.toggle-button{
+    width: 40px;
+    height: auto;
+    background-color: transparent;
+    color: black;
+    border-radius: 10px;
+    border: 1px #444444 solid;
+
+}
+.toggle-button i{
+    font-size: 20px;
+    font-weight: bold;
+}
+.toggle-button:hover{
+    background-color: transparent;
+}
+.layout-inputs-informations{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1rem;
+    border-bottom: 2px solid #00000052 ;
+}
+.layout-inputs-informations p{
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+.inputs-informations-button{
+    color: white;
+    background-color: #0E87F2;
+    border-radius: 10px;
+}
+.layout-choose-date{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    text-align: center;
+}
+.button-choose-date{
+    color: black;
+    background-color: transparent;
+}
+
+.button-choose-date:hover{
+    color: black;
+    background-color: transparent;
+}
