@@ -1,6 +1,6 @@
-import lineTravel from "../../../../../assets/line-travel-card.png"
-import { timeUtils } from "../../../../../infrastructure/utils/timeUtils"
-import "../styles/ItineraryCard.css"
+import lineTravel from "../../../assets/line-travel-card.png"
+import { timeUtils } from "../../../infrastructure/utils/timeUtils"
+import "./styles/ItineraryCard.css"
 
 export default function ItineraryCard({ travelInfo }) {
 

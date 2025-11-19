@@ -1,16 +1,16 @@
 import { Routes, Route, Navigate  } from 'react-router-dom'
-import ResumeTravel from '../../ui/pages/customer/resume-travel/ResumeTravel'
-import TravelerInfo from '../../ui/pages/customer/traveler-information/TravelerInfo'
-import PaymentInformation from '../../ui/pages/customer/payment-information/PaymentInformation'
+import TravelSummary from '../../ui/pages/customer/travel-summary/TravelSummary'
+import PassengerRegistration from '../../ui/pages/customer/passenger-registration/PassengerRegistration'
+import PaymentSummary from '../../ui/pages/customer/payment-summary/PaymentSummary'
 
 export default function CustomerRoutes() {
   return (
     <Routes>
-      <Route index element={<Navigate to="resume-travel" replace />} />
+      <Route index element={<Navigate to="travel-summary" replace />} />
 
-      <Route path="resume-travel" element={<ResumeTravel />} /> 
-      <Route path="traveler-info" element={<TravelerInfo />} /> 
-      <Route path="payment-information" element={<PaymentInformation />} /> 
+      <Route path="travel-summary" element={<TravelSummary />} /> 
+      <Route path="passenger-registration" element={<PassengerRegistration />} /> 
+      <Route path="payment-summary" element={<PaymentSummary />} /> 
     </Routes>
   )
 }

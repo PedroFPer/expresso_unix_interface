@@ -1,7 +1,7 @@
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils"
-import "../styles/BuyerInfoCard.css"
+import "../styles/PassengerFormCard.css"
 
-export default function BuyerInformationCard({ handleInputChange, travelerInfoList, errors }) {
+export default function PassengerFormCard({ handleInputChange, travelerInfo, errors }) {
 
 
     return (
@@ -15,8 +15,8 @@ export default function BuyerInformationCard({ handleInputChange, travelerInfoLi
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: João da Silva"
-                        value={maskUtils.formattersField("text",travelerInfoList[0].name)}
-                        onChange={(e) => handleInputChange(travelerInfoList.travelerId, "name", e.target.value)}
+                        value={maskUtils.formattersField("text",travelerInfo.name)}
+                        onChange={(e) => handleInputChange("name", e.target.value)}
                     />
                     <p className="input-error">
                         {errors.name || "\u00A0"}
@@ -29,10 +29,10 @@ export default function BuyerInformationCard({ handleInputChange, travelerInfoLi
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: 123.456.789-10"
-                        value={maskUtils.formattersField("cpf", travelerInfoList[0].cpf)}
+                        value={maskUtils.formattersField("cpf", travelerInfo.cpf)}
                         onChange={(e) => {
-                            const onlyNumbers = maskUtils.onlyDigits(e.target.value);
-                            handleInputChange(travelerInfoList.travelerId, "cpf", onlyNumbers);
+                            const onlyNumbers = maskUtils.onlyDigitsCpf(e.target.value);
+                            handleInputChange("cpf", onlyNumbers);
                         }}
                     />
                     <p className="input-error">
@@ -46,8 +46,8 @@ export default function BuyerInformationCard({ handleInputChange, travelerInfoLi
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: Nome@email.com"
-                        value={maskUtils.formattersField("text", travelerInfoList[0].email)}
-                        onChange={(e) => handleInputChange(travelerInfoList.travelerId, "email", e.target.value)}
+                        value={maskUtils.formattersField("text", travelerInfo.email)}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
                     />
                     <p className="input-error">
                         {errors.email || "\u00A0"}
@@ -60,10 +60,10 @@ export default function BuyerInformationCard({ handleInputChange, travelerInfoLi
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: (00) 00000-0000"
-                        value={maskUtils.formattersField("phoneNumber", travelerInfoList[0].phoneNumber)}
+                        value={maskUtils.formattersField("phoneNumber", travelerInfo.phoneNumber)}
                         onChange={(e) =>{
-                            const onlyNumbers = maskUtils.onlyDigits(e.target.value)
-                            handleInputChange(travelerInfoList.travelerId, "phoneNumber", onlyNumbers)
+                            const onlyNumbers = maskUtils.onlyDigitsPhoneNumber(e.target.value)
+                            handleInputChange("phoneNumber", onlyNumbers)
                         }}
                     />
                     <p className="input-error">

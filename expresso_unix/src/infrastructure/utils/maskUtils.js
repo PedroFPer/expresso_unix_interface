@@ -1,7 +1,11 @@
 export class maskUtils {
 
-    static onlyDigits(value) {
-        return value.replace(/\D/g, "");
+    static onlyDigitsCpf(value) {
+        return value.replace(/\D/g, "").slice(0,11);
+    }
+
+    static onlyDigitsPhoneNumber(value) {
+        return value.replace(/\D/g, "").slice(0,11);
     }
 
     static limitText(value) {

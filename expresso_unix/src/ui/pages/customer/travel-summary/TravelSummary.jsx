@@ -1,19 +1,11 @@
 import { Link } from 'react-router-dom'
-import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
-import ItineraryCard from "./Components/ItineraryCard"
+import { useNavigate } from "react-router-dom";
+import ItineraryCard from "../../../common-components/itinerary-card/ItineraryCard"
 import InfoCardModel from "../../../common-components/info-card-model/InfoCardModel"
-import "./styles/ResumeTravel.css"
+import HeaderMobileResume from "./Components/HeaderMobileResume"
+import "./styles/TravelSummary.css"
 
-export default function ResumeTravel() {
-    const textHeader = "Resumo da Viagem"
-    const infoCardPrice ={
-        titleCard: "Valor Unitário" ,
-        describe: "R$ 80,00"
-    }
-    const infoCardAvailableSeats ={
-        titleCard: "Assentos Disponiveis" ,
-        describe: "10"
-    }
+export default function TravelSummary() {
 
     const travelInfo = [
         {
@@ -26,6 +18,8 @@ export default function ResumeTravel() {
             destinyCity: "Salvador, BA",
             destinyAddress: "Praça da Sé, 406 – Pelourinho, 40020-210",
             price: "R$ 80,00",
+            availableSeats: 20,
+            totalSeats: 40,
             date: new Date(2025, 11, 18),
             company: "Travel Bus"
         },
@@ -39,19 +33,37 @@ export default function ResumeTravel() {
             destinyCity: "Feira de Santana, BA",
             destinyAddress: "R. Augusto dos Anjos, E - Rua Nova, 40301-110",
             price: "R$ 80,00",
+            availableSeats: 20,
+            totalSeats: 40,
             date: new Date(2025, 11, 18),
             company: "Travel Bus"
         }
     ];
 
+
+    const infoCardPrice ={
+        titleCard: "Valor Unitário" ,
+        describe: travelInfo[0].availableSeats
+    }
+    const infoCardAvailableSeats ={
+        titleCard: "Assentos Disponiveis" ,
+        describe: travelInfo[0].availableSeats
+    }
+
     return (
         <div id="resume-travel">
-            <HeaderBaseMobile textHeader={textHeader} />
-            <ItineraryCard travelInfo={travelInfo} />
-            <InfoCardModel infoCard ={infoCardPrice} />
-            <InfoCardModel infoCard ={infoCardAvailableSeats} />
+            <HeaderMobileResume />
 
-            <Link to={"/customer/traveler-info"} className="btn btn-primary btn-custom  ">Continuar</Link>
+            <div id="scroll-content-resume-travel">
+                <ItineraryCard travelInfo={travelInfo} />
+                <InfoCardModel infoCard ={infoCardPrice} />
+                <InfoCardModel infoCard ={infoCardAvailableSeats} />
+            </div>
+
+            <Link 
+            to={"/customer/passenger-registration"} 
+            className="btn btn-primary btn-custom"
+            state={{travelInfo}}>Continuar</Link>
         </div>
     )
 }
