@@ -1,15 +1,18 @@
 export class maskUtils {
 
     static onlyDigitsCpf(value) {
-        return value.replace(/\D/g, "").slice(0,11);
+        return value.replace(/\D/g, "").slice(0, 11);
     }
 
     static onlyDigitsPhoneNumber(value) {
-        return value.replace(/\D/g, "").slice(0,11);
+        return value.replace(/\D/g, "").slice(0, 11);
     }
 
     static limitText(value) {
+        if (typeof value !== "string") value = "";
         return value.slice(0, 50);
+
+
     }
 
     static formatPhoneNumber(phone) {

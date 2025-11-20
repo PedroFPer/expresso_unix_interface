@@ -1,24 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile.jsx";
 import PassengerFormCard from "./Components/PassengerFormCard.jsx";
 import { travelerValidations } from "../../../../infrastructure/validators/travelerValidations.js";
+import { CustomerContext } from "../../../../infrastructure/context/CustomerContext.jsx";
 import "./styles/PassengerRegistration.css";
 
 export default function PassengerRegistration() {
-    const location = useLocation();
-    const { travelInfo } = location.state || {};
+    const { travelInfo, travelerInfo, setTravelerInfo } = useContext(CustomerContext);
 
     const navigate = useNavigate();
     const textHeader = "Dados do Passageiro";
-
-    const [travelerInfo, setTravelerInfo] = useState({
-        travelerId: crypto.randomUUID(),
-        name: "",
-        cpf: "",
-        email: "",
-        phoneNumber: "",
-    });
 
     const [errors, setErrors] = useState({
         name: "",
@@ -58,7 +50,7 @@ export default function PassengerRegistration() {
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length === 0) {
-            navigate("/customer/payment-information", { state: { travelerInfo } });
+            navigate("/customer/payment-summary");
         }
     };
 
