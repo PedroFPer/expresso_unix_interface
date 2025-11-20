@@ -1,7 +1,8 @@
 .layout-card{
     padding: 0.3rem;
+    padding-left: 1rem;
     border-radius: 10px;
-    border: 1px solid #444444;
+    border: 1px solid #d9d9d9;
     margin-bottom: 0.7rem;
 }
 
@@ -33,14 +34,19 @@
 
 .layout-button-card{
     display:grid;
-    grid-template-columns: repeat(4,auto);
-    border-top: 1px #444444 solid;
+    grid-template-columns: repeat(2,2rem) 10rem 1fr;
+    border-top: 1px solid #d9d9d9;
 }
 .layout-button-card i{
-    width: auto;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    color: #888888;
 }
 
-.layout-button-card button{
+.button-card button{
     background-color: #00C234;
     color: #ffff;
     font-weight: 500;
@@ -49,13 +55,23 @@
     width: auto;
     margin-top: 0.2rem;
     padding: 0.3rem 3rem;
-
+}
+.button-card{
+    width: 100%;
+    display: grid;
+    justify-content: end;
+    
 }
 
 .go-and-goback{
+    height: 100%;
     display: grid;
     grid-template-columns: auto auto;
+    align-items: center;
+    justify-items: center;
 }
+
+
 .go-and-goback p{
     color: #444444;
 

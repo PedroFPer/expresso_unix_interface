@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/SideBar.css";
 import { useState, useEffect } from "react";
-import logo from "../../../../assets/logo.png";
+import logo from "../../../../assets/LogoPequenaExpressoUnix.png";
+import logoSideBarOpen from "../../../../assets/LogoExpressoUnix.png";
 
 function SideBar(){
 
@@ -12,7 +13,7 @@ function SideBar(){
 
     let sidebarClass = SideBarIsOpen ? "side-bar open" : "side-bar closed";
 
-    // === MODELO 1: ajusta o MAIN sem mexer no layout ===
+    
     useEffect(() => {
         if (SideBarIsOpen) {
             document.documentElement.classList.add("sidebar-open");
@@ -26,7 +27,7 @@ function SideBar(){
             <aside className={sidebarClass}>
 
                 <div className='layout-logo-and-name'>
-                    <img src={logo} alt="logo" className={`empresa-logo ${SideBarIsOpen ? "open" : "closed"}`} />
+                    <img src={SideBarIsOpen?(logoSideBarOpen):(logo)} alt="logo" className={`empresa-logo ${SideBarIsOpen ? "open" : "closed"}`} />
                     <p className="empresa-name">{NomeDaEmpresa}</p>
                 </div>
 

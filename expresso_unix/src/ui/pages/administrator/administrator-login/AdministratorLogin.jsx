@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import logo from "../../../../assets/logo.png";
+import logo from "../../../../assets/LogoExpressoUnix.png";
 import "./styles/AdminstratorLogin.css";
 
 
@@ -38,7 +38,6 @@ function AdminstratorLogin() {
 
         <div className="lado-esquerdo">
           <img src={logo} alt="Logo" className="logo-sistema" />
-          <h1 className="titulo-sistema">Expresso Unix</h1>
           <p className="mensagem-boas-vindas">Bem vindo de volta!</p>
           <p className="mensagem-subtitulo">Faça o login para acessar sua conta</p>
         </div>

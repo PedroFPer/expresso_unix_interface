@@ -33,13 +33,13 @@
 .empresa-logo.open{
     width: 80%;
     height: auto;
-    margin-top: 10px;
+    margin-top: 0px;
     transition: all 0.9s ease;   
 }
 
 .empresa-logo.closed{
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 0rem;
     transition: all 0.5s ease;  
 }
 

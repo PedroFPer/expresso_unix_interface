@@ -4,17 +4,21 @@
 }
 
 .tabs {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,10.8rem);
     gap: 25px;
     margin-bottom: 15px;
 }
 
 .tab {
     background: transparent;
+    width: 100%;
     font-size: 18px;
     color: #5A5A5A;
 }
-
+.tab:hover{
+    background-color: transparent;
+}
 .tab.active {
     font-weight: 600;
     color: #0F529E;

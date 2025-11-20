@@ -2,30 +2,30 @@
   width: 100%;
   height: 100vh;
   background: linear-gradient(#0085ff, #003a74);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center; 
 }
 
 .caixa-login {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
   width: 780px;
   border-radius: 8px;
   overflow: hidden;
 }
 
 .lado-esquerdo {
-  width: 50%;
   background: linear-gradient(#0a58ca, #003f7f);
   padding: 40px 32px;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  align-content: center;
+  gap: 20px; 
 }
 
 .logo-sistema {
-  width: 160px;
+  width: 20rem;
+  height: auto;
   margin-bottom: 30px;
 }
 
@@ -35,7 +35,6 @@
 }
 
 .mensagem-boas-vindas {
-  margin-top: 30px;
   font-size: 14px;
   font-weight: 600;
 }
@@ -46,9 +45,11 @@
 }
 
 .lado-direito {
-  width: 50%;
   background: white;
   padding: 40px 32px;
+
+  display: grid;
+  align-content: start;
 }
 
 .titulo-login {
@@ -105,9 +106,12 @@
   text-align: center;
   margin-top: 18px;
   font-size: 12px;
+  color: black;
 }
 
 .mensagem-erro {
+  width: 100%;
+  text-align: left;
   color: red;
   font-size: 12px;
   margin-top: 4px;

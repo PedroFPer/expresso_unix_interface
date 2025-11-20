@@ -29,7 +29,7 @@ function AdminstratorTravelCatalogAtivas() {
               </div>
             </div>
 
-            <button className="swap" onClick={() => setToggle(true)}>
+            <button className="toggle-button" onClick={() => setToggle(true)}>
               <i className="bi bi-arrow-left-right"></i>
             </button>
 
@@ -58,7 +58,7 @@ function AdminstratorTravelCatalogAtivas() {
               </div>
             </div>
 
-            <button className="swap" onClick={() => setToggle(false)}>
+            <button className="toggle-button" onClick={() => setToggle(false)}>
               <i className="bi bi-arrow-left-right"></i>
             </button>
 

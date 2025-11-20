@@ -10,7 +10,7 @@
   export default function AdministratorRoutes() {
     return (
       <Routes>
-        <Route index element={<Navigate to="account" replace />} />
+        <Route index element={<Navigate to="manage-employees" replace />} />
 
         <Route path="manage-employees" element={<AdminstratorManageEmployees/>} />
         <Route path="modelo" element={<Home/>} />

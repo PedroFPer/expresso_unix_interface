@@ -32,7 +32,7 @@ function AdminstratorTravelCatalogCard({ origem, destino, duracao, price,goAndGo
             <div className="go-and-goback"><i class="bi bi-arrow-left-right"></i><p>ida e volta</p></div>
           )}
         </div>
-        <button>Ativa</button>
+        <div className="button-card"><button>Ativa</button></div>
       </div>
     </div>
   );
