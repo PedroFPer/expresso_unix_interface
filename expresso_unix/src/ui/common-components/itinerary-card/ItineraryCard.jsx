@@ -1,5 +1,5 @@
 import lineTravel from "../../../assets/line-travel-card.png"
-import { timeUtils } from "../../../infrastructure/utils/timeUtils"
+import { formatUtils } from "../../../infrastructure/utils/formatUtils";
 import "./styles/ItineraryCard.css"
 
 export default function ItineraryCard({ travelInfo }) {
@@ -7,7 +7,7 @@ export default function ItineraryCard({ travelInfo }) {
     return (
         <section id="itinerary-card">
             {travelInfo.map((segment, index) => {
-                const formattedDate = timeUtils.formatDayMonth(segment.date);
+                const formattedDate = formatUtils.formatField("shortDate", segment.date);
 
                 return (
                     <div className="itinerary-segment" key={index}>

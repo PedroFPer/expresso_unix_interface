@@ -15,7 +15,7 @@ export default function PassengerFormCard({ handleInputChange, travelerInfo, err
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: João da Silva"
-                        value={maskUtils.formattersField("text",travelerInfo.name)}
+                        value={maskUtils.maskField("text",travelerInfo.name)}
                         onChange={(e) => handleInputChange("name", e.target.value)}
                     />
                     <p className="input-error">
@@ -29,7 +29,7 @@ export default function PassengerFormCard({ handleInputChange, travelerInfo, err
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: 123.456.789-10"
-                        value={maskUtils.formattersField("cpf", travelerInfo.cpf)}
+                        value={maskUtils.maskField("cpf", travelerInfo.cpf)}
                         onChange={(e) => {
                             const onlyNumbers = maskUtils.onlyDigitsCpf(e.target.value);
                             handleInputChange("cpf", onlyNumbers);
@@ -46,7 +46,7 @@ export default function PassengerFormCard({ handleInputChange, travelerInfo, err
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: Nome@email.com"
-                        value={maskUtils.formattersField("text", travelerInfo.email)}
+                        value={maskUtils.maskField("text", travelerInfo.email)}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                     />
                     <p className="input-error">
@@ -60,7 +60,7 @@ export default function PassengerFormCard({ handleInputChange, travelerInfo, err
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: (00) 00000-0000"
-                        value={maskUtils.formattersField("phoneNumber", travelerInfo.phoneNumber)}
+                        value={maskUtils.maskField("phoneNumber", travelerInfo.phoneNumber)}
                         onChange={(e) =>{
                             const onlyNumbers = maskUtils.onlyDigitsPhoneNumber(e.target.value)
                             handleInputChange("phoneNumber", onlyNumbers)

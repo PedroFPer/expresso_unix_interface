@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#payment-method-card{
+    width: 90%;
+    height: 15em;
+
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 100%;
+    align-items: center;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}

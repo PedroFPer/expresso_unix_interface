@@ -1,7 +1,8 @@
 import { useState, useContext } from "react";
 import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
 import ItineraryCard from "../../../common-components/itinerary-card/ItineraryCard"
-import PaymentDetails from "./Components/PaymentDetails";
+import PaymentDetailsCard from "./Components/PaymentDetailsCard";
+import PaymentMethodCard from "./Components/PaymentMethodCard";
 import { CustomerContext } from "../../../../infrastructure/context/CustomerContext";
 import "./styles/PaymentSummary.css"
 
@@ -18,9 +19,11 @@ export default function PaymentSummary() {
                 travelInfo={travelInfo}
                 />
 
-                <PaymentDetails 
+                <PaymentDetailsCard 
                 travelInfo={travelInfo} 
                 />
+
+                <PaymentMethodCard />
             </div>
 
 
