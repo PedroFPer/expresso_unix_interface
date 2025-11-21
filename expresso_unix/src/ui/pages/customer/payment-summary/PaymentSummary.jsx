@@ -11,16 +11,18 @@ export default function PaymentSummary() {
 
     const textHeader = "Informações de Pagamento";
 
+    
+
     return (
         <div id="payment-summary">
             <HeaderBaseMobile textHeader={textHeader} />
             <div id="scroll-content-payment-summary">
-                <ItineraryCard 
-                travelInfo={travelInfo}
+                <ItineraryCard
+                    travelInfo={travelInfo}
                 />
 
-                <PaymentDetailsCard 
-                travelInfo={travelInfo} 
+                <PaymentDetailsCard
+                    travelInfo={travelInfo}
                 />
 
                 <PaymentMethodCard />
