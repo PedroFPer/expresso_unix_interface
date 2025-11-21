@@ -5,7 +5,7 @@
     height: 5em;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 80% 20%;
     align-items: center;
 
     border-radius: 10px;
@@ -27,6 +27,6 @@
     font-size: 0.8em;
     font-weight: 600;
 
-    margin: auto 3em auto auto;
+    margin: auto auto auto auto;
     
 }

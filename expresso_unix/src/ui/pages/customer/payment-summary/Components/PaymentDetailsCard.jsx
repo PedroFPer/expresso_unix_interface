@@ -7,17 +7,17 @@ export default function PaymentDetailsCard({travelInfo}) {
     return (
         <section id="payment-details-card">
             <h3>Resumo da Compra</h3>
-            <div className="summary-item">
+            <div className="summary-item-payment-details">
                 <strong>Valor Unitário</strong>
                 <p>R${priceTravel}</p>
             </div>
 
-            <div className="summary-item" >
+            <div className="summary-item-payment-details" >
                 <strong>Quantidade de Assentos</strong>
                 <p>1</p>
             </div>
 
-            <div id="summary-total" className="summary-item">
+            <div id="summary-total" className="summary-item-payment-details">
                 <strong>Valor à Vista</strong>
                 <p>R${priceTravel}</p>
             </div>

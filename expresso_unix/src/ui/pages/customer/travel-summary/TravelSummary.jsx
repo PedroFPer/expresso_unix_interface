@@ -4,14 +4,16 @@ import ItineraryCard from "../../../common-components/itinerary-card/ItineraryCa
 import InfoCardModel from "../../../common-components/info-card-model/InfoCardModel"
 import HeaderMobileResume from "./Components/HeaderMobileResume"
 import { CustomerContext } from '../../../../infrastructure/context/CustomerContext';
+import { formatUtils } from '../../../../infrastructure/utils/formatUtils';
 import "./styles/TravelSummary.css"
 
 export default function TravelSummary() {
     const { travelInfo } = useContext(CustomerContext);
+    const priceTravel = formatUtils.formatCurrencyBR(travelInfo?.[0]?.price);
 
     const infoCardPrice = {
         titleCard: "Valor Unitário",
-        describe: travelInfo?.[0]?.price
+        describe:  `R$ ${priceTravel}`
     }
     const infoCardAvailableSeats = {
         titleCard: "Assentos Disponiveis",
