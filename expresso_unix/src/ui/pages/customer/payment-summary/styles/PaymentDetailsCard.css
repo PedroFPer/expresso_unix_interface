@@ -20,11 +20,9 @@
     grid-area: 1/1/2/2;
 
     font-size: 1em;
-    font-weight: 600;
-
-    border-bottom: 1px solid rgb(187, 186, 186);
 
     padding: 1em;
+    margin: 0%;
 }
 
 .summary-item-payment-details{
@@ -32,11 +30,11 @@
     height: 4em;
 
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 50% 50%;
     align-items: center;
 
     padding: 1em;
-    border-bottom: 1px solid rgb(187, 186, 186);
+    border-top: 1px solid rgb(187, 186, 186);
 
     background-color: white;
 }
@@ -53,7 +51,7 @@
     font-size: 0.8em;
     font-weight: 500;
 
-    margin: auto auto auto auto;
+    margin: auto 0em auto auto;
     
 }
 

@@ -13,7 +13,7 @@ export default function PaymentDetailsCard({travelInfo}) {
             </div>
 
             <div className="summary-item-payment-details" >
-                <strong>Quantidade de Assentos</strong>
+                <strong>Quant Assentos</strong>
                 <p>1</p>
             </div>
 
