@@ -20,25 +20,9 @@ export class travelerValidations {
 
     static validateCPF(value) {
         if (!value) return { valid: false, message: "Campo obrigatório" };
-
+      
         const cpf = value.replace(/\D/g, "");
         if (cpf.length !== 11) return { valid: false, message: "CPF precisa ter 11 dígitos" };
-        if (/^(\d)\1{10}$/.test(cpf)) return { valid: false, message: "CPF inválido" };
-
-        const calcDigit = (cpf, factor) => {
-            let total = 0;
-            for (let i = 0; i < factor - 1; i++) {
-                total += parseInt(cpf[i]) * (factor - i);
-            }
-            const remainder = (total * 10) % 11;
-            return remainder === 10 ? 0 : remainder;
-        };
-
-        const digit1 = calcDigit(cpf, 10);
-        const digit2 = calcDigit(cpf, 11);
-
-        if (digit1 !== parseInt(cpf[9]) || digit2 !== parseInt(cpf[10]))
-            return { valid: false, message: "CPF inválido" };
 
         return { valid: true, message: "" };
     }

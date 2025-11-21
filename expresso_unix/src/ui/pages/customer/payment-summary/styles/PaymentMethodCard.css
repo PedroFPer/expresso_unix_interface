@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#payment-method-card{
+    width: 90%;
+    height: 12em;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 100%;
+    align-items: center;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+#payment-method-card h3{
+    grid-area: 1/1/2/2;
+
+    font-size: 1em;
+
+    padding: 1em;
+
+    margin: 0%;
+}
+
+.summary-item-payment-method{
+     width: 100%;
+    height: 4em;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+    padding: 1em;
+    border-top: 1px solid rgb(187, 186, 186);
+
+}
+
+.summary-item-payment-method strong{
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: auto;
+
+}
+
+
+.summary-item-payment-method figure{
+    font-size: 0.8em;
+    font-weight: 500;
+
+    margin: auto 0em auto auto;
+    
+}
+
