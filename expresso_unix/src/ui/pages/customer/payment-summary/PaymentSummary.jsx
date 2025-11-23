@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
-import ItineraryCard from "../../../common-components/itinerary-card/ItineraryCard"
+import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
+import ItineraryCard from "../../../common-components/components/ItineraryCard"
 import PaymentDetailsCard from "./Components/PaymentDetailsCard";
 import PaymentMethodCard from "./Components/PaymentMethodCard";
 import { CustomerContext } from "../../../../infrastructure/context/CustomerContext";

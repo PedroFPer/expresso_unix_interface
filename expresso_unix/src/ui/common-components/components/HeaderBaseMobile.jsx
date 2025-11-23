@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import "./styles/HeaderBaseMobile.css"
+import "../styles/HeaderBaseMobile.css"
 
 export default function HeaderBaseMobile({ textHeader }) {
     const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import banner from '../../../assets/banner-image-header-home-mobile.png'
 import profile from '../../../assets/profile-image-header-home-mobile.png'
-import "./styles/HeaderHomeMobile.css"
+import "../styles/HeaderHomeMobile.css"
 
 export default function HeaderHomeMobile({id}){
     return(

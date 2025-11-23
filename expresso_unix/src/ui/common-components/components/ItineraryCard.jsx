@@ -1,6 +1,6 @@
 import lineTravel from "../../../assets/line-travel-card.png"
 import { formatUtils } from "../../../infrastructure/utils/formatUtils";
-import "./styles/ItineraryCard.css"
+import "../styles/ItineraryCard.css"
 
 export default function ItineraryCard({ travelInfo }) {
 

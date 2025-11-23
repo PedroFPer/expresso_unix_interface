@@ -1,5 +1,5 @@
-import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
-import PayeeInfo from "../../../common-components/payee-info/PayeeInfo";
+import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
+import PayeeInfo from "../../../common-components/components/PayeeInfo";
 import BoletoInstructionCard from "./Components/BoletoInstructionCard";
 import "./styles/BoletoPaymentDetails.css"
 
