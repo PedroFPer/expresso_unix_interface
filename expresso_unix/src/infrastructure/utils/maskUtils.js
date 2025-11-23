@@ -1,14 +1,21 @@
 export class maskUtils {
 
-    static onlyDigits(value) {
-        return value.replace(/\D/g, "");
+    static onlyDigitsCpf(value) {
+        return value.replace(/\D/g, "").slice(0, 11);
+    }
+
+    static onlyDigitsPhoneNumber(value) {
+        return value.replace(/\D/g, "").slice(0, 11);
     }
 
     static limitText(value) {
+        if (typeof value !== "string") value = "";
         return value.slice(0, 50);
+
+
     }
 
-    static formatPhoneNumber(phone) {
+    static phoneNumber(phone) {
         if (!phone) return "";
 
         let digits = phone.replace(/\D/g, "").slice(0, 11);
@@ -39,7 +46,7 @@ export class maskUtils {
         return digits;
     }
 
-    static formatCPF(cpf) {
+    static cpf(cpf) {
         if (!cpf) return "";
 
         return cpf
@@ -50,13 +57,13 @@ export class maskUtils {
             .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     }
 
-    static formattersField(fieldName, value) {
+    static maskField(fieldName, value) {
         switch (fieldName) {
             case "cpf":
-                return this.formatCPF(value)
+                return this.cpf(value)
 
             case "phoneNumber":
-                return this.formatPhoneNumber(value)
+                return this.phoneNumber(value)
 
             case "text":
                 return this.limitText(value)
