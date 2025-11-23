@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile.jsx";
+import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile.jsx";
 import PassengerFormCard from "./Components/PassengerFormCard.jsx";
 import { travelerValidations } from "../../../../infrastructure/validators/travelerValidations.js";
 import { CustomerContext } from "../../../../infrastructure/context/CustomerContext.jsx";

@@ -1,4 +1,4 @@
-import "./styles/PayeeInfo.css"
+import "../styles/PayeeInfo.css"
 
 export default function PayeeInfo(){
     return(

@@ -1,6 +1,6 @@
-import HeaderBaseMobile from "../../../common-components/header-base-mobile/HeaderBaseMobile"
+import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
 import PixInstructionCard from "./Components/PixInstructionCard";
-import PayeeInfo from "../../../common-components/payee-info/PayeeInfo";
+import PayeeInfo from "../../../common-components/components/PayeeInfo";
 import "./styles/PixPaymentDetails.css"
 
 export default function PixPaymentDetails(){

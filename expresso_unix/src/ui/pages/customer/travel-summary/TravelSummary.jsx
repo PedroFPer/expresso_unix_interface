@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useContext } from "react";
-import ItineraryCard from "../../../common-components/itinerary-card/ItineraryCard"
-import InfoCardModel from "../../../common-components/info-card-model/InfoCardModel"
+import ItineraryCard from "../../../common-components/components/ItineraryCard"
+import InfoCardModel from "../../../common-components/components/InfoCardModel"
 import HeaderMobileResume from "./Components/HeaderMobileResume"
 import { CustomerContext } from '../../../../infrastructure/context/CustomerContext';
 import { formatUtils } from '../../../../infrastructure/utils/formatUtils';

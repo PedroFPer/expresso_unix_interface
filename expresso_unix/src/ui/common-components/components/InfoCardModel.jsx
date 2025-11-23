@@ -1,4 +1,4 @@
-import "./styles/InfoCardModel.css"
+import "../styles/InfoCardModel.css"
 
 export default function InfoCardModel({infoCard}){
   return (
