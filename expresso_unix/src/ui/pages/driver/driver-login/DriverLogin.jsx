@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import isEqual from "lodash/isEqual";
 import HeaderDriverLogin from "./Components/HeaderDriverLogin"
 import DriverFormCard from "./Components/DriverFormCard"
-import {DriverContext} from "../../../../infrastructure/context/DriverProvider";
+import { DriverContext } from "../../../../infrastructure/context/DriverProvider";
 import { validationsUtils } from "../../../../infrastructure/utils/validationsUtils";
 import "./styles/DriverLogin.css"
 
@@ -12,7 +12,7 @@ export default function DriverLogin() {
     const navigate = useNavigate();
 
 
-    const driverCredentialsTest ={
+    const driverCredentialsTest = {
         email: "Name@email.com",
         password: "Dragon2023"
     }
@@ -36,48 +36,50 @@ export default function DriverLogin() {
         }));
     };
 
-    const handleLogin = () => {
-            const fields = ["email", "password" ];
-            const newErrors = {};
-    
-            fields.forEach(field => {
-                const validation =
-                    validationsUtils.validateField(field, driverCredentials[field]) ||
-                    { valid: false, message: "Campo inválido" };
-    
-                if (!validation.valid) {
-                    newErrors[field] = validation.message;
-                }
-            });
-    
-            setErrors(newErrors);
+    const handleLogin = (e) => {
+        e.preventDefault();
+        
+        const fields = ["email", "password"];
+        const newErrors = {};
 
-            const isEqualLogin = isEqual(driverCredentialsTest, driverCredentials);
+        fields.forEach(field => {
+            const validation =
+                validationsUtils.validateField(field, driverCredentials[field]) ||
+                { valid: false, message: "Campo inválido" };
 
-            if (!isEqualLogin){
-                window.alert("Usuário não encontrado");
-                return
+            if (!validation.valid) {
+                newErrors[field] = validation.message;
             }
-    
-            if (Object.keys(newErrors).length === 0) {
-                navigate("/driver/trips");
-            }
-        };
+        });
+
+        setErrors(newErrors);
+
+        const isEqualLogin = isEqual(driverCredentialsTest, driverCredentials);
+
+        if (Object.keys(newErrors).length !== 0) {
+            return;
+        }
+
+        if (isEqualLogin) {
+            navigate("/driver/trips");
+        } else {
+            window.alert("Usuário não encontrado");
+            return;
+        }
+
+
+
+
+    };
 
     return (
         <div id="driver-login">
             <HeaderDriverLogin />
-            <DriverFormCard 
-             driverCredentials={driverCredentials}
-             handleInputChange={handleInputChange} 
-             errors={errors} />
-
-              <button
-                onClick={handleLogin}
-                className="btn btn-primary btn-custom"
-            >
-                Ir para pagamento
-            </button>
+            <DriverFormCard
+                driverCredentials={driverCredentials}
+                handleInputChange={handleInputChange}
+                handleLogin={handleLogin}
+                errors={errors} />
         </div>
     )
 }

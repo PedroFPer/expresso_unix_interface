@@ -1,1 +1,41 @@
 @charset "UTF-8";
+
+#driver-form-card{
+    width: 100%;
+    height: 100%;
+
+    grid-area: 2/1/3/2;
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50px 50px 0px 0px;
+
+    padding: 1em;
+
+    background-color: white;
+}
+
+#form-drive-login{
+    width: 90%;
+
+    display: grid;
+    place-items: center;
+    gap: 1.5em;
+
+    border: 0em;
+}
+
+#form-drive-login label{
+    font-size: 0.9em;
+}
+
+
+#form-drive-login input{
+    height: 3.5em;
+
+}
+
+
+
+
