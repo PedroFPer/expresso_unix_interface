@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+#info-card-model{
+    width: 90%;
+    height: 5em;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+
+    padding: 1em;
+}
+
+
+#info-card-model strong{
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: auto;
+
+}
+
+
+#info-card-model p{
+    font-size: 0.8em;
+    font-weight: 600;
+
+    margin: auto 0em auto auto;
+    
+}

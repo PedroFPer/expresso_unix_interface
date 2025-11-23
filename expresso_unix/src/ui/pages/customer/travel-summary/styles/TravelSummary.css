@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+#resume-travel {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0%;
+    padding: 0%;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    place-items: start center;
+
+    gap: 1em;
+
+    background-color: #F9F9F9;
+
+}
+
+#scroll-content-resume-travel {
+    width: 100%;
+    grid-area: 2/1/3/2;
+
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: 100%;
+    place-items: center;
+    gap: 1em;
+
+    overflow-y: auto;
+
+    margin: 0%;
+    padding: 0.5em 0em 0.5em 0em;
+
+}
+
+
+.btn-custom {
+    width: 90%;
+    height: 3.5em;
+
+    grid-area: 3/1/4/2;
+
+    display: grid;
+    place-items: center;
+
+
+    margin: 2.5em auto;
+
+    background-color: #0E87F2;
+    transition: background-color .2s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0C78D6;
+}
