@@ -3,7 +3,7 @@ import { useContext } from "react";
 import ItineraryCard from "../../../common-components/components/ItineraryCard"
 import InfoCardModel from "../../../common-components/components/InfoCardModel"
 import HeaderMobileResume from "./Components/HeaderMobileResume"
-import { CustomerContext } from '../../../../infrastructure/context/CustomerContext';
+import { CustomerContext } from '../../../../infrastructure/context/CustomerProvider';
 import { formatUtils } from '../../../../infrastructure/utils/formatUtils';
 import "./styles/TravelSummary.css"
 
