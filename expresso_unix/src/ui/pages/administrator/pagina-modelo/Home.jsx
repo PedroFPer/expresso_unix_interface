@@ -1,6 +1,6 @@
-import PopUp from "../../../common-components/pagina-modelo/Components/PopUp";
-import SideBar from "../../../common-components/pagina-modelo/Components/SideBar";
-import Models from "../../../common-components/pagina-modelo/Components/Models";
+import PopUp from "../../../common-components/components/PopUp";
+import SideBar from "../../../common-components/components/SideBar";
+import Models from "../../../common-components/components/Models";
 import "./styles/Home.css";
 
 

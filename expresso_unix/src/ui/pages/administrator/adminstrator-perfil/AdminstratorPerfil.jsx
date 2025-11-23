@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SideBar from "../../../common-components/pagina-modelo/Components/SideBar";
+import SideBar from "../../../common-components/components/SideBar";
 import PerfilPreview from "./components/PerfilPreview";
 import PerfilCustom from "./components/PerfilCustom";
 import "./styles/AdminstratorPerfil.css"

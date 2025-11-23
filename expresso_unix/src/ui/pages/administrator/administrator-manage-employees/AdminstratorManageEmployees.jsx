@@ -1,7 +1,7 @@
 import { useState } from "react";
-import SideBar from "../../../common-components/pagina-modelo/Components/SideBar";
+import SideBar from "../../../common-components/components/SideBar";
 import EmployeeRow from "./components/EmployeeRow";
-import Models from "../../../common-components/pagina-modelo/Components/Models";
+import Models from "../../../common-components/components/Models";
 import "./styles/AdminstratorManageEmployees.css";
 
 function AdminstratorManageEmployees() {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SideBar from "../../../common-components/pagina-modelo/Components/SideBar";
+import SideBar from "../../../common-components/components/SideBar";
 import "./styles/AdminstratorAccount.css";
 
 function AdminstratorAccount() {

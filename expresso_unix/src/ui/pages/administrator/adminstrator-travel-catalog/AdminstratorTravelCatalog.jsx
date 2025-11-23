@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SideBar from "../../../common-components/pagina-modelo/Components/SideBar";
+import SideBar from "../../../common-components/components/SideBar";
 import AdminstratorTravelCatalogAtivas from "./components/AdminstratorTravelCatalogAtivas";
 import AdminstratorTravelCatalogFinalizadas from "./components/AdminstratorTravelCatalogFinalizadas";
 import AdminstratorTravelCatalogCanceladas from "./components/AdminstratorTravelCatalogCanceladas";
