@@ -8,6 +8,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  color-scheme: light; /* ← impede modo escuro automático */
+}
+
 html, body, #root {
   width: 100%;
 }
@@ -20,4 +24,3 @@ body {
   display: grid;
   place-items: center;
 }
-
