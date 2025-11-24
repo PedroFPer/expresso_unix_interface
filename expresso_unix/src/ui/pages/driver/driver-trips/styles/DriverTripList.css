@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+#driver-trip-list{
+    width: 90%;
+    height: 10em;
+
+    display: grid;
+
+    
+
+    
+}
+
+.trip-item{
+    display: grid;
+    grid-template-columns: 80% 20%;
+
+    color: #042C50;
+    background-color: white;
+
+    border: 10px white solid;
+}
+
+.trip-itinerary{
+    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.trip-itinerary h3{
+    font-size: 1em;
+}
+
+
+.trip-date{
+    grid-area: 1/2/2/3;
+}
