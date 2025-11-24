@@ -8,6 +8,8 @@ import "./styles/DriverTrips.css"
 export default function DriverTrips(){
     const { travelInfo, setTravelInfo } = useContext(DriverContext);
 
+    const tripTeste = []
+
     const withoutTrip = travelInfo.length === 0;
 
 
@@ -15,7 +17,7 @@ export default function DriverTrips(){
         <div id="driver-trips">
             <HeaderHomeMobile />
             <div id="scroll-content-driver-trips">
-                {withoutTrip? <EmptyTripState /> : <DriverTripList />}
+                {withoutTrip? <EmptyTripState /> : <DriverTripList travelInfo={travelInfo} />}
             </div>
         </div>
     )
