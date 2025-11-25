@@ -21,7 +21,8 @@ export function DriverProvider({ children }) {
                 availableSeats: 20,
                 totalSeats: 40,
                 date: new Date(2025, 10, 24),
-                company: "Travel Bus"
+                company: "Travel Bus",
+                driver: "Daniel Frascisco"
             },
             {
                 type: "volta",
@@ -36,23 +37,8 @@ export function DriverProvider({ children }) {
                 availableSeats: 20,
                 totalSeats: 40,
                 date: new Date(2025, 10, 29),
-                company: "Travel Bus"
-            },
-
-             {
-                type: "volta",
-                departureTime: "19:00",
-                durationTravel: "2:00",
-                arrivalTime: "21:00",
-                originCity: "Salvador, BA",
-                originAddress: "Praça da Sé, 406 – Pelourinho, 40020-210",
-                destinyCity: "Feira de Santana, BA",
-                destinyAddress: "R. Augusto dos Anjos, E - Rua Nova, 40301-110",
-                price: 80.00,
-                availableSeats: 20,
-                totalSeats: 40,
-                date: new Date(2025, 10, 29),
-                company: "Travel Bus"
+                company: "Travel Bus",
+                driver: "Lucas Moreira"
             },
             {
                 type: "volta",
@@ -67,11 +53,29 @@ export function DriverProvider({ children }) {
                 availableSeats: 20,
                 totalSeats: 40,
                 date: new Date(2025, 10, 29),
-                company: "Travel Bus"
+                company: "Travel Bus",
+                driver: "Mariana Alves"
+            },
+            {
+                type: "volta",
+                departureTime: "19:00",
+                durationTravel: "2:00",
+                arrivalTime: "21:00",
+                originCity: "Salvador, BA",
+                originAddress: "Praça da Sé, 406 – Pelourinho, 40020-210",
+                destinyCity: "Feira de Santana, BA",
+                destinyAddress: "R. Augusto dos Anjos, E - Rua Nova, 40301-110",
+                price: 80.00,
+                availableSeats: 20,
+                totalSeats: 40,
+                date: new Date(2025, 10, 29),
+                company: "Travel Bus",
+                driver: "Thiago Pereira"
             }
         ];
 
-        const defaultDriverCredentials ={
+
+        const defaultDriverCredentials = {
             email: "",
             password: ""
         }
