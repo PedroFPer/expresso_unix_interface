@@ -5,6 +5,7 @@ export const DriverContext = createContext();
 export function DriverProvider({ children }) {
     const [driverCredentials, setDriverCredentials] = useState({});
     const [travelInfo, setTravelInfo] = useState([]);
+    const [passengerList, setPassengerList] = useState([]);
 
     useEffect(() => {
         const defaultTravelInfo = [
@@ -80,8 +81,23 @@ export function DriverProvider({ children }) {
             password: ""
         }
 
+        const defaultPassengerList = [
+            { id: 1, name: "Pedro Ferreira", status: "Ausente" },
+            { id: 2, name: "Lucas Andrade", status: "Ausente" },
+            { id: 3, name: "Mariana Souza", status: "Ausente" },
+            { id: 4, name: "Bruna Carvalho", status: "Ausente" },
+            { id: 5, name: "Gustavo Oliveira", status: "Ausente" },
+            { id: 6, name: "Fernanda Lima", status: "Ausente" },
+            { id: 7, name: "Rafael Martins", status: "Ausente" },
+            { id: 8, name: "Camila Duarte", status: "Ausente" },
+            { id: 9, name: "João Henrique", status: "Ausente" },
+            { id: 10, name: "Ana Vitória", status: "Ausente" }
+        ];
+
+
         setTravelInfo(defaultTravelInfo);
         setDriverCredentials(defaultDriverCredentials);
+        setPassengerList(defaultPassengerList)
     }, []);
 
     return (
@@ -91,6 +107,8 @@ export function DriverProvider({ children }) {
                 setDriverCredentials,
                 travelInfo,
                 setTravelInfo,
+                passengerList,
+                setPassengerList
             }}
         >
             {children}

@@ -1,17 +1,25 @@
 import { useLocation } from "react-router-dom";
+import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
+import ManifestStatusTitle from "../driver-trip-manifest/Components/ManifestStatusTitle";
+import PassengerManifest from "./Components/PassengerManifest";
 import "./styles/DriverTripManifest.css";
 
 export default function DriverTripManifest() {
   const location = useLocation();
-  const { travel } = location.state || {}; 
+  const { travel } = location.state || {};
+
+  const textHeader = "Lista de Presença"
+  const statusTitle = "Pendente"
 
 
   return (
-    <div>
-      <h1>TripManifest</h1>
+    <div id="driver-trip-manifest">
+      <HeaderBaseMobile textHeader={textHeader}/>
+      <ManifestStatusTitle statusTitle={statusTitle} />
 
-      {/* Imprimir JSON formatado */}
-      <pre>{JSON.stringify(travel, null, 2)}</pre>
+      <div id="scroll-content-trip-manifest">
+        <PassengerManifest />
+      </div>
     </div>
   );
 }
