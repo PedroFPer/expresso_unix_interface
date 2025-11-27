@@ -91,7 +91,8 @@ export function DriverProvider({ children }) {
             { id: 7, name: "Rafael Martins", isPresent: "Ausente" },
             { id: 8, name: "Camila Duarte", isPresent: "Ausente" },
             { id: 9, name: "João Henrique", isPresent: "Ausente" },
-            { id: 10, name: "Ana Vitória", isPresent: "Ausente" }
+            { id: 10, name: "Ana Vitória", isPresent: "Ausente" },
+            { id: 11, name: "Ana Alicia", isPresent: "Ausente" }
         ];
 
 

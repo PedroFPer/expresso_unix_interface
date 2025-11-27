@@ -9,7 +9,7 @@ import "./styles/TravelSummary.css"
 
 export default function TravelSummary() {
     const { travelInfo } = useContext(CustomerContext);
-    const priceTravel = formatUtils.formatCurrencyBR(travelInfo?.[0]?.price);
+    const priceTravel = formatUtils.toCurrencyBRL(travelInfo?.[0]?.price);
 
     const infoCardPrice = {
         titleCard: "Valor Unitário",

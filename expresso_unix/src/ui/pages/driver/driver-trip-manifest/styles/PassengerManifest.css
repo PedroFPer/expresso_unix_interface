@@ -4,7 +4,7 @@
     width: 100%;
 
     display: grid;
-    place-items: center;
+    place-items: start center;
     gap: 1em;
 
     padding: 0%;
@@ -36,10 +36,13 @@
 
 #passenger-list {
     width: 100%;
-    min-height: 100vh;
+    height: auto;
 
     margin: 0%;
     padding: 0%;
+    padding-bottom: 1em;
+
+    gap: 1em;
 
     display: grid;
     grid-template-rows: auto;

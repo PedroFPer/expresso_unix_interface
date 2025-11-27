@@ -24,7 +24,7 @@ export default function DriverTripList({ travelInfo }) {
                     <h3>Viagens do Dia</h3>
 
                     {dailyTrips.map((travel, index) => {
-                        const formattedDateTrip = formatUtils.formatField("dayMonthDate", travel.date);
+                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.date);
 
                         return (
                             <Link
@@ -44,7 +44,7 @@ export default function DriverTripList({ travelInfo }) {
                     <h3>Viagens Ativas</h3>
 
                     {activeTrips.map((travel, index) => {
-                        const formattedDateTrip = formatUtils.formatField("dayMonthDate", travel.date);
+                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.date);
 
                         return (
                             <Link

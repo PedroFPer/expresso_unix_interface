@@ -13,7 +13,7 @@ export default function DriverFormCard({ driverCredentials, handleInputChange, h
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: Email@email.com"
-                        value={maskUtils.maskField("text", driverCredentials.email)}
+                        value={maskUtils.limitText(driverCredentials.email)}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                     />
                     <p className="input-error">
@@ -27,7 +27,7 @@ export default function DriverFormCard({ driverCredentials, handleInputChange, h
                         type= "password"
                         className="form-input"
                         placeholder="********"
-                        value={maskUtils.maskField("text", driverCredentials.password)}
+                        value={maskUtils.limitText("text", driverCredentials.password)}
                         onChange={(e) => handleInputChange("password", e.target.value)}
                     />
                     
