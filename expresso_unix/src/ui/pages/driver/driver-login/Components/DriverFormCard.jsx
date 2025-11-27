@@ -27,7 +27,7 @@ export default function DriverFormCard({ driverCredentials, handleInputChange, h
                         type= "password"
                         className="form-input"
                         placeholder="********"
-                        value={maskUtils.limitText("text", driverCredentials.password)}
+                        value={maskUtils.limitText( driverCredentials.password)}
                         onChange={(e) => handleInputChange("password", e.target.value)}
                     />
                     

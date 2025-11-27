@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
-import HeaderBaseMobile from "../../../common-components/components/HeaderHomeMobile"
+import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
+import DriverChatWindow from "./Components/DriverChatWindow";
 import "./styles/DriverTripChat.css"
 
 export default function DriverTripChat() {
@@ -9,9 +10,9 @@ export default function DriverTripChat() {
     const textHeader = "Mensagens";
 
     return (
-        <div>
-            <HeaderBaseMobile textHeader={textHeader}/>
-            
+        <div id="driver-trip-chat">
+            <HeaderBaseMobile textHeader={textHeader} />
+            <DriverChatWindow />
         </div>
     )
 }

@@ -1,1 +1,9 @@
 @charset "UTF-8";
+
+#driver-trip-chat{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
