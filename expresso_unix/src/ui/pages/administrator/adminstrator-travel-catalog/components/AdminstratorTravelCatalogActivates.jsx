@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AdminstratorTravelCatalogCard from "./AdminstratorTravelCatalogCard";
-import Models from "../../../../common-components/components/Models";
+import Models from "./ModelTravelCatalog";
 import "../styles/AdminstratorTravelCatalogActivates.css";
 
 const cardsList = [
