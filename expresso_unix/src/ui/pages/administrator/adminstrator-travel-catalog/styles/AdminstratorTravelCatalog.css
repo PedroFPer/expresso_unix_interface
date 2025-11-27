@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: auto auto;
     margin: 3rem;
+    padding-left: 4rem;
 }
 .grid-main-and-footer{
     margin-top: 1rem;
