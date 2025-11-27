@@ -10,39 +10,37 @@ function AdminstratorTravelCatalog() {
     <div className="grid-general">
       <SideBar />
 
-      <main>
-        <div className="title-catalogo">
-          <h1>Catalogo de Viagens</h1>
-
-          <div className="tabs">
-            <button
-              className={abaActivates === "activates" ? "tab active" : "tab"}
-              onClick={() => setAbaActivates("activates")}
-            >
-              Viagens Ativas
-            </button>
-
-            <button
-              className={abaActivates === "finalised" ? "tab active" : "tab"}
-              onClick={() => setAbaActivates("finalised")}
-            >
-              Viagens Finalizadas
-            </button>
-
-            <button
-              className={abaActivates === "cacellates" ? "tab active" : "tab"}
-              onClick={() => setAbaActivates("cacellates")}
-            >
-              Viagens Canceladas
-            </button>
+      <div>
+        <main>
+          <div className="title-catalogo">
+            <h1>Catalogo de Viagens</h1>
+            <div className="tabs">
+              <button
+                className={abaActivates === "activates" ? "tab active" : "tab"}
+                onClick={() => setAbaActivates("activates")}
+              >
+                Viagens Ativas
+              </button>
+              <button
+                className={abaActivates === "finalised" ? "tab active" : "tab"}
+                onClick={() => setAbaActivates("finalised")}
+              >
+                Viagens Finalizadas
+              </button>
+              <button
+                className={abaActivates === "cacellates" ? "tab active" : "tab"}
+                onClick={() => setAbaActivates("cacellates")}
+              >
+                Viagens Canceladas
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div className="catalogo-box">
-          {abaActivates === "activates" && <AdminstratorTravelCatalogActivates />}
-          
-        </div>
-      </main>
+          <div className="catalogo-box">
+            {abaActivates === "activates" && <AdminstratorTravelCatalogActivates />}
+        
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
