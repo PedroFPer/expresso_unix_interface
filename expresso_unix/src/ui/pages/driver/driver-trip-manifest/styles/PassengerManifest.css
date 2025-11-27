@@ -6,6 +6,32 @@
     display: grid;
     place-items: center;
     gap: 1em;
+
+    padding: 0%;
+    margin: 0%;
+
+    border: 0em;
+}
+
+#passenger-manifest header {
+    width: 90%;
+    padding-bottom: 1em;
+
+}
+
+
+#form-input-manifest{
+    width: 100%;
+    height: 3.5em;
+    font-size: 0.8em;
+
+    padding-left: 2em;
+
+    border: 0em;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
 }
 
 #passenger-list {
@@ -23,7 +49,7 @@
 
 .passenger-item {
     width: 90%;
-    height: 5em;
+    height: 4.5em;
 
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -36,14 +62,14 @@
 }
 
 .passenger-item input[type="checkbox"] {
-    appearance: none;      /* remove o estilo padrão */
+    appearance: none;   
     -webkit-appearance: none;
 
-    width: 60%;
-    height: 55%;
+    width: 47%;
+    height: 47%;
 
-    border: 2px solid black;
-    border-radius: 6px;
+    border: 2px solid rgb(156, 156, 156);
+    border-radius: 12px;
 
     cursor: pointer;
     display: inline-block;
@@ -56,23 +82,17 @@
     border-color: #007bff;
 }
 
-.passenger-item input[type="checkbox"]:checked::after {
-    content: "✔";
-    color: white;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .passenger-item strong {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.75em;
     margin-right: auto;
 }
 
 .passenger-item figure {
-    width: 70%;
-    height: 70%;
+    width: 55%;
+    height: 55%;
 
     margin: auto;
 }

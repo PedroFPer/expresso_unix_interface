@@ -8,6 +8,8 @@
     place-items: center;
 
     text-align: center;
+
+    margin-top: 1em;
 }
 
 #manifest-status-title h3{

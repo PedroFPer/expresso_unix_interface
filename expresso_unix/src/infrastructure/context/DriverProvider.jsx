@@ -82,16 +82,16 @@ export function DriverProvider({ children }) {
         }
 
         const defaultPassengerList = [
-            { id: 1, name: "Pedro Ferreira", status: "Ausente" },
-            { id: 2, name: "Lucas Andrade", status: "Ausente" },
-            { id: 3, name: "Mariana Souza", status: "Ausente" },
-            { id: 4, name: "Bruna Carvalho", status: "Ausente" },
-            { id: 5, name: "Gustavo Oliveira", status: "Ausente" },
-            { id: 6, name: "Fernanda Lima", status: "Ausente" },
-            { id: 7, name: "Rafael Martins", status: "Ausente" },
-            { id: 8, name: "Camila Duarte", status: "Ausente" },
-            { id: 9, name: "João Henrique", status: "Ausente" },
-            { id: 10, name: "Ana Vitória", status: "Ausente" }
+            { id: 1, name: "Pedro Ferreira", isPresent: "Ausente" },
+            { id: 2, name: "Lucas Andrade", isPresent: "Ausente" },
+            { id: 3, name: "Mariana Souza", isPresent: "Ausente" },
+            { id: 4, name: "Bruna Carvalho", isPresent: "Ausente" },
+            { id: 5, name: "Gustavo Oliveira", isPresent: "Ausente" },
+            { id: 6, name: "Fernanda Lima", isPresent: "Ausente" },
+            { id: 7, name: "Rafael Martins", isPresent: "Ausente" },
+            { id: 8, name: "Camila Duarte", isPresent: "Ausente" },
+            { id: 9, name: "João Henrique", isPresent: "Ausente" },
+            { id: 10, name: "Ana Vitória", isPresent: "Ausente" }
         ];
 
 

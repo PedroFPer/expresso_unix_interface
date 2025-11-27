@@ -1,12 +1,13 @@
-import { useLocation } from "react-router-dom";
+import { useState, useContext } from "react";
 import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
 import ManifestStatusTitle from "../driver-trip-manifest/Components/ManifestStatusTitle";
 import PassengerManifest from "./Components/PassengerManifest";
+import { DriverContext } from "../../../../infrastructure/context/DriverProvider";
+
 import "./styles/DriverTripManifest.css";
 
 export default function DriverTripManifest() {
-  const location = useLocation();
-  const { travel } = location.state || {};
+  const { passengerList, setPassengerList } = useContext(DriverContext);
 
   const textHeader = "Lista de Presença"
   const statusTitle = "Pendente"
@@ -18,7 +19,10 @@ export default function DriverTripManifest() {
       <ManifestStatusTitle statusTitle={statusTitle} />
 
       <div id="scroll-content-trip-manifest">
-        <PassengerManifest />
+        <PassengerManifest 
+        passengerList={passengerList}
+        setPassengerList ={setPassengerList}
+        />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@
     grid-template-columns: 100%;
     place-items: start center;
     
-    gap: 1em;
+    gap: 0em;
 
 
     background-color: #F9F9F9;
@@ -35,4 +35,5 @@
 
     margin: 0%;
     padding: 0.5em 0em 0.5em 0em;
+
 }
