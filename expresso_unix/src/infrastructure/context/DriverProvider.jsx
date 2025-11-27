@@ -81,19 +81,23 @@ export function DriverProvider({ children }) {
             password: ""
         }
 
-        const defaultPassengerList = [
-            { id: 1, name: "Pedro Ferreira", isPresent: "Ausente" },
-            { id: 2, name: "Lucas Andrade", isPresent: "Ausente" },
-            { id: 3, name: "Mariana Souza", isPresent: "Ausente" },
-            { id: 4, name: "Bruna Carvalho", isPresent: "Ausente" },
-            { id: 5, name: "Gustavo Oliveira", isPresent: "Ausente" },
-            { id: 6, name: "Fernanda Lima", isPresent: "Ausente" },
-            { id: 7, name: "Rafael Martins", isPresent: "Ausente" },
-            { id: 8, name: "Camila Duarte", isPresent: "Ausente" },
-            { id: 9, name: "João Henrique", isPresent: "Ausente" },
-            { id: 10, name: "Ana Vitória", isPresent: "Ausente" },
-            { id: 11, name: "Ana Alicia", isPresent: "Ausente" }
-        ];
+        const defaultPassengerList = {
+            idManifestList: 1,
+            isFinalized: false, // indica se a lista já foi finalizada
+            passengers: [
+                { id: 1, name: "Pedro Ferreira", isPresent: "Ausente" },
+                { id: 2, name: "Lucas Andrade", isPresent: "Ausente" },
+                { id: 3, name: "Mariana Souza", isPresent: "Ausente" },
+                { id: 4, name: "Bruna Carvalho", isPresent: "Ausente" },
+                { id: 5, name: "Gustavo Oliveira", isPresent: "Ausente" },
+                { id: 6, name: "Fernanda Lima", isPresent: "Ausente" },
+                { id: 7, name: "Rafael Martins", isPresent: "Ausente" },
+                { id: 8, name: "Camila Duarte", isPresent: "Ausente" },
+                { id: 9, name: "João Henrique", isPresent: "Ausente" },
+                { id: 10, name: "Ana Vitória", isPresent: "Ausente" },
+                { id: 11, name: "Ana Alicia", isPresent: "Ausente" }
+            ]
+        };
 
 
         setTravelInfo(defaultTravelInfo);

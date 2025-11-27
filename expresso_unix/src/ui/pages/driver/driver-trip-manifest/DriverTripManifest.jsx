@@ -10,13 +10,13 @@ export default function DriverTripManifest() {
   const { passengerList, setPassengerList } = useContext(DriverContext);
 
   const textHeader = "Lista de Presença"
-  const statusTitle = "Pendente"
+  
 
 
   return (
     <div id="driver-trip-manifest">
       <HeaderBaseMobile textHeader={textHeader}/>
-      <ManifestStatusTitle statusTitle={statusTitle} />
+      <ManifestStatusTitle passengerList={passengerList} />
 
       <div id="scroll-content-trip-manifest">
         <PassengerManifest 
