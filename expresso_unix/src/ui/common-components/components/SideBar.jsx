@@ -43,14 +43,14 @@ function SideBar() {
                         </button>
                     </Link>
 
-                    <Link to="/admin/modelo">
+                    <Link to="#">
                         <button className={`button-menu list-button ${SideBarIsOpen ? "open" : "closed"}`}>
                             <i className="bi bi-table"></i>
                             {SideBarIsOpen && <p className="button-text">Lista de Viagens</p>}
                         </button>
                     </Link>
 
-                    <Link to="/admin/modelo">
+                    <Link to="#">
                         <button className={`button-menu relatorio-button ${SideBarIsOpen ? "open" : "closed"}`}>
                             <i className="bi bi-clipboard2-data"></i>
                             {SideBarIsOpen && <p className="button-text">Relatorio de Viagens</p>}
@@ -66,7 +66,7 @@ function SideBar() {
                         </button>
                     </Link>
 
-                    <Link to="/admin/perfil">
+                    <Link to="#">
                         <button className={`button-menu custom-button ${SideBarIsOpen ? "open" : "closed"}`}>
                             <i className="bi bi-pencil"></i>
                             {SideBarIsOpen && <p className="button-text">Customização</p>}
@@ -76,12 +76,12 @@ function SideBar() {
 
         
                 <div className="layout-buttons-3">
-                    <Link to="/admin/account">
+                    
                         <button className={`button-menu account-button ${SideBarIsOpen ? "open" : "closed"}`}>
                             <i className="bi bi-person-circle"></i>
                             {SideBarIsOpen && <p className="button-text">Minha Conta</p>}
                         </button>
-                    </Link>
+                    
 
                     <Link to="#">
                         <button className={`button-menu settings-button ${SideBarIsOpen ? "open" : "closed"}`}>
@@ -90,7 +90,7 @@ function SideBar() {
                         </button>
                     </Link>
 
-                    <Link to="/admin/support">
+                    <Link to="#">
                         <button className={`button-menu suport-button ${SideBarIsOpen ? "open" : "closed"}`}>
                             <i className="bi bi-headset"></i>
                             {SideBarIsOpen && <p className="button-text">Suporte</p>}

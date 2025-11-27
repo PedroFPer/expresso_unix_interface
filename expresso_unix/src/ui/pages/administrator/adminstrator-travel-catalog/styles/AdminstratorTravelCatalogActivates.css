@@ -31,6 +31,42 @@
     border-radius: 10px;
 }
 
+.container-input-date {
+    margin-top: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.input-date {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    font-size: 1rem;
+    outline: none;
+    background-color: #ffffff;
+    color: #333333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.input-date::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.icon-calendar {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #3b7cff;
+    pointer-events: none;
+}
+
+
 .toggle-button {
     margin-top: 10px;
     background: transparent;
@@ -44,33 +80,26 @@
     background: transparent;
 }
 
-.buscar {
+.search {
     background: #0E87F2;
     color: white;
     border-radius: 10px;
 }
 
-.datas {
+.dates{
     margin-top: 15px;
     display: flex;
     justify-content: center;
     gap: 25px;
 }
 
-.dia-selecionado {
-    font-size: 18px;
-}
-
-.cards-lista {
-    margin-top: 20px;
-}
-.seta{
+.arrow{
     font-size: 30px;
     background: transparent;
     width: auto;
-    color: black;
+    color: #6b6b6b;
 }
 
-.seta:hover{
+.arrow:hover{
     background: transparent;
 }

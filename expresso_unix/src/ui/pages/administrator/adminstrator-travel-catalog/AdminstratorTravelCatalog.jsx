@@ -1,15 +1,13 @@
 import { useState } from "react";
 import SideBar from "../../../common-components/components/SideBar";
-import AdminstratorTravelCatalogAtivas from "./components/AdminstratorTravelCatalogAtivas";
-import AdminstratorTravelCatalogFinalizadas from "./components/AdminstratorTravelCatalogFinalizadas";
-import AdminstratorTravelCatalogCanceladas from "./components/AdminstratorTravelCatalogCanceladas";
+import AdminstratorTravelCatalogActivates from "./components/AdminstratorTravelCatalogActivates";
 import "./styles/AdminstratorTravelCatalog.css";
 
 function AdminstratorTravelCatalog() {
-  const [abaAtiva, setAbaAtiva] = useState("ativas");
+  const [abaActivates, setAbaActivates] = useState("activates");
 
   return (
-    <div className="grid-geral">
+    <div className="grid-general">
       <SideBar />
 
       <main>
@@ -18,22 +16,22 @@ function AdminstratorTravelCatalog() {
 
           <div className="tabs">
             <button
-              className={abaAtiva === "ativas" ? "tab active" : "tab"}
-              onClick={() => setAbaAtiva("ativas")}
+              className={abaActivates === "activates" ? "tab active" : "tab"}
+              onClick={() => setAbaActivates("activates")}
             >
               Viagens Ativas
             </button>
 
             <button
-              className={abaAtiva === "finalizadas" ? "tab active" : "tab"}
-              onClick={() => setAbaAtiva("finalizadas")}
+              className={abaActivates === "finalised" ? "tab active" : "tab"}
+              onClick={() => setAbaActivates("finalised")}
             >
               Viagens Finalizadas
             </button>
 
             <button
-              className={abaAtiva === "canceladas" ? "tab active" : "tab"}
-              onClick={() => setAbaAtiva("canceladas")}
+              className={abaActivates === "cacellates" ? "tab active" : "tab"}
+              onClick={() => setAbaActivates("cacellates")}
             >
               Viagens Canceladas
             </button>
@@ -41,9 +39,8 @@ function AdminstratorTravelCatalog() {
         </div>
 
         <div className="catalogo-box">
-          {abaAtiva === "ativas" && <AdminstratorTravelCatalogAtivas />}
-          {abaAtiva === "finalizadas" && <AdminstratorTravelCatalogFinalizadas />}
-          {abaAtiva === "canceladas" && <AdminstratorTravelCatalogCanceladas />}
+          {abaActivates === "activates" && <AdminstratorTravelCatalogActivates />}
+          
         </div>
       </main>
     </div>

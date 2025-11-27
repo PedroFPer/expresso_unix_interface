@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SideBar from "../../../common-components/components/SideBar";
 import EmployeeRow from "./components/EmployeeRow";
-import Models from "../../../common-components/components/Models";
+import Models from "./components/ManagerModel";
 import "./styles/AdminstratorManageEmployees.css";
 
 function AdminstratorManageEmployees() {
@@ -16,12 +16,9 @@ function AdminstratorManageEmployees() {
 
     const [employeesList, setEmployeesList] = useState(originalEmployees);
 
-
     const [filterName, setFilterName] = useState("");
     const [filterRole, setFilterRole] = useState("");
     const [filterStatus, setFilterStatus] = useState("");
-
-
 
     function handleSearch() {
         const filtered = originalEmployees.filter(employee => {
@@ -35,12 +32,15 @@ function AdminstratorManageEmployees() {
         setEmployeesList(filtered);
     }
 
+    function handleAddEmployee(newEmployee) {
+        setEmployeesList(prev => [...prev, newEmployee]);
+    }
 
     return (
-        <div className="grid-geral">
+        <div className="grid-general">
             <SideBar />
 
-            <div>
+            <div className="grid-main-and-footer">
                 <main className="employees-main-container">
 
                     <div className="employees-title-container">
@@ -52,7 +52,11 @@ function AdminstratorManageEmployees() {
                         <div className="employees-header-section">
                             <h2>Funcionários</h2>
 
-                            <Models TitleButton={"+ Adicionar Funcionario"} TitleModel={"Adicionar Funcionario"}></Models>
+                            <Models 
+                                TitleButton={"+ Adicionar Funcionario"} 
+                                TitleModel={"Adicionar Funcionario"}
+                                onSave={handleAddEmployee}
+                            />
                         </div>
 
                         <div className="employees-filters-container">

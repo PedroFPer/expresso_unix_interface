@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AdminstratorTravelCatalogCard from "./AdminstratorTravelCatalogCard";
 import Models from "../../../../common-components/components/Models";
-import "../styles/AdminstratorTravelCatalogAtivas.css";
+import "../styles/AdminstratorTravelCatalogActivates.css";
 
 const cardsList = [
   { origem: "Feira de Santana, BA - 07:00", destino: "Salvador, BA - 09:00", duracao: "2:00", price: "R$ 80,00", goAndGoback: "go" },
@@ -12,7 +12,7 @@ function AdminstratorTravelCatalogAtivas() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="catalogo-atividades">
+    <div className="catalogo-activity">
       <div className="topo">
         <h2>Viagens</h2>
         <Models TitleButton={"+ Adicionar Viagem"} TitleModel={"Adicionar Viagem"} />
@@ -41,12 +41,13 @@ function AdminstratorTravelCatalogAtivas() {
               </div>
             </div>
 
-            <div className="input-block">
-              <p>Data de Saída</p>
-              <input type="date" />
+            <div className="container-input-date">
+              <input type="date" className="input-date" />
+              <i className="bi bi-calendar-event icon-calendar"></i>
             </div>
 
-            <button className="buscar">Buscar</button>
+
+            <button className="search">Buscar</button>
           </>
         ) : (
           <>
@@ -70,29 +71,29 @@ function AdminstratorTravelCatalogAtivas() {
               </div>
             </div>
 
-            <div className="input-block">
-              <p>Data de Saída</p>
-              <input type="date" />
+            <div className="container-input-date">
+              <input type="date" className="input-date" />
+              <i className="bi bi-calendar-event icon-calendar"></i>
             </div>
 
-            <button className="buscar">Buscar</button>
+            <button className="search">Buscar</button>
           </>
         )}
       </div>
 
-      <div className="datas">
-        <button className="seta">
+      <div className="dates">
+        <button className="arrow">
           <i className="bi bi-arrow-left-circle"></i>
         </button>
 
-        <div className="dia-selecionado">Sábado, 24/10</div>
+        <div>Sábado, 24/10</div>
 
-        <button className="seta">
+        <button className="arrow">
           <i className="bi bi-arrow-right-circle"></i>
         </button>
       </div>
 
-      <div className="cards-lista">
+      <div>
         {cardsList.map((item, index) => (
           <AdminstratorTravelCatalogCard key={index} {...item} />
         ))}

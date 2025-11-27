@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import logo from "../../../../assets/LogoExpressoUnix.png";
 import "./styles/AdminstratorLogin.css";
-
 
 function AdminstratorLogin() {
   const [email, setEmail] = useState("");
@@ -11,6 +10,11 @@ function AdminstratorLogin() {
   const [exibirSenha, setExibirSenha] = useState(false);
   const [erroEmail, setErroEmail] = useState("");
   const [erroSenha, setErroSenha] = useState("");
+
+  const navigate = useNavigate();
+
+  const emailCorreto = "admin@empresa.com";{/* so pra testar depois colocar para puxar do banco */}
+  const senhaCorreta = "123456";
 
   function validarCampos() {
     let formularioValido = true;
@@ -29,7 +33,19 @@ function AdminstratorLogin() {
       setErroSenha("");
     }
 
-    
+    if (!formularioValido) return;
+
+    if (email !== emailCorreto) {
+      setErroEmail("Email incorreto");
+      return;
+    }
+
+    if (senha !== senhaCorreta) {
+      setErroSenha("Senha incorreta");
+      return;
+    }
+
+    navigate("/admin/manage-employees");
   }
 
   return (
