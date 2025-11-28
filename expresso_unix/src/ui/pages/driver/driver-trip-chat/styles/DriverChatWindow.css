@@ -5,8 +5,8 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 90% 10% ; 
-    gap: 0.5em;
+    grid-template-rows: 1fr 7em;
+    gap: 0em;
     
 
 }
@@ -14,34 +14,117 @@
 
 #chat-box{
     width: 100%;
-    min-height: 100vh;
-
-    display: grid;
-    grid-template-columns: 100%;
-    grid-auto-rows: max-content;
-    gap: 1em;
-
-    overflow-y: auto;
+    
+    overflow-y: auto; 
     overflow-x: hidden;
 
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    gap: 1em;
     padding: 0.5em;
 
 }
 
 #chat-alert{
-    width: 60%;
+    width: 65%;
     height: 6em;
 
     display: grid;
-    place-items: center;
-    place-self: start center;
+    place-content: center;
+
+    margin: auto;
+    margin-top: 2em;
 
     border-radius: 10px;
 
     background-color: #379bf3;
 
-    margin-top: 5em;
 }
+
+#message-list {
+    width: 100%;
+    display: grid;
+
+    place-self: end center ;
+
+    grid-auto-rows: max-content;
+    grid-template-columns: 100%;
+    gap: 0.5em;
+    padding: 1em;
+
+}
+
+.message-item{
+    max-width: 50%;
+    
+    height: fit-content;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    padding: 0.5em;
+    
+    gap: 0.2em;
+    
+    border-radius: 10px;
+
+}
+
+.message-item strong{
+    grid-area: 1/1/2/2;
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+.message-item p{
+    grid-area: 2/1/2/2;
+    font-size: 0.65em;
+    margin: 0%;
+}
+
+.message-item time{
+    grid-area: 3/1/4/2;
+    font-size: 0.7em;
+}
+
+.message-item-current-user{
+    margin-left: auto;
+
+    background-color: #0E87F2;
+    color: white;
+}
+
+.message-item-current-user p{
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.message-item-current-user time{
+     margin-left: auto;
+}
+
+.message-item-other-user{
+    margin-right: auto;
+
+    background-color: white;
+    color: black;
+
+    border: 1px rgb(165, 165, 165) solid;
+}
+
+.message-item-other-user strong{
+    margin-right: auto;
+    color: #1565C0;
+}
+
+.message-item-other-user p{
+    margin-right: auto;
+}
+
+.message-item-other-user time{
+     margin-right: auto;
+}
+
 
 
 #chat-alert p{
@@ -55,19 +138,18 @@
 
 
 #input-submit-message{
-    width: 90%;
+    width: 95%;
 
     display: grid;
-    place-self: center;
+    place-self: start center;
     place-items: center start;
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 88% 12%;
 
      border: 2px #0E87F2 solid;
      border-radius: 10px;
 
     padding: 0em 1em 0em 1em;
 
-    margin-bottom: 2em;
 }
 
 #input-submit-message input {
