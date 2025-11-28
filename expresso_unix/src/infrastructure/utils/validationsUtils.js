@@ -1,4 +1,4 @@
-export class travelerValidations {
+export class validationsUtils {
 
     static validateName(value) {
         const trimmed = typeof value === "string" ? value.trim() : "";
@@ -49,6 +49,22 @@ export class travelerValidations {
         return { valid: true, message: "" };
     }
 
+    static validatePassword(value){
+        if (!value) return { valid: false, message: "Campo obrigatório" };
+        const password = value.replace(/|D/g,"");
+
+        if(password.length<=8){
+            return{valid: false, message: "A senha deve ter no mínimo 8 caracteres"}
+        }
+
+        if(password.length>=20){
+            return{valid: false, message: "A senha deve ter no maximo 20 caracteres"}
+        }
+
+        return {valid: true, message: ""}
+
+    }
+
 
 
     static validateField(fieldName, value) {
@@ -65,6 +81,9 @@ export class travelerValidations {
 
             case "cpf":
                 return this.validateCPF(value);
+
+            case "password":
+                return this.validatePassword(value);
 
             default:
                 return { valid: true, message: "" };

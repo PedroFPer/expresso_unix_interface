@@ -4,7 +4,7 @@
   import PaymentSummary from '../../ui/pages/customer/payment-summary/PaymentSummary'
   import BoletoPaymentDetails from '../../ui/pages/customer/boleto-payment-details/BoletoPaymentDetails'
   import PixPaymentDetails from '../../ui/pages/customer/pix-payment-details/PixPaymentDetails'
-  import { CustomerProvider  } from '../context/CustomerContext'
+  import { CustomerProvider  } from '../context/CustomerProvider'
 
   export default function CustomerRoutes() {
     return (

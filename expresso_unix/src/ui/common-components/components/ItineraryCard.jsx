@@ -1,13 +1,14 @@
-import lineTravel from "../../../assets/line-travel-card.png"
+import lineTravelSmall from "../../../assets/line-travel-card-small.png"
 import { formatUtils } from "../../../infrastructure/utils/formatUtils";
 import "../styles/ItineraryCard.css"
 
 export default function ItineraryCard({ travelInfo }) {
+    const segments = Array.isArray(travelInfo) ? travelInfo : [travelInfo];
 
     return (
         <section id="itinerary-card">
-            {travelInfo.map((segment, index) => {
-                const formattedDate = formatUtils.formatField("shortDate", segment.date);
+            {segments.map((segment, index) => {
+                const formattedDate = formatUtils.toShortDate(segment.date);
 
                 return (
                     <div className="itinerary-segment" key={index}>
@@ -29,7 +30,7 @@ export default function ItineraryCard({ travelInfo }) {
 
                         <div className="segment-route-line">
                             <figure>
-                                <img src={lineTravel} alt="Linha Ilustrando o Trajeto" />
+                                <img src={lineTravelSmall} alt="Linha Ilustrando o Trajeto" />
                             </figure>
                         </div>
 

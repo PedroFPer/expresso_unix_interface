@@ -1,6 +1,14 @@
 @charset "UTF-8";
 
 #header-home-mobile{
+    width: 100%;
+
+    display: grid;
+
+    margin: 0%;
+    padding: 0%;
+
+    overflow: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: 4em 5em 9em;
 }
