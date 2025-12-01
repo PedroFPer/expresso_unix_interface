@@ -1,9 +1,9 @@
   import { Routes, Route, Navigate  } from 'react-router-dom'
-  import TravelSummary from '../../ui/pages/customer/travel-summary/TravelSummary'
-  import PassengerRegistration from '../../ui/pages/customer/passenger-registration/PassengerRegistration'
-  import PaymentSummary from '../../ui/pages/customer/payment-summary/PaymentSummary'
-  import BoletoPaymentDetails from '../../ui/pages/customer/boleto-payment-details/BoletoPaymentDetails'
-  import PixPaymentDetails from '../../ui/pages/customer/pix-payment-details/PixPaymentDetails'
+  import CustomerTravelSummary from '../../ui/pages/customer/customer-travel-summary/CustomerTravelSummary'
+  import CustomerPassengerRegistration from '../../ui/pages/customer/customer-passenger-registration/CustomerPassengerRegistration'
+  import CustomerPaymentSummary from '../../ui/pages/customer/customer-payment-summary/CustomerPaymentSummary'
+  import CustomerBoletoPaymentDetails from '../../ui/pages/customer/customer-boleto-payment-details/CustomerBoletoPaymentDetails'
+  import CustomerPixPaymentDetails from '../../ui/pages/customer/customer-pix-payment-details/CustomerPixPaymentDetails'
   import { CustomerProvider  } from '../context/CustomerProvider'
 
   export default function CustomerRoutes() {
@@ -12,11 +12,11 @@
         <Routes>
           <Route index element={<Navigate to="travel-summary" replace />} />
 
-          <Route path="travel-summary" element={<TravelSummary />} />
-          <Route path="passenger-registration" element={<PassengerRegistration />} />
-          <Route path="payment-summary" element={<PaymentSummary />} />
-          <Route path="boleto-payment-details" element={<BoletoPaymentDetails />} />
-          <Route path="pix-payment-details" element={<PixPaymentDetails />} />
+          <Route path="travel-summary" element={<CustomerTravelSummary />} />
+          <Route path="passenger-registration" element={<CustomerPassengerRegistration />} />
+          <Route path="payment-summary" element={<CustomerPaymentSummary />} />
+          <Route path="boleto-payment-details" element={<CustomerBoletoPaymentDetails />} />
+          <Route path="pix-payment-details" element={<CustomerPixPaymentDetails />} />
         </Routes>
       </CustomerProvider>
     )

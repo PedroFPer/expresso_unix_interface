@@ -1,0 +1,145 @@
+
+
+.layout-sidebar{
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 100vh;
+    width: auto;
+}
+
+.side-bar{
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0F529E;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease-out;
+}
+
+.side-bar.closed {
+    width: 5rem;
+}
+
+.side-bar.open {
+    width: 15rem;
+}
+.layout-logo-and-name{
+    text-align: center;
+}
+
+.empresa-logo.open{
+    width: 80%;
+    height: auto;
+    margin-top: 0px;
+    transition: all 0.9s ease;   
+}
+
+.empresa-logo.closed{
+    width: 100%;
+    margin-top: 0rem;
+    transition: all 0.5s ease;  
+}
+
+.empresa-name{
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 1rem;
+}
+
+.menu-buttons {
+    display: grid;
+    flex-direction: auto;
+    gap: 15px;
+}
+
+
+
+button{
+    width: 80%;
+    margin: auto;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #093669;
+}
+
+.button-open-sidebar{
+    background-color: #0F529E;
+    margin-top: 1rem;
+    height: 35px;
+    width: auto;
+    border-radius: 0px 5px 5px 0px;
+    padding: 2px;
+    position: fixed;
+    top: 0;
+    left: 5rem;
+    transition: all 0.5s ease-out;
+}
+
+html.sidebar-open .button-open-sidebar {
+    left: 15rem;
+}
+
+.button-menu.open {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 0.5rem;
+    transition: all 0.7s ease ; 
+}
+
+.button-menu.closed {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: start;
+    gap: 0.5rem;
+    transition: all 0.7s ease ;
+}
+
+.button-text{
+    width: 100%;
+    text-align: left;
+    margin: auto;
+}
+
+.button-text-trip p {
+    font-size: 10px;
+}
+
+.layout-buttons-2{
+    margin-top: 1rem;
+}
+
+.layout-buttons-3{
+    margin-bottom: 1rem;
+}
+img{
+    color: thistle;
+    text-align: center;
+    font-size: small;
+}
+
+p{
+    color: white;
+    font-size: 13px;    
+    font-weight: 600;
+    margin: auto;
+}
+
+i{
+    font-size:120%;
+}
