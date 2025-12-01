@@ -3,7 +3,7 @@ import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMo
 import ItineraryCard from "../../../common-components/components/ItineraryCard"
 import PaymentDetailsCard from "./Components/PaymentDetailsCard";
 import PaymentMethodCard from "./Components/PaymentMethodCard";
-import { CustomerContext } from "../../../../infrastructure/context/CustomerContext";
+import { CustomerContext } from "../../../../infrastructure/context/CustomerProvider";
 import "./styles/PaymentSummary.css"
 
 export default function PaymentSummary() {

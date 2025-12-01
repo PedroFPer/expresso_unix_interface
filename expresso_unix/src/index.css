@@ -19,4 +19,12 @@ body {
 #root {
   display: grid;
   place-items: center;
+
+}
+
+:root {
+  color-scheme: light;
+  forced-color-adjust: none;
+
+  background-color: white;
 }

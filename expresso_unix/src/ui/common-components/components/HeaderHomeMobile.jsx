@@ -2,9 +2,9 @@ import banner from '../../../assets/banner-image-header-home-mobile.png'
 import profile from '../../../assets/profile-image-header-home-mobile.png'
 import "../styles/HeaderHomeMobile.css"
 
-export default function HeaderHomeMobile({id}){
+export default function HeaderHomeMobile(){
     return(
-        <header id={id}>
+        <header id="header-home-mobile" >
             <figure id='banner-image'><img src={banner} alt="banner-image-header-home-mobile" /></figure>
             <div id='profile-card'>
                 <div id='profile-info'>

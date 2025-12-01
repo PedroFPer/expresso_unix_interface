@@ -1,21 +1,19 @@
 export class maskUtils {
 
-    static onlyDigitsCpf(value) {
+    static cpfDigitsOnly(value) {
         return value.replace(/\D/g, "").slice(0, 11);
     }
 
-    static onlyDigitsPhoneNumber(value) {
+    static phoneDigitsOnly(value) {
         return value.replace(/\D/g, "").slice(0, 11);
     }
 
     static limitText(value) {
         if (typeof value !== "string") value = "";
         return value.slice(0, 50);
-
-
     }
 
-    static phoneNumber(phone) {
+    static maskPhoneNumber(phone) {
         if (!phone) return "";
 
         let digits = phone.replace(/\D/g, "").slice(0, 11);
@@ -35,6 +33,7 @@ export class maskUtils {
         if (digits.length > 6 && digits.length <= 9) {
             return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
         }
+
         if (digits.length === 11) {
             return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
         }
@@ -46,7 +45,7 @@ export class maskUtils {
         return digits;
     }
 
-    static cpf(cpf) {
+    static maskCpf(cpf) {
         if (!cpf) return "";
 
         return cpf
@@ -55,20 +54,5 @@ export class maskUtils {
             .replace(/(\d{3})(\d)/, "$1.$2")
             .replace(/(\d{3})(\d)/, "$1.$2")
             .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-    }
-
-    static maskField(fieldName, value) {
-        switch (fieldName) {
-            case "cpf":
-                return this.cpf(value)
-
-            case "phoneNumber":
-                return this.phoneNumber(value)
-
-            case "text":
-                return this.limitText(value)
-            default:
-                return value;
-        }
     }
 }

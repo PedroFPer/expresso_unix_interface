@@ -2,7 +2,7 @@ import {formatUtils} from "../../../../../infrastructure/utils/formatUtils"
 import "../styles/PaymentDetailsCard.css"
 
 export default function PaymentDetailsCard({travelInfo}) {
-    const priceTravel = formatUtils.formatCurrencyBR(travelInfo?.[0]?.price);
+    const priceTravel = formatUtils.toCurrencyBRL(travelInfo?.[0]?.price);
 
     return (
         <section id="payment-details-card">

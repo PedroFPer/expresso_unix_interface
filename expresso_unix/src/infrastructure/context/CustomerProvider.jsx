@@ -22,7 +22,7 @@ export function CustomerProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 18),
+                date: new Date(2025, 10, 29),
                 company: "Travel Bus"
             },
             {
@@ -37,7 +37,7 @@ export function CustomerProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 18),
+                date: new Date(2025, 10, 29),
                 company: "Travel Bus"
             }
         ];

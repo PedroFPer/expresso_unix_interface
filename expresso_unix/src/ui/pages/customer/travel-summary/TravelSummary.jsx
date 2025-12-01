@@ -3,13 +3,13 @@ import { useContext } from "react";
 import ItineraryCard from "../../../common-components/components/ItineraryCard"
 import InfoCardModel from "../../../common-components/components/InfoCardModel"
 import HeaderMobileResume from "./Components/HeaderMobileResume"
-import { CustomerContext } from '../../../../infrastructure/context/CustomerContext';
+import { CustomerContext } from '../../../../infrastructure/context/CustomerProvider';
 import { formatUtils } from '../../../../infrastructure/utils/formatUtils';
 import "./styles/TravelSummary.css"
 
 export default function TravelSummary() {
     const { travelInfo } = useContext(CustomerContext);
-    const priceTravel = formatUtils.formatCurrencyBR(travelInfo?.[0]?.price);
+    const priceTravel = formatUtils.toCurrencyBRL(travelInfo?.[0]?.price);
 
     const infoCardPrice = {
         titleCard: "Valor Unitário",

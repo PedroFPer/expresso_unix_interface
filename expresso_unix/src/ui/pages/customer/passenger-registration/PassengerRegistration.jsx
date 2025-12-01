@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile.jsx";
 import PassengerFormCard from "./Components/PassengerFormCard.jsx";
-import { travelerValidations } from "../../../../infrastructure/validators/travelerValidations.js";
-import { CustomerContext } from "../../../../infrastructure/context/CustomerContext.jsx";
+import {validationsUtils} from "../../../../infrastructure/utils/validationsUtils.js"
+import { CustomerContext } from "../../../../infrastructure/context/CustomerProvider.jsx";
 import "./styles/PassengerRegistration.css";
 
 export default function PassengerRegistration() {
@@ -25,7 +25,7 @@ export default function PassengerRegistration() {
             [field]: value,
         }));
 
-        const validation = travelerValidations.validateField(field, value);
+        const validation = validationsUtils.validateField(field, value);
 
         setErrors(prev => ({
             ...prev,
@@ -39,7 +39,7 @@ export default function PassengerRegistration() {
 
         fields.forEach(field => {
             const validation =
-                travelerValidations.validateField(field, travelerInfo[field]) ||
+                validationsUtils.validateField(field, travelerInfo[field]) ||
                 { valid: false, message: "Campo inválido" };
 
             if (!validation.valid) {
