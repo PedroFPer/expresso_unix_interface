@@ -1,9 +1,9 @@
-import { Routes, Route, Navigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../styles/SideBar.css";
 import { useState, useEffect } from "react";
 import logo from "../../../assets/LogoPequenaExpressoUnix.png";
 import logoSideBarOpen from "../../../assets/LogoExpressoUnix.png";
+import "../styles/SideBar.css";
 
 function SideBar() {
     const [SideBarIsOpen, setSideBarIsOpen] = useState(false);
