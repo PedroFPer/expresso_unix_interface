@@ -16,7 +16,7 @@
 
     #login-title {
         grid-area: 1/1/2/2;
-        font-size: 1.8em;
+        font-size: 200%;
 
         margin: 0%;
     }
@@ -79,6 +79,31 @@
         cursor: pointer;
         font-size: 18px;
     }
+    .layout-password{
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .button-password {
+        text-decoration: underline;
+        border: none;
+        width:auto;
+        color: #0E87F2;
+        cursor: pointer;
+        padding: 0;
+        font-size: 0.7em;
+    }
+    .button-password:hover {
+        
+        background-color: transparent;
+    }
+
+    .layout-button-login{
+        display: grid;
+        width: 100%;
+    }
 
     #btn-login-admin{
         width: 90%;
@@ -87,6 +112,7 @@
 
         display: grid;
         place-items: center;
+        align-content: center;
         
 
         color: white;
@@ -97,3 +123,27 @@
     #btn-login-admin:hover{
         background-color: #0C78D6;
     }
+
+    .register-firm {
+        display: grid;
+        grid-template-columns: auto auto;
+        width:auto;
+        margin-top: 1em;
+        font-size: 0.9em;
+        color: black;
+    }   
+    .button-register-firm {
+        text-decoration: underline;
+        border: none;
+        width:auto;
+        color: #0E87F2;
+        cursor: pointer;
+        padding: 0;
+        font-size: 0.9em;
+    }
+    .button-register-firm:hover {
+        
+        background-color: transparent;
+    }
+
+    
