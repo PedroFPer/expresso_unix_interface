@@ -20,25 +20,30 @@
 
 
 #passenger-manifest header {
-    width: 90%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+
     padding-bottom: 1em;
 
 }
 
 
 #form-input-manifest {
-    width: 100%;
+    width: 90%;
     height: 3.5em;
     font-size: 0.8em;
-
-    padding-left: 2em;
-
+    
     border: 0em;
+
+    padding-left: 1em;
 
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     background-color: white;
 }
+
+
 
 #passenger-list {
     width: 100%;

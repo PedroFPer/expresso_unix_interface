@@ -7,7 +7,6 @@ import "./styles/DriverTrips.css"
 
 export default function DriverTrips(){
     const { travelInfo, setTravelInfo } = useContext(DriverContext);
-
     const tripTeste = []
 
     const withoutTrip = travelInfo.length === 0;
