@@ -40,15 +40,22 @@ export default function AdminFormCard({ adminInfo, handleLogin, handleInputChang
                                 onClick={() => setShowPassword(!showPassword)}
                             ></i>
                         </div>
-                        <p className="input-error-desktop">
-                            {errors.password || "\u00A0"}
-                        </p>
+                        <div className="layout-password">
+                            <p className="input-error-desktop">
+                                {errors.password || "\u00A0"}
+                            </p>
+                            <button className="button-password">Esqueci minha senha</button>
+                        </div>
                     </div>
 
 
-                    <button id="btn-login-admin" className="btn" onClick={handleLogin}>
-                        Entrar
-                    </button>
+                    <div className="layout-button-login">
+                        <button id="btn-login-admin" className="btn" onClick={handleLogin}>
+                            Entrar
+                        </button>
+
+                        <p className="register-firm">Novo Aqui?  <button className="button-register-firm"> Cadastre sua empresa</button></p>
+                    </div>
                 </form>
 
             </section>
