@@ -63,7 +63,7 @@ export default function AdminLogin() {
     console.log(adminInfoTeste, adminInfo)
 
     if (isEqualLogin) {
-      navigate("/admin/travel-catalog");
+      navigate("/admin/teste-admin");
     } else {
       window.alert("Usuário não encontrado");
       return;
