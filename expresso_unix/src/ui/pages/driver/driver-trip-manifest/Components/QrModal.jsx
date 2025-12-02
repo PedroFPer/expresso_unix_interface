@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
-import "./QrModal.css";
+import { useEffect, useState } from "react";
+import "../styles/QrModal.css";
 
-export default function QrModal({ open, onClose }) {
+export default function QrModal({ open, onClose, onRead }) {
   const [data, setData] = useState("");
 
   useEffect(() => {
@@ -15,7 +15,11 @@ export default function QrModal({ open, onClose }) {
     );
 
     scanner.render(
-      (decodedText) => setData(decodedText),
+      (decodedText) => {
+        setData(decodedText);
+        onRead?.(decodedText);
+        
+      },
       () => {}
     );
 
@@ -26,62 +30,54 @@ export default function QrModal({ open, onClose }) {
 
   if (!open) return null;
 
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      decodeImage(ev.target.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const decodeImage = async (image) => {
+    const { default: jsQR } = await import("jsqr");
+    const img = new Image();
+    img.src = image;
+
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const code = jsQR(imageData.data, canvas.width, canvas.height);
+      const result = code ? code.data : null;
+      setData(result || "Nenhum QR encontrado");
+      onRead?.(result);
+      
+      
+    };
+  };
+
   return (
-    <div className="qr-overlay">
+    <div className="qr-modal-overlay">
       <div className="qr-modal">
-        <h2>Leitor de QR Code</h2>
+        <button className="qr-close-btn" onClick={onClose}>×</button>
 
-        <div id="qr-reader" className="qr-camera"></div>
+        <h2>Escanear QR Code</h2>
 
-        <p className="qr-result">{data || "Aponte para um QR..."}</p>
+        <div id="qr-reader"></div>
 
-        <div className="qr-divider">ou</div>
-
-        <label className="qr-upload-btn">
-          Selecionar imagem
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => handleImage(e, setData)}
-            hidden
-          />
+        <label className="qr-upload">
+          Ler imagem
+          <input type="file" accept="image/*" onChange={handleImageUpload} />
         </label>
 
-        <button className="qr-close" onClick={onClose}>
-          Fechar
-        </button>
+        <p className="qr-result">{data}</p>
       </div>
     </div>
   );
-}
-
-async function handleImage(e, setData) {
-  const file = e.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = () => decode(reader.result, setData);
-  reader.readAsDataURL(file);
-}
-
-async function decode(image, setData) {
-  const { default: jsQR } = await import("jsqr");
-
-  const img = new Image();
-  img.src = image;
-
-  img.onload = () => {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    ctx.drawImage(img, 0, 0);
-
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const code = jsQR(imageData.data, canvas.width, canvas.height);
-
-    setData(code ? code.data : "Nenhum QR encontrado");
-  };
 }
