@@ -82,6 +82,7 @@
     align-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+    gap: 7em;
 
     margin-top: 1em;
 }

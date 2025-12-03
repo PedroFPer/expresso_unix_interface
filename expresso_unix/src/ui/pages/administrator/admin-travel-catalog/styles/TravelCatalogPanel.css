@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#employees-panel {
+#travel-catalog-panel {
     width: 90%;
     height: 90%;
 
@@ -14,7 +14,7 @@
     border-radius: 10px;
 }
 
-#header-employees-panel {
+#header-travel-catalog-panel {
     width: 100%;
 
     grid-area: 1/1/2/2;
@@ -27,14 +27,14 @@
     border-bottom: black 1px solid;
 }
 
-#header-employees-panel h3 {
+#header-travel-catalog-panel h3 {
     margin: 0%;
     margin-right: auto;
 
     font-size: 1.3em;
 }
 
-#header-employees-panel button {
+#header-travel-catalog-panel button {
     width: 45%;
     height: 2.5em;
 
@@ -52,7 +52,7 @@
 
 }
 
-#search-employees-panel {
+#search-travel-catalog-panel {
     width: 100%;
 
     grid-area: 2/1/3/2;
@@ -63,64 +63,23 @@
     padding: 1em;
 }
 
-.form-group-search-employees {
+.form-group-search-travel {
     width: 95%;
 }
 
-.form-group-search-employees label {
+.form-group-search-travel label {
     font-size: 0.8em;
 }
 
-.form-group-search-employees input {
+.form-group-search-travel input {
     font-size: 0.8em;
 }
 
-.form-group-search-employees select {
-    font-size: 0.8em;
 
-    color: #595C5F;
-}
-
-#search-employees-panel button {
+#search-travel-catalog-panel button {
     width: 90%;
     height: 2.5em;
 
     margin-left: auto;
     margin-top: 2em;
-}
-
-.employee-table {
-    width: 100%;
-
-    grid-area: 3/1/4/2;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.employee-table th {
-    width: 25%;
-    
-    font-size: 0.8em;
-
-    text-align: center;
-
-    background: #0E87F2;
-    color: white;
-    font-weight: bold;
-     border: 1px solid #ccc;
-}
-
-.employee-table tr {
-    width: 25%;
-    height: 3em;    
-}
-
-
-.employee-table td {
-    
-
-    font-size: 0.8em;
-
-    text-align: center;
-    border: 1px solid #ccc;
 }

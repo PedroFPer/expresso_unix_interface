@@ -21,8 +21,8 @@ export default function EmployeesPanel() {
 
     const filteredEmployees = employees.filter(emp =>
         emp.name.toLowerCase().startsWith(searchName.toLowerCase()) &&
-        emp.role.toLowerCase().startsWith(searchRole.toLowerCase()) &&
-        emp.status.toLowerCase().startsWith(searchStatus.toLowerCase())
+        (searchRole === "" || emp.role === searchRole) &&
+        (searchStatus === "" || emp.status === searchStatus)
     );
 
     const rows = [...filteredEmployees];

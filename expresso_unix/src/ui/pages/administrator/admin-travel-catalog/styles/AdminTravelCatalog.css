@@ -1,44 +1,17 @@
-.grid-general{
-    display: grid;
-    grid-template-columns: auto auto;
-    margin: 3rem;
-    padding-left: 4rem;
-}
-.grid-main-and-footer{
-    margin-top: 1rem;
+@charset "UTF-8";
 
-}
-
-.title-catalogo h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.tabs {
-    display: grid;
-    grid-template-columns: repeat(3,10.8rem);
-    gap: 25px;
-    margin-bottom: 15px;
-}
-
-.tab {
-    background: transparent;
+#admin-travel-catalog{
     width: 100%;
-    font-size: 18px;
-    color: #5A5A5A;
-}
-.tab:hover{
-    background-color: transparent;
-}
-.tab.active {
-    font-weight: 600;
-    color: #0F529E;
-    text-decoration: underline 2px #0F529E;
-}
+    height: 100%;
 
-.catalogo-box {
-    border: 1px solid #d9d9d9;
-    padding: 20px;
-    border-radius: 12px;
-    background: #fff;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 100%;
+    place-content: start;
+    gap: 1.5em;
+
+    overflow: hidden;
+
+    padding-left: 3em;
+
 }
