@@ -1,17 +1,17 @@
 import AdminLayoutWrapper from "../../../common-components/components/AdminLayoutWrapper";
-import HeaderBaseDesktop from "../../../common-components/components/HeaderBaseDesktop";
+import HeaderManagerEmployees from "./components/HeaderManagerEmployees";
 import EmployeesPanel from "./components/EmployeesPanel";
 import "./styles/AdminManageEmployees.css"
 
 export default function AdminManageEmployees() {
 
-    const headerTitle = "Gerenciar Funcionarios"
+    const headerTitle = ""
 
    
     return (
         <AdminLayoutWrapper>
             <div id="admin-manage-employees">
-                <HeaderBaseDesktop headerTitle={headerTitle} ></HeaderBaseDesktop>
+                <HeaderManagerEmployees ></HeaderManagerEmployees>
                 <EmployeesPanel></EmployeesPanel>
             </div>
         </AdminLayoutWrapper>

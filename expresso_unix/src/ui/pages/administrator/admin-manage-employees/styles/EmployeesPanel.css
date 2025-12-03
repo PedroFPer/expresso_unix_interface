@@ -75,6 +75,11 @@
     font-size: 0.8em;
 }
 
+.form-group-search-employees select {
+    font-size: 0.8em;
+
+    color: #595C5F;
+}
 
 #search-employees-panel button {
     width: 15em;
