@@ -4,9 +4,9 @@
 #admin-layout-wrapper {
     width: 100vw;
     height: 100vh;
+
     display: grid;
 
-    gap: 3em;
 }
 
 

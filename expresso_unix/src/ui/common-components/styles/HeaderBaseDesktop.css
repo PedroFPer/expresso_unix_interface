@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#header-base-desktop{
+    width: 100%;
+    height: 100%;
+
+    grid-area: 1/1/2/2;
+    display: grid;
+    place-items: end start;
+
+}
+
+#header-base-desktop h1{
+    text-align: left;
+}
