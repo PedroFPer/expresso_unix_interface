@@ -83,3 +83,41 @@
     margin-left: auto;
     margin-top: 2em;
 }
+
+#travel-catalog-list{
+    width: 100%;
+
+    display: grid;
+    place-items: start center;
+
+    padding: 0%;
+}
+
+.travel-catalog-item{
+    width: 95%;
+    height: 8em;
+
+    display: grid;
+    grid-template-rows: 60% 40%;
+
+    padding: 0.5em;
+
+    border: black 1px solid;
+    border-radius: 10px;
+}
+
+.item-info-primary{
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
+.item-info-secondary{
+     width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+}

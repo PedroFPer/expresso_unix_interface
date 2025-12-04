@@ -50,9 +50,41 @@ export default function TravelCatalogPanel() {
                 <button className="btn btn-primary">Buscar</button>
             </form>
 
-            <div className="travel-catalog-list">
-                <div></div>
-            </div>
+            <ul id="travel-catalog-list">
+            
+                    <li className="travel-catalog-item">
+                        <div className="item-info-primary">
+                            <div>
+                                <label>ORIGEM</label>
+                                <input type="text" />
+                            </div>
+                            <div>
+                                <label>DESTINO</label>
+                                <input type="text" />
+                            </div>
+                            <div>
+                                <label>DURAÇÃO</label>
+                                <input type="text" />
+                            </div>
+                            <div>
+                                <label>A PARTIR DE</label>
+                                <input type="text" />
+                            </div>
+                            <div>
+                                icone
+                            </div>
+                        
+                        </div>
+                        <div className="item-info-secondary">
+                            <div>
+                                icones
+                            </div>
+                            <div>
+                                <p>Ativa</p>
+                            </div>
+                        </div>
+                    </li>
+            </ul>
         </div>
     );
 }
