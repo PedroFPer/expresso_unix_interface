@@ -35,18 +35,12 @@ export default function SideBar({ sideBarIsOpen, setSideBarIsOpen }) {
             </li>
 
             <li>
-              <Link to="/admin/catalogo" className={`nav-item ${sideBarIsOpen ? "nav-item-open" : "nav-item-closed"}`}>
+              <Link to="/admin/travel-catalog" className={`nav-item ${sideBarIsOpen ? "nav-item-open" : "nav-item-closed"}`}>
                 <i className="bi bi-suitcase"></i>
                 <p>Catalogo de Viagens</p>
               </Link>
             </li>
-
-            <li>
-              <Link to="#" className={`nav-item ${sideBarIsOpen ? "nav-item-open" : "nav-item-closed"}`}>
-                <i className="bi bi-table"></i>
-                <p>Lista de Viagens</p>
-              </Link>
-            </li>
+    
 
             <li>
               <Link to="#" className={`nav-item ${sideBarIsOpen ? "nav-item-open" : "nav-item-closed"}`}>
