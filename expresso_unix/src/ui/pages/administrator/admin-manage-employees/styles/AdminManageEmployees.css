@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#admin-manage-employees{
+    width: 100%;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 100%;
+    place-content: start;
+    gap: 1.5em;
+
+    overflow: hidden;
+
+    padding-left: 3em;
+
+}

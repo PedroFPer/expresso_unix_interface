@@ -1,0 +1,50 @@
+.background-container {
+  position: relative;
+}
+
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+
+.models {
+  width: 60%;
+  max-width: 900px;
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+
+.button-open-model {
+  padding: 0.5rem 1rem;
+  border: 2px #0F529E solid;
+  color: #0F529E;
+  font-weight: 500;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: transparent;
+
+  
+}
+.button-open-model:hover{
+  border: 2.3px #0f4c92 solid;
+  color: #0f4c92;
+  font-weight: 700;
+
+  background-color: transparent;
+
+}

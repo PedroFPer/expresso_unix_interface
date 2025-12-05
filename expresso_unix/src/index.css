@@ -19,6 +19,7 @@ body {
 #root {
   display: grid;
   place-items: center;
+
 }
 
 :root {
@@ -27,6 +28,3 @@ body {
 
   background-color: white;
 }
-
-
-  

@@ -1,11 +1,14 @@
 import { createContext, useState, useEffect } from "react";
 
-export const DriverContext = createContext();
+export const AdminContext = createContext();
 
-export function DriverProvider({ children }) {
-    const [driverCredentials, setDriverCredentials] = useState({});
+export function AdminProvider({ children }) {
+    const [adminInfo, setAdminInfo] = useState({
+        email: "",
+        password: ""
+    });
+
     const [travelInfo, setTravelInfo] = useState([]);
-    const [passengerList, setPassengerList] = useState([]);
 
     useEffect(() => {
         const defaultTravelInfo = [
@@ -21,7 +24,7 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                date: new Date(2025, 11, 25), 
                 company: "Travel Bus",
                 driver: "Daniel Frascisco"
             },
@@ -37,7 +40,7 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                date: new Date(2025, 11, 25), 
                 company: "Travel Bus",
                 driver: "Lucas Moreira"
             },
@@ -53,7 +56,7 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                date: new Date(2025, 11, 25), 
                 company: "Travel Bus",
                 driver: "Mariana Alves"
             },
@@ -69,54 +72,30 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                date: new Date(2025, 11, 25), 
                 company: "Travel Bus",
                 driver: "Thiago Pereira"
             }
         ];
 
-
-        const defaultDriverCredentials = {
-            email: "",
-            password: ""
-        }
-
-        const defaultPassengerList = {
-            idManifestList: 1,
-            isFinalized: false, // indica se a lista já foi finalizada
-            passengers: [
-                { id: 1, name: "Pedro Ferreira", isPresent: "Ausente" },
-                { id: 2, name: "Lucas Andrade", isPresent: "Ausente" },
-                { id: 3, name: "Mariana Souza", isPresent: "Ausente" },
-                { id: 4, name: "Bruna Carvalho", isPresent: "Ausente" },
-                { id: 5, name: "Gustavo Oliveira", isPresent: "Ausente" },
-                { id: 6, name: "Fernanda Lima", isPresent: "Ausente" },
-                { id: 7, name: "Rafael Martins", isPresent: "Ausente" },
-                { id: 8, name: "Camila Duarte", isPresent: "Ausente" },
-                { id: 9, name: "João Henrique", isPresent: "Ausente" },
-                { id: 10, name: "Ana Vitória", isPresent: "Ausente" },
-                { id: 11, name: "Ana Alicia", isPresent: "Ausente" }
-            ]
-        };
-
-
         setTravelInfo(defaultTravelInfo);
-        setDriverCredentials(defaultDriverCredentials);
-        setPassengerList(defaultPassengerList)
     }, []);
 
+
+
+
     return (
-        <DriverContext.Provider
+        <AdminContext.Provider
             value={{
-                driverCredentials,
-                setDriverCredentials,
+                adminInfo,
+                setAdminInfo,
                 travelInfo,
-                setTravelInfo,
-                passengerList,
-                setPassengerList
+                setTravelInfo
             }}
         >
             {children}
-        </DriverContext.Provider>
-    )
+        </AdminContext.Provider>
+    );
+
+
 }

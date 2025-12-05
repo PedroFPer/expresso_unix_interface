@@ -2,11 +2,13 @@ import React, { useRef, useState } from "react";
 import ActionSheet from "actionsheet-react";
 import qrCodeDefault from "../../../../../assets/qr-code-default.png";
 import { formatUtils } from "../../../../../infrastructure/utils/formatUtils";
+import QrModal from "./QrModal";
 import "../styles/PassengerManifest.css";
 
 export default function PassengerManifest({ passengerList, setPassengerList }) {
     const sheetRef = useRef(null);
     const [search, setSearch] = useState("");
+    const [openQr, setOpenQr] = useState(false);
 
     const passengersArray = passengerList?.passengers || [];
 
@@ -21,12 +23,26 @@ export default function PassengerManifest({ passengerList, setPassengerList }) {
         setPassengerList(prev => ({
             ...prev,
             passengers: prev.passengers.map(p => 
-                p.id === id
+                p.id.toString() == id
                 ? { ...p, isPresent: p.isPresent === "Ausente" ? "Presente" : "Ausente" }
                 : p
             )
         }));
     };
+
+    const handleQrRead = (decodedText) => {
+    if (!decodedText) return;
+
+    const passenger = passengerList.passengers.find(
+        p => p.id.toString() === decodedText.toString()
+    );
+
+    if (passenger) {
+        handleTogglePresence(passenger.id);
+    }
+
+    setOpenQr(false);
+};
 
     const handleFinalizeManifest = () => {
         setPassengerList(prev => ({
@@ -63,8 +79,9 @@ export default function PassengerManifest({ passengerList, setPassengerList }) {
                             />
                             <strong>{passenger.name}</strong>
                             <figure>
-                                <img src={qrCodeDefault} alt="Escanear qrcode" />
+                                <img src={qrCodeDefault} alt="Escanear qrcode" onClick={() => setOpenQr(true)}/>
                             </figure>
+                            <QrModal open={openQr} onClose={() => setOpenQr(false)} onRead={handleQrRead} />
                         </li>
                     ))}
                 </ul>
