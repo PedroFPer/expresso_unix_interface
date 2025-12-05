@@ -17,7 +17,6 @@ export default function EmployeesPanel() {
         { name: "Ana Costa", email: "AnaCosta@email.com", role: "Motorista", status: "Ativo" }
     ];
 
-    const totalRows = 7;
 
     const filteredEmployees = employees.filter(emp =>
         emp.name.toLowerCase().startsWith(searchName.toLowerCase()) &&
@@ -25,10 +24,6 @@ export default function EmployeesPanel() {
         (searchStatus === "" || emp.status === searchStatus)
     );
 
-    const rows = [...filteredEmployees];
-    while (rows.length < totalRows) {
-        rows.push({ empty: true });
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -88,26 +83,30 @@ export default function EmployeesPanel() {
                 <button className="btn btn-primary">Buscar</button>
             </form>
 
-            <table className="employee-table">
-                <thead>
-                    <tr>
-                        <th>Nome do Funcionário</th>
-                        <th>Email</th>
-                        <th>Cargo</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {rows.map((emp, index) => (
-                        <tr key={index}>
-                            <td>{emp.empty ? "\u00A0" : emp.name}</td>
-                            <td>{emp.empty ? "\u00A0" : emp.email}</td>
-                            <td>{emp.empty ? "\u00A0" : emp.role}</td>
-                            <td>{emp.empty ? "\u00A0" : emp.status}</td>
+            <div className="table-scroll">
+                <table className="employee-table">
+                    <thead>
+                        <tr>
+                            <th>Nome do Funcionário</th>
+                            <th>Email</th>
+                            <th>Cargo</th>
+                            <th>Status</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody>
+                        {filteredEmployees.map((emp, index) => (
+                            <tr key={index}>
+                                <td>{emp.empty ? "\u00A0" : emp.name}</td>
+                                <td>{emp.empty ? "\u00A0" : emp.email}</td>
+                                <td>{emp.empty ? "\u00A0" : emp.role}</td>
+                                <td>{emp.empty ? "\u00A0" : emp.status}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     );
 }

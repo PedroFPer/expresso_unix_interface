@@ -15,6 +15,19 @@ export class formatUtils {
         return { day, month: capitalizedMonth };
     }
 
+    static toInputDateFormat(date) {
+        if (!date) return "";
+
+        const d = new Date(date);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+
+        return `${year}-${month}-${day}`;
+    }
+
+
+
     static toCurrencyBRL(value) {
         if (value === null || value === undefined || value === "") return "0,00";
 
