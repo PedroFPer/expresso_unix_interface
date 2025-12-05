@@ -123,6 +123,7 @@
 
     display: grid;
     place-items: center;
+    justify-self: center;
 
     margin-top: 2em;
     
