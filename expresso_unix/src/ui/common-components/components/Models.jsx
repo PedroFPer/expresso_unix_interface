@@ -2,7 +2,7 @@ import { useState } from "react";
 import Modelo from "../../pages/customer/passenger-registration/PassengerRegistration"
 import "../styles/Models.css";
 
-function Models({ TitleButton, TitleModel }) {
+export default function Models({ TitleButton, TitleModel }) {
   const [ModelsIsClosed, setModelsIsClosed] = useState(true);
   const[Status, setStatus] = useState("");
   const [Role, setRole] = useState("");
@@ -38,4 +38,4 @@ function Models({ TitleButton, TitleModel }) {
   );
 }
 
-export default Models;
+ Models;
