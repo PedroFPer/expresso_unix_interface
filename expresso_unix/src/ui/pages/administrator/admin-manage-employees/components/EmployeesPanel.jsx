@@ -37,7 +37,7 @@ export default function EmployeesPanel({handleToggleModal}) {
         <div id="employees-panel">
             <div id="header-employees-panel">
                 <h3>Funcionários</h3>
-                <button onClick={ handleToggleModal} >Adicionar Funcionário</button>
+                <button onClick={handleToggleModal} >Adicionar Funcionário</button>
             </div>
 
             <form id="search-employees-panel" onSubmit={handleSubmit}>
