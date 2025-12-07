@@ -24,7 +24,7 @@ export function AdminProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 25), 
+                date: new Date(2025, 11, 23), 
                 company: "Travel Bus",
                 driver: "Daniel Frascisco"
             },
@@ -40,7 +40,7 @@ export function AdminProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 25), 
+                date: new Date(2025, 11, 23), 
                 company: "Travel Bus",
                 driver: "Lucas Moreira"
             },
@@ -56,7 +56,7 @@ export function AdminProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 25), 
+                date: new Date(2025, 11, 24), 
                 company: "Travel Bus",
                 driver: "Mariana Alves"
             },
