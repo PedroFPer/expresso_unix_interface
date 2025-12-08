@@ -176,8 +176,9 @@
 
         background-color: transparent;
     }
+    
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 500px) {
 
         #right-panel {
             height: 30em;
