@@ -1,44 +1,57 @@
-.grid-general{
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+#admin-travel-catalog{
+    width: 100vw;
+    height: 100vh;
+
     display: grid;
-    grid-template-columns: auto auto;
-    margin: 3rem;
-    padding-left: 4rem;
-}
-.grid-main-and-footer{
-    margin-top: 1rem;
-
 }
 
-.title-catalogo h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
 
-.tabs {
-    display: grid;
-    grid-template-columns: repeat(3,10.8rem);
-    gap: 25px;
-    margin-bottom: 15px;
-}
-
-.tab {
-    background: transparent;
+#main-travel-catalog{
     width: 100%;
-    font-size: 18px;
-    color: #5A5A5A;
-}
-.tab:hover{
-    background-color: transparent;
-}
-.tab.active {
-    font-weight: 600;
-    color: #0F529E;
-    text-decoration: underline 2px #0F529E;
+    height: 100vh;
+
+    grid-area: 1/2/2/3;
+    display: grid;
+    grid-template-rows: 13% 90%;
+    grid-template-columns: 100% ;
+    place-content: start;
+    gap: 1.5em;
+
+    overflow: hidden;
+
+    padding-left: 3em;
+
 }
 
-.catalogo-box {
-    border: 1px solid #d9d9d9;
-    padding: 20px;
-    border-radius: 12px;
-    background: #fff;
+
+#side-bar-wrapper{
+    grid-area: 1/1/2/2;
+}
+
+.travel-catalog-sidebar-open {
+    grid-template-columns: 15% 1fr;
+}
+
+
+.travel-catalog-sidebar-closed {
+    grid-template-columns: 8% 1fr;
+}
+
+.overlay-modal-travel-catalog{
+    width: 100vw;
+    height: 100vh;
+
+     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 9000; 
 }

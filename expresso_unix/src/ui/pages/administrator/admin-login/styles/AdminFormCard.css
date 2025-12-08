@@ -114,20 +114,21 @@
     }
 
     .button-password {
+        width:auto;
+
         text-decoration: underline;
         border: none;
-        width: auto;
+
+
         color: #0E87F2;
         background-color: transparent;
+
         cursor: pointer;
+    
         padding: 0;
         font-size: 0.7em;
     }
 
-    .button-password:hover {
-
-        background-color: transparent;
-    }
 
     .layout-button-login {
         display: grid;
@@ -153,6 +154,7 @@
         background-color: #0C78D6;
     }
 
+
     .register-firm {
         display: grid;
         grid-template-columns: auto auto;
@@ -177,6 +179,7 @@
         background-color: transparent;
     }
     
+
 
     @media screen and (max-width: 500px) {
 

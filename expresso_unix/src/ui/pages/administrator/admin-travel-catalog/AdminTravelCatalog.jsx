@@ -1,48 +1,47 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import SideBar from "../../../common-components/components/SideBar";
-import AdminstratorTravelCatalogActivates from "./components/AdminstratorTravelCatalogActivates";
-import "./styles/AdminTravelCatalog.css";
+import HeaderTravelCatalog from "./components/HeaderTravelCatalog"
+import TravelCatalogPanel from "./components/TravelCatalogPanel"
+import ModelAddTravel from "./components/ModelAddTravel"
+import { AdminContext } from "../../../../infrastructure/context/AdminProvider";
+import "./styles/AdminTravelCatalog.css"
 
-function AdminstratorTravelCatalog() {
-  const [abaActivates, setAbaActivates] = useState("activates");
+export default function AdminTravelCatalog() {
+  const { travelInfo, setTravelInfo } = useContext(AdminContext);
+
+  const [sideBarIsOpen, setSideBarIsOpen] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
+  const [overlayActive, setOverlayActive] = useState(false)
+
+
+  const handleToggleModal = () => {
+    setOpenModal(prev => !prev);
+    setOverlayActive(prev => !prev);
+  };
+
 
   return (
-    <div className="grid-general">
-      <SideBar />
 
-      <div>
-        <main>
-          <div className="title-catalogo">
-            <h1>Catalogo de Viagens</h1>
-            <div className="tabs">
-              <button
-                className={abaActivates === "activates" ? "tab active" : "tab"}
-                onClick={() => setAbaActivates("activates")}
-              >
-                Viagens Ativas
-              </button>
-              <button
-                className={abaActivates === "finalised" ? "tab active" : "tab"}
-                onClick={() => setAbaActivates("finalised")}
-              >
-                Viagens Finalizadas
-              </button>
-              <button
-                className={abaActivates === "cacellates" ? "tab active" : "tab"}
-                onClick={() => setAbaActivates("cacellates")}
-              >
-                Viagens Canceladas
-              </button>
-            </div>
-          </div>
-          <div className="catalogo-box">
-            {abaActivates === "activates" && <AdminstratorTravelCatalogActivates />}
-        
-          </div>
-        </main>
+    <div id="admin-travel-catalog"
+      className={sideBarIsOpen ? "travel-catalog-sidebar-open" : "travel-catalog-sidebar-closed"}>
+      <SideBar
+        sideBarIsOpen={sideBarIsOpen}
+        setSideBarIsOpen={setSideBarIsOpen}></SideBar>
+      <div id="main-travel-catalog">
+        <HeaderTravelCatalog> </HeaderTravelCatalog>
+        <TravelCatalogPanel
+          travelInfo={travelInfo}
+          setTravelInfo={setTravelInfo}
+          handleToggleModal={handleToggleModal}
+        ></TravelCatalogPanel>
+        <ModelAddTravel
+          openModal={openModal} ></ModelAddTravel>
       </div>
+      {overlayActive && (
+        <div className="overlay-modal-travel-catalog"
+          onClick={handleToggleModal}></div>
+      )}
     </div>
-  );
-}
 
-export default AdminstratorTravelCatalog;
+  )
+}

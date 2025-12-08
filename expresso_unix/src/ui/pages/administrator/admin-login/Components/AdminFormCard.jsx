@@ -45,12 +45,9 @@ export default function AdminFormCard({logoExpressoUnix, adminInfo, handleLogin,
                                 onClick={() => setShowPassword(!showPassword)}
                             ></i>
                         </div>
-                        <div className="layout-password">
-                            <p className="input-error-desktop">
-                                {errors.password || "\u00A0"}
-                            </p>
-                            <button className="button-password">Esqueci minha senha</button>
-                        </div>
+                        <p className="input-error-desktop">
+                            {errors.password || "\u00A0"}
+                        </p>
                     </div>
 
 
