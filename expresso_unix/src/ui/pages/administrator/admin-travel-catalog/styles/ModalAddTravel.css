@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-.model-add-employees{
+.modal-add-travel{
     display: grid;
     grid-template-rows: 15% 75% 10%;
     grid-template-columns: 100%;
 }
 
-.model-add-employees-hidden {
+.modal-add-travel-hidden {
     width: 0%;
     height: 100vh;
 
@@ -21,7 +21,7 @@
     background: white;
 }
 
-.model-add-employees-show {
+.modal-add-travel-show {
     width: 60%;
     height: 100vh;
 
@@ -36,19 +36,20 @@
     background: white;
 }
 
-#model-header-add-employees{
+#modal-header-add-travel{
     grid-area: 1/1/2/2;
 }
 
-#model-form-add-travel{
+#modal-form-add-travel{
+    grid-area: 2/1/3/2;
+    
+}
+
+#modal-preview-add-travel{
     grid-area: 2/1/3/2;
 }
 
-#model-preview-add-travel{
-    grid-area: 2/1/3/2;
-}
-
-#group-button-add-employees{
+#group-button-add-travel{
     width: 100%;
     height: 100%;
 
@@ -64,7 +65,7 @@
 
 }
 
-#cancel-button-add-employees{
+#cancel-button-add-travel{
      width: 100%;
     height: 2.5em;
 
@@ -83,7 +84,7 @@
     margin-left: auto;
 }
 
-#continue-button-add-employees{
+#continue-button-add-travel{
     width: 100%;
     height: 2.5em;
 

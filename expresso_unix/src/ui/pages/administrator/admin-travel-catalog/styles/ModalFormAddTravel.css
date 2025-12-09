@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#model-form-add-employees{
+#modal-form-add-travel{
     width: 100%;
     height: 100vh;
 
@@ -17,7 +17,7 @@
     background-color: #F9F9F9;
 }
 
-.accordion-add-employees {
+.accordion-add-travel {
     width: 95%;
     height: auto;
 
@@ -27,7 +27,7 @@
 
 }
 
-.accordion-header-add-employees{
+.accordion-header-add-travel{
     width: 100%;
 
     display: grid;
@@ -38,12 +38,10 @@
     border-bottom: 1px solid black;
 }
 
-.accordion-header-add-employees h3{
+.accordion-header-add-travel h3{
     font-size: 1.3em;
 }
 
-.accordion-header-add-employees i{
+.accordion-header-add-travel i{
     font-size: 1.3em;
 }
-
-

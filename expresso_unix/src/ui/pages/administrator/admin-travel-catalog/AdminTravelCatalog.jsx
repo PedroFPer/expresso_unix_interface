@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import SideBar from "../../../common-components/components/SideBar";
 import HeaderTravelCatalog from "./components/HeaderTravelCatalog"
 import TravelCatalogPanel from "./components/TravelCatalogPanel"
-import ModelAddTravel from "./components/ModelAddTravel"
+import ModalAddTravel from "./components/ModalAddTravel"
 import { AdminContext } from "../../../../infrastructure/context/AdminProvider";
 import "./styles/AdminTravelCatalog.css"
 
@@ -28,15 +28,18 @@ export default function AdminTravelCatalog() {
         sideBarIsOpen={sideBarIsOpen}
         setSideBarIsOpen={setSideBarIsOpen}></SideBar>
       <div id="main-travel-catalog">
+
         <HeaderTravelCatalog> </HeaderTravelCatalog>
+
         <TravelCatalogPanel
           travelInfo={travelInfo}
           setTravelInfo={setTravelInfo}
           handleToggleModal={handleToggleModal}
         ></TravelCatalogPanel>
-        <ModelAddTravel
-          openModal={openModal} ></ModelAddTravel>
+
+        <ModalAddTravel openModal={openModal} ></ModalAddTravel>
       </div>
+
       {overlayActive && (
         <div className="overlay-modal-travel-catalog"
           onClick={handleToggleModal}></div>

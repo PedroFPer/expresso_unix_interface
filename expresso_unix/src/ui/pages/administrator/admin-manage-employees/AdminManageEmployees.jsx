@@ -2,7 +2,7 @@ import { useState } from "react";
 import SideBar from "../../../common-components/components/SideBar"
 import HeaderManagerEmployees from "./components/HeaderManagerEmployees";
 import EmployeesPanel from "./components/EmployeesPanel";
-import ModelAddEmployees from "./components/ModelAddEmployees";
+import ModalAddEmployees from "./components/ModalAddEmployees";
 import "./styles/AdminManageEmployees.css"
 
 export default function AdminManageEmployees() {
@@ -28,7 +28,7 @@ export default function AdminManageEmployees() {
             <div id="main-manage-employees">
                 <HeaderManagerEmployees ></HeaderManagerEmployees>
                 <EmployeesPanel handleToggleModal={handleToggleModal}></EmployeesPanel>
-                <ModelAddEmployees openModal={openModal}></ModelAddEmployees>
+                <ModalAddEmployees openModal={openModal}></ModalAddEmployees>
             </div>
 
             {overlayActive && (
