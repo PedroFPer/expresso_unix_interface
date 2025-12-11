@@ -10,6 +10,15 @@ export function AdminProvider({ children }) {
 
     const [travelInfo, setTravelInfo] = useState([]);
 
+    const [employees, setEmployees] = useState([{
+        id: "",
+        name: "",
+        email: "",
+        role: "",
+        password: "",
+        status: ""
+    }])
+
     useEffect(() => {
         const defaultTravelInfo = [
             {
@@ -24,7 +33,7 @@ export function AdminProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 23), 
+                date: new Date(2025, 11, 23),
                 company: "Travel Bus",
                 driver: "Daniel Frascisco"
             },
@@ -40,7 +49,7 @@ export function AdminProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 23), 
+                date: new Date(2025, 11, 23),
                 company: "Travel Bus",
                 driver: "Lucas Moreira"
             },
@@ -56,7 +65,7 @@ export function AdminProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 24), 
+                date: new Date(2025, 11, 24),
                 company: "Travel Bus",
                 driver: "Mariana Alves"
             },
@@ -72,13 +81,23 @@ export function AdminProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 11, 25), 
+                date: new Date(2025, 11, 25),
                 company: "Travel Bus",
                 driver: "Thiago Pereira"
             }
         ];
 
+        const defaultEmployees = [
+            { id: crypto.randomUUID(), name: "Pedro Pereira Oliveira Souza", email: "PedroOliveiraTravel@gmail.com", role: "Adm", status: "Ativo" },
+            { id: crypto.randomUUID(), name: "Maria Silva", email: "MariaSilva@email.com", role: "Motorista", status: "Ativo" },
+            { id: crypto.randomUUID(), name: "João Santos", email: "JoaoSantos@email.com", role: "Gestor", status: "Inativo" },
+            { id: crypto.randomUUID(), name: "Ana Costa", email: "AnaCosta@email.com", role: "Motorista", status: "Ativo" }
+        ];
+
+
         setTravelInfo(defaultTravelInfo);
+
+        setEmployees(defaultEmployees);
     }, []);
 
 
@@ -90,7 +109,9 @@ export function AdminProvider({ children }) {
                 adminInfo,
                 setAdminInfo,
                 travelInfo,
-                setTravelInfo
+                setTravelInfo,
+                employees,
+                setEmployees
             }}
         >
             {children}

@@ -27,7 +27,13 @@ export class validationsUtils {
         return { valid: true, message: "" };
     }
 
+ 
+    static validateSelect(value) {
+        if (!value || value === "" || value === "default")
+            return { valid: false, message: "Selecione uma opção" };
 
+        return { valid: true, message: "" };
+    }
 
     static validateEmail(value) {
         if (!value) return { valid: false, message: "Campo obrigatório" };
@@ -49,27 +55,22 @@ export class validationsUtils {
         return { valid: true, message: "" };
     }
 
-    static validatePassword(value){
+    static validatePassword(value) {
         if (!value) return { valid: false, message: "Campo obrigatório" };
-        const password = value.replace(/|D/g,"");
 
-        if(password.length<=8){
-            return{valid: false, message: "A senha deve ter no mínimo 8 caracteres"}
-        }
+        const password = value.toString();
 
-        if(password.length>=20){
-            return{valid: false, message: "A senha deve ter no maximo 20 caracteres"}
-        }
+        if (password.length < 8)
+            return { valid: false, message: "A senha deve ter no mínimo 8 caracteres" };
 
-        return {valid: true, message: ""}
+        if (password.length > 20)
+            return { valid: false, message: "A senha deve ter no máximo 20 caracteres" };
 
+        return { valid: true, message: "" };
     }
-
-
 
     static validateField(fieldName, value) {
         switch (fieldName) {
-
             case "name":
                 return this.validateName(value);
 
@@ -85,9 +86,12 @@ export class validationsUtils {
             case "password":
                 return this.validatePassword(value);
 
+
+            case "select": 
+                return this.validateSelect(value);
+
             default:
                 return { valid: true, message: "" };
         }
     }
-
 }

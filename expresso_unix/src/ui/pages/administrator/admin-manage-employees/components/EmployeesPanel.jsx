@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AdminContext } from "../../../../../infrastructure/context/AdminProvider";
 import "../styles/EmployeesPanel.css";
 
-export default function EmployeesPanel({handleToggleModal}) {
+export default function EmployeesPanel({ handleToggleAddModal, handleToggleEditModal }) {
+    const { employees } = useContext(AdminContext);
+
+
     const [tempName, setTempName] = useState("");
     const [tempRole, setTempRole] = useState("");
     const [tempStatus, setTempStatus] = useState("");
@@ -10,12 +14,6 @@ export default function EmployeesPanel({handleToggleModal}) {
     const [searchRole, setSearchRole] = useState("");
     const [searchStatus, setSearchStatus] = useState("");
 
-    const employees = [
-        { name: "Pedro Pereira Oliveira Souza", email: "PedroOliveiraTravel@gmail.com", role: "Adm", status: "Ativo" },
-        { name: "Maria Silva", email: "MariaSilva@email.com", role: "Motorista", status: "Ativo" },
-        { name: "João Santos", email: "JoaoSantos@email.com", role: "Gestor", status: "Inativo" },
-        { name: "Ana Costa", email: "AnaCosta@email.com", role: "Motorista", status: "Ativo" }
-    ];
 
 
     const filteredEmployees = employees.filter(emp =>
@@ -37,7 +35,7 @@ export default function EmployeesPanel({handleToggleModal}) {
         <div id="employees-panel">
             <div id="header-employees-panel">
                 <h3>Funcionários</h3>
-                <button onClick={handleToggleModal} >Adicionar Funcionário</button>
+                <button onClick={handleToggleAddModal} >Adicionar Funcionário</button>
             </div>
 
             <form id="search-employees-panel" onSubmit={handleSubmit}>
@@ -96,7 +94,7 @@ export default function EmployeesPanel({handleToggleModal}) {
 
                     <tbody>
                         {filteredEmployees.map((emp, index) => (
-                            <tr key={index}>
+                            <tr key={index} onClick={() => handleToggleEditModal(emp)}>
                                 <td>{emp.empty ? "\u00A0" : emp.name}</td>
                                 <td>{emp.empty ? "\u00A0" : emp.email}</td>
                                 <td>{emp.empty ? "\u00A0" : emp.role}</td>

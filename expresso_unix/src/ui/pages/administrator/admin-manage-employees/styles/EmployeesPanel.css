@@ -120,6 +120,13 @@
 .employee-table tr {
     width: 25%;
     height: 3em;    
+
+    cursor: pointer;
+
+}
+
+.employee-table tr:hover {
+    background-color: #f2f2f2;  
 }
 
 
