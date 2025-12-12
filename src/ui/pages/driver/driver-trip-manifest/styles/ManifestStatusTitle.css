@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+#manifest-status-title{
+    width: 100%;
+    height: 4em;
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+
+    margin-top: 3em;
+}
+
+#manifest-status-title h3{
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+#manifest-status-title span{
+    color: #FF070B;
+}

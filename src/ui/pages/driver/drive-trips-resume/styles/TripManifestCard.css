@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+#trip-manifest-card{
+    width: 90%;
+    height: 7em;
+
+    display: grid;
+    grid-template-rows: 2em 1fr;
+    grid-template-columns: 100%;
+    align-items: center;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+
+#trip-manifest-card h3{
+    grid-area: 1/1/2/2;
+
+    font-size: 0.9em;
+
+    padding: 1em 0.5em 0em 1em;
+
+    margin: 0%;
+
+}
+
+#summary-item-trip-manifest{
+    width: 100%;
+    height: 3.5em;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+    padding: 0.5em 1em 0em 1em;
+    border-top: 1px solid rgb(187, 186, 186);
+}
+
+#summary-item-trip-manifest figure{
+    font-size: 0.8em;
+    font-weight: 500;
+
+    margin: auto 0em auto auto;
+}
+
+
+#trip-status strong{
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: auto;
+
+}
+
+#trip-status p{
+    font-size: 0.7em;
+    font-weight: 600;
+
+    color: #008000;
+
+    margin-right: auto;
+}
+
