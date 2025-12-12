@@ -1,9 +1,9 @@
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils"
 import "../styles/ModalFormAddEmployees.css"
 
-export default function ModalFormAddEmployees({ handleInputChange, handleRegisterEmployee, employee, errors }) {
+export default function ModalFormAddEmployees({ handleInputChange, registerEmployee, employee, errors }) {
     return (
-        <form id="modal-form-add-employees" onSubmit={handleRegisterEmployee}>
+        <form id="modal-form-add-employees" onSubmit={registerEmployee}>
 
             <div className="input-row-full">
                 <label>Nome do Funcionário*</label>

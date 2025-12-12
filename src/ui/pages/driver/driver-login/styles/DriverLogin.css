@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+#driver-login{
+    width: 100%;
+    height: 100vh;
+    
+    margin: 0%;
+    padding: 0%;
+
+
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+    place-items: center;
+
+    border: 0em;
+
+
+   background: linear-gradient(to bottom, #077BFF, #0A2F5A);
+
+}
