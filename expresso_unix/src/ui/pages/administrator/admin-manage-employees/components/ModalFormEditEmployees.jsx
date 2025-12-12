@@ -29,8 +29,6 @@ export default function ModalFormEditEmployees({
             </div>
 
             <div className="input-row-two-columns">
-
-                {/* CARGO */}
                 <div className="item-row-two-columns">
                     <label>Cargo*</label>
                     <select

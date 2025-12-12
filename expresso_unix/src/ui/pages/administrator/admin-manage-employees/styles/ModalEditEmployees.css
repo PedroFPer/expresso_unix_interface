@@ -37,6 +37,36 @@
 }
 
 
+#modal-header-edit-employees{
+    grid-area: 1/1/2/2;
+}
+
+#modal-form-edit-travel{
+    grid-area: 2/1/3/2;
+    
+}
+
+#modal-preview-edit-travel{
+    grid-area: 2/1/3/2;
+}
+
+#group-button-edit-employees{
+    width: 100%;
+    height: 100%;
+
+    grid-area: 3/1/4/2;
+    display: grid;
+    grid-template-columns: 1fr 25% 25%;
+    grid-template-rows: 100%;
+    gap: 1em;
+
+    padding: 1em;
+
+    border-top: 1px solid black;
+
+}
+
+
 #cancel-button-edit-employees{
      width: 100%;
     height: 2.5em;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ModalHeaderEditEmployees from "./ModalHeaderEditEmployees";
 import ModalFormEditEmployees from "./ModalFormEditEmployees"
+import { validationsUtils } from "../../../../../infrastructure/utils/validationsUtils";
 import "../styles/ModalEditEmployees.css"
 
 export default function ModalEditEmployees({ openEditModal, handleToggleEditModal, selectedEmployee }) {
@@ -26,6 +27,7 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
             });
         }
     }, [selectedEmployee]);
+
 
 
 
@@ -61,6 +63,8 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
         const newErrors = {};
 
 
+
+
         Object.entries(validationMap).forEach(([attribute, field]) => {
             const validation =
                 validationsUtils.validateField(field, editableEmployee[attribute]) ||
@@ -77,6 +81,8 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
 
         window.alert("Usuário cadastrado!");
 
+         console.log(editableEmployee);
+
         handleToggleEditModal();
     };
 
@@ -89,7 +95,7 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
                 editableEmployee={editableEmployee}
                 errors={errors}>
                 </ModalFormEditEmployees>
-            <div id="group-button-add-employees">
+            <div id="group-button-edit-employees">
                 <button id="cancel-button-edit-employees" onClick={handleToggleEditModal}>Cancelar</button>
                 <button id="continue-button-edit-employees" onClick={handleEditEmployee} >Continuar</button>
             </div>
