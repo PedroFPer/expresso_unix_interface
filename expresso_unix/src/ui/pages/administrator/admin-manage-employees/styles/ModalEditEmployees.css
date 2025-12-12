@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.modal-edit-employees{
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 100%;
+}
+
+.modal-edit-employees-hidden {
+    width: 0%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: 0.3s ease;
+    z-index: 9999;
+
+    background: white;
+}
+
+.modal-edit-employees-show {
+    width: 60%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(0);
+    transition: 0.3s ease;
+    z-index: 9999;
+
+    background: white;
+}
+
