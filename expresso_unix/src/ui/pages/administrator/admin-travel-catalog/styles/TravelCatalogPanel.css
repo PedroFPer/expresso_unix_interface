@@ -228,3 +228,31 @@
     color: white;
 
 }
+
+@media (max-width: 1290px){
+
+    .item-info-secondary{
+        grid-template-columns: 40% 1fr 20%;
+    }
+
+}
+
+@media (max-width: 990px){
+    .item-info-secondary{
+        grid-template-columns: 50% 1fr 20%;
+    }
+}
+
+@media (max-width: 960px){
+    #travel-catalog-panel{
+        width: 97%;
+    }
+    #header-travel-catalog-panel button{
+        width: 50%;
+
+    }
+
+    .item-info-primary{
+
+    }
+}
