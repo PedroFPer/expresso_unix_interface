@@ -10,14 +10,23 @@ export default function AdminTravelCatalog() {
   const { travelInfo, setTravelInfo } = useContext(AdminContext);
 
   const [sideBarIsOpen, setSideBarIsOpen] = useState(true);
-  const [openModal, setOpenModal] = useState(false);
-  const [overlayActive, setOverlayActive] = useState(false)
+  const [openAddModal, setOpenAddModal] = useState(false);
+  const [openEditModal, setOpenEditModal] = useState(false);
+  const [overlayActive, setOverlayActive] = useState(false);
 
+  const [selectedTravel, setSelectedTravel] = useState(null);
 
-  const handleToggleModal = () => {
-    setOpenModal(prev => !prev);
+  const handleToggleAddModal = () => {
+    setOpenAddModal(prev => !prev);
     setOverlayActive(prev => !prev);
   };
+
+  const handleToggleEditModal = (employee) => {
+    setSelectedTravel(employee);
+    setOpenEditModal(prev => !prev);
+    setOverlayActive(prev => !prev);
+  };
+
 
 
   return (
@@ -34,16 +43,22 @@ export default function AdminTravelCatalog() {
         <TravelCatalogPanel
           travelInfo={travelInfo}
           setTravelInfo={setTravelInfo}
-          handleToggleModal={handleToggleModal}
+          handleToggleAddModal={handleToggleAddModal}
         ></TravelCatalogPanel>
 
-        <ModalAddTravel openModal={openModal} ></ModalAddTravel>
+        <ModalAddTravel openAddModal={openAddModal} handleToggleAddModal={handleToggleAddModal} ></ModalAddTravel>
       </div>
 
       {overlayActive && (
-        <div className="overlay-modal-travel-catalog"
-          onClick={handleToggleModal}></div>
-      )}
+                <div
+                    className="overlay-modal"
+                    onClick={() => {
+                        setOpenAddModal(false);
+                        setOpenEditModal(false);
+                        setOverlayActive(false);
+                    }}
+                ></div>
+            )}
     </div>
 
   )
