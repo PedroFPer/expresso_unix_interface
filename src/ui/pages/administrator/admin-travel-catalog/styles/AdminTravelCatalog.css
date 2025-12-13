@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#admin-travel-catalog{
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+}
+
+
+#main-travel-catalog{
+    width: 100%;
+    height: 100vh;
+
+    grid-area: 1/2/2/3;
+    display: grid;
+    grid-template-rows: 13% 90%;
+    grid-template-columns: 100% ;
+    place-content: start;
+    gap: 1.5em;
+
+    overflow: hidden;
+
+    padding-left: 3em;
+
+}
+
+
+#side-bar-wrapper{
+    grid-area: 1/1/2/2;
+}
+
+.travel-catalog-sidebar-open {
+    grid-template-columns: 15% 1fr;
+}
+
+
+.travel-catalog-sidebar-closed {
+    grid-template-columns: 8% 1fr;
+}
+
+.overlay-modal-travel-catalog{
+    width: 100vw;
+    height: 100vh;
+
+     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 9000; 
+}
