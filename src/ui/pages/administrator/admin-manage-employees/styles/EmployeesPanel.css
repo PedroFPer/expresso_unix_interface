@@ -138,3 +138,34 @@
     text-align: center;
     border: 1px solid #ccc;
 }
+
+@media (max-width: 1200px){
+    #employees-panel{
+        width: 95%;
+    }
+
+    #header-employees-panel button{
+        width: 55%;
+  }
+
+  .form-control{
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    
+  }
+
+
+
+  .employee-table tbody td{
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+}
+@media (max-width: 990px){
+  #header-employees-panel button{
+    width: 60%;
+  }
+}
