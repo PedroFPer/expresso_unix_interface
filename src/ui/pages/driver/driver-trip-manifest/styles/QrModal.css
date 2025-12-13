@@ -1,0 +1,48 @@
+.qr-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.qr-modal {
+  background: #fff;
+  padding: 20px;
+  width: 340px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.qr-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.qr-upload {
+  margin-top: 15px;
+  display: inline-block;
+  background: #2e86ff;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.qr-upload input {
+  display: none;
+}
+
+.qr-result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
