@@ -2,11 +2,16 @@ import { useState} from "react";
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils";
 import "../styles/AdminFormCard.css";
 
-export default function AdminFormCard({ adminInfo, handleLogin, handleInputChange, errors }) {
+export default function AdminFormCard({logoExpressoUnix, adminInfo, handleLogin, handleInputChange, errors }) {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
             <section id="right-panel">
+
+                <figure id="system-logo-rigth">
+                    <img src={logoExpressoUnix} alt="" />
+                </figure>
+
                 <h2 id="login-title">Faça seu login</h2>
 
                 <form id="form-login-admin">
@@ -44,6 +49,7 @@ export default function AdminFormCard({ adminInfo, handleLogin, handleInputChang
                             {errors.password || "\u00A0"}
                         </p>
                     </div>
+
 
 
                     <button id="btn-login-admin" className="btn" onClick={handleLogin}>
