@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.model-add-employees{
+    display: grid;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 100%;
+}
+
+.model-add-employees-hidden {
+    width: 0%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: 0.3s ease;
+    z-index: 9999;
+
+    background: white;
+}
+
+.model-add-employees-show {
+    width: 60%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(0);
+    transition: 0.3s ease;
+    z-index: 9999;
+
+    background: white;
+}
+
+#model-header-add-employees{
+    grid-area: 1/1/2/2;
+}
+
+#model-form-add-travel{
+    grid-area: 2/1/3/2;
+}
+
+#model-preview-add-travel{
+    grid-area: 2/1/3/2;
+}
