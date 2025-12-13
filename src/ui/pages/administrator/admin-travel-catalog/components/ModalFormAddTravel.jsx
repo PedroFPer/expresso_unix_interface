@@ -7,31 +7,99 @@ export default function ModalFormAddTravel() {
     const [isOpenExtraInfo, setIsOpenExtraInfo] = useState(false);
 
     return (
-        <main id="modal-form-add-travel">
-            <div className="accordion-add-travel" onClick={() => setIsOpenOutbound(prev => !prev)}>
-                <header className="accordion-header-add-travel">
+        <form id="modal-form-add-travel">
+            <div className="accordion-add-travel">
+                <header className="accordion-header-add-travel" onClick={() => setIsOpenOutbound(prev => !prev)}>
                     <h3>Trecho de Ida</h3>
                     <i class={isOpenOutbound ? "bi bi-caret-up" : "bi bi-caret-down"}></i>
                 </header>
                 {isOpenOutbound && (
-                    <form>
-                        <div className="form-group-add-travel">
-                            <div className="item-add-travel">
-                                <label>Origem <span>(Obrigatório)</span></label>
-                                <select
-                                >
-                                    <option value="">Feira de Santana, BA</option>
-                                    <option value="Salvador, BA">Salvador, BA</option>
-                                    <option value="Cachoeira, BA">Cachoeira, BA</option>
-                                    <option value="Alagonhias, BA">Alagonhias, BA</option>
-                                </select>
-                            </div>
+
+                  <div>
+                      
+                      <div className="input-row-two-columns">
+                          <div className="item-row-two-columns">
+                              <label>Origem <span>(Obrigatório)</span></label>
+                              <select
+                              >
+                                  <option value="">Escolha a origem</option>
+                                  <option value="Salvador, BA">Salvador, BA</option>
+                                  <option value="Cachoeira, BA">Cachoeira, BA</option>
+                                  <option value="Alagonhias, BA">Alagonhias, BA</option>
+                              </select>
+                          </div>
+                          <div className="item-row-two-columns">
+                              <label>Destino <span>(Obrigatório)</span></label>
+                              <select
+                              >
+                                  <option value="">Escolha o destino</option>
+                                  <option value="Salvador, BA">Salvador, BA</option>
+                                  <option value="Cachoeira, BA">Cachoeira, BA</option>
+                                  <option value="Alagonhias, BA">Alagonhias, BA</option>
+                              </select>
+                          </div>
+                      </div>
+
+                      <div className="input-row-full">
+                            <label>Local de Embarque<span>(Obrigatório)</span></label>
+                            <input
+                                type="text"
+                                placeholder="Praça da Sé, 406 - Pelourinho, Salvador - BA, 40020-210"
+                               
+                            />
 
                         </div>
-                    </form>
+
+                        <div className="input-row-full">
+                            <label>Local de Desembarque<span>(Obrigatório)</span></label>
+                            <input
+                                type="text"
+                                placeholder="R. Augusto dos Anjos, 65 - Rua Nova, Feira de Santana - BA, 40301-110"
+                               
+                            />
+                        </div>
+
+                     <div className="input-row-two-columns">
+                          <div className="item-row-two-columns">
+                              <label>Data de Saída <span>(Obrigatório)</span></label>
+                               <input type="date" />
+                          </div>
+                          <div className="item-row-two-columns">
+                              <label>Data de Chegada <span>(Obrigatório)</span></label>
+                              <input type="date" />
+                          </div>
+                      </div>
+
+                      
+                     <div className="input-row-two-columns">
+                          <div className="item-row-two-columns">
+                              <label>Horario de Saída <span>(Obrigatório)</span></label>
+                               <input type="date" />
+                          </div>
+                          <div className="item-row-two-columns">
+                              <label>Horario de Chegada <span>(Obrigatório)</span></label>
+                              <input type="time" />
+                          </div>
+                      </div>
+
+                      <div className="input-row-full">
+                            <label>Motorista Responsável<span>(Obrigatório)</span></label>
+                             <select
+                              >
+                                  <option value="">Escolha o Motorista</option>
+                                  <option value="Lucas Moreira">Lucas Moreira</option>
+                                  <option value="Maria Mariana">Maria Mariana</option>
+                                  <option value="Rodrigo Rodil">Rodrigo Rodil</option>
+                              </select>
+                        </div>
+
+
+                      
+                  </div>
+
                 )}
             </div>
 
-        </main>
+        </form>
     )
 }

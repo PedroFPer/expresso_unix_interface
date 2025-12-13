@@ -63,7 +63,7 @@ export default function AdminManageEmployees() {
 
             {overlayActive && (
                 <div
-                    className="overlay-modal-manage-employees"
+                    className="overlay-modal"
                     onClick={() => {
                         setOpenAddModal(false);
                         setOpenEditModal(false);

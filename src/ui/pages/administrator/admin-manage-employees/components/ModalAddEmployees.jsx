@@ -55,7 +55,7 @@ export default function ModalAddEmployees({ openAddModal, handleToggleAddModal }
         }));
     };
 
-    const registerEmployee = () => {
+    const handleRegisterEmployee = () => {
         const newErrors = {};
 
         const finalEmployee = {
@@ -94,14 +94,14 @@ export default function ModalAddEmployees({ openAddModal, handleToggleAddModal }
 
             <ModalFormAddEmployees
                 handleInputChange={handleInputChange}
-                registerEmployee={registerEmployee}
+                handleRegisterEmployee={handleRegisterEmployee}
                 employee={employee}
                 errors={errors}
             />
 
             <div id="group-button-add-employees">
                 <button id="cancel-button-add-employees" onClick={handleToggleAddModal}>Cancelar</button>
-                <button id="continue-button-add-employees" onClick={registerEmployee}>Continuar</button>
+                <button id="continue-button-add-employees" onClick={handleRegisterEmployee}>Continuar</button>
             </div>
         </aside>
     );
