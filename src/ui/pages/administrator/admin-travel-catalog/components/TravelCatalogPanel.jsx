@@ -3,7 +3,7 @@ import { formatUtils } from "../../../../../infrastructure/utils/formatUtils";
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils";
 import "../styles/TravelCatalogPanel.css";
 
-export default function TravelCatalogPanel({ travelInfo, setTravelInfo, handleToggleModal }) {
+export default function TravelCatalogPanel({ travelInfo, setTravelInfo, handleToggleAddModal }) {
 
     const [tempOrigin, setTempOrigin] = useState("");
     const [tempDestination, setTempDestination] = useState("");
@@ -43,7 +43,7 @@ export default function TravelCatalogPanel({ travelInfo, setTravelInfo, handleTo
 
             <div id="header-travel-catalog-panel">
                 <h3>Catalogo de Viagens</h3>
-                <button onClick={handleToggleModal}>Adicionar Viagem</button>
+                <button onClick={handleToggleAddModal}>Adicionar Viagem</button>
             </div>
 
             <form id="search-travel-catalog-panel" onSubmit={handleSubmit}>
