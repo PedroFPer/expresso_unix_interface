@@ -177,3 +177,33 @@
     border-radius: 0px 10px 10px 0px;
 }
 
+@media (max-width: 1400px) {
+    .nav-item-open p {
+        padding: 0 1.7em 0 0.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 1100px) {
+    .company-name-side-bar-close p {
+        font-size: 0.7em;
+    }
+    .company-name-side-bar-open p{
+        font-size: 0.8em;
+    }
+
+    .nav-item-open {
+        padding: 0 0.5em 0 0.5em;
+    }
+
+    .nav-item-open p {
+        font-size: 0.6em;
+        padding: 0 1.2em 0 0.1em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .nav-item-open i{
+        font-size: 1.2em;
+    }
+}
