@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+.input-row-full{
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 100%;
+    gap: 0.5em;
+    place-items: end start;
+}
+
+.input-row-full label{
+    font-size: 1em;
+
+    margin-top: auto;
+}
+
+.input-row-full input{
+    width: 100%;
+    height: 2.4em;
+
+    border-radius: 10px;
+    padding-left: 0.5em ;
+
+    border: 1px rgba(0, 0, 0, 0.336) solid;
+}
+
+.input-row-full select{
+    width: 100%;
+    height: 2.4em;
+
+    border-radius: 10px;
+    padding-left: 0.5em ;
+
+    border: 1px rgba(0, 0, 0, 0.336) solid;
+}
+
+.input-row-two-columns{
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    place-items: start center;
+}
+
+.item-row-two-columns{
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5em;
+}
+
+.input-row-two-columns label{
+    font-size: 1em;
+
+    margin-top: auto;
+}
+
+.input-row-two-columns select{
+    width: 90%;
+    height: 2.4em;
+
+    border-radius: 10px;
+    padding-left: 0.5em ;
+
+    border: 1px rgba(0, 0, 0, 0.336) solid;
+}
+
+.input-row-two-columns input{
+    width: 90%;
+    height: 2.4em;
+
+    border-radius: 10px;
+    padding-left: 0.5em ;
+
+    border: 1px rgba(0, 0, 0, 0.336) solid;
+}
+
+.input-row-two-columns span{
+    font-size: 0.9em;
+    color:#9ca3af
+}
+
+.message-input{
+    font-size: 0.8em;
+}
+
+
+.input-error{
+    height: 0.5em;
+
+
+    font-size: 0.5em;
+    color: red;
+
+
+    margin-top: 0.5em;
+}
+
+
+.overlay-modal{
+    width: 100vw;
+    height: 100vh;
+
+     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 9000; 
+}

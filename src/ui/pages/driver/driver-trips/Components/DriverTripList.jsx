@@ -8,11 +8,11 @@ export default function DriverTripList({ travelInfo }) {
     const today = new Date().setHours(0, 0, 0, 0);
 
     const dailyTrips = travelInfo.filter(t =>
-        new Date(t.date).setHours(0, 0, 0, 0) === today
+        new Date(t.dateDeparture).setHours(0, 0, 0, 0) === today
     );
 
     const activeTrips = travelInfo.filter(t => {
-        const tripDate = new Date(t.date).setHours(0, 0, 0, 0);
+        const tripDate = new Date(t.dateDeparture).setHours(0, 0, 0, 0);
         return tripDate > today;
     });
 
@@ -24,7 +24,7 @@ export default function DriverTripList({ travelInfo }) {
                     <h3>Viagens do Dia</h3>
 
                     {dailyTrips.map((travel, index) => {
-                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.date);
+                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.dateDeparture);
 
                         return (
                             <Link
@@ -44,7 +44,7 @@ export default function DriverTripList({ travelInfo }) {
                     <h3>Viagens Ativas</h3>
 
                     {activeTrips.map((travel, index) => {
-                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.date);
+                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.dateDeparture);
 
                         return (
                             <Link

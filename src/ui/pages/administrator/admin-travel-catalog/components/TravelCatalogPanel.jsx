@@ -3,7 +3,7 @@ import { formatUtils } from "../../../../../infrastructure/utils/formatUtils";
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils";
 import "../styles/TravelCatalogPanel.css";
 
-export default function TravelCatalogPanel({ travelInfo, setTravelInfo, handleToggleAddModal }) {
+export default function TravelCatalogPanel({ travelInfo, handleToggleAddModal }) {
 
     const [tempOrigin, setTempOrigin] = useState("");
     const [tempDestination, setTempDestination] = useState("");
@@ -22,7 +22,7 @@ export default function TravelCatalogPanel({ travelInfo, setTravelInfo, handleTo
         travelItem.originCity?.toLowerCase().startsWith(searchOrigin.toLowerCase()) &&
         travelItem.destinyCity?.toLowerCase().startsWith(searchDestination.toLowerCase()) &&
         (searchDate === "" ||
-            formatUtils.toInputDateFormat(travelItem.date) === searchDate)
+            formatUtils.toInputDateFormat(travelItem.dateDeparture) === searchDate)
     );
 
 
@@ -106,7 +106,7 @@ export default function TravelCatalogPanel({ travelInfo, setTravelInfo, handleTo
 
                                 <div>
                                     <strong>DATA DE SAIDA</strong>
-                                    <data value={maskUtils.dateToBR(travel.date)}>{maskUtils.dateToBR(travel.date)}</data>
+                                    <data value={maskUtils.dateToBR(travel.dateDeparture)}>{maskUtils.dateToBR(travel.dateDeparture)}</data>
                                 </div>
 
                                 <div>

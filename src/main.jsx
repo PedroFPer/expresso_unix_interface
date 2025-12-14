@@ -4,6 +4,7 @@ import { BrowserRouter} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './index.css'
+import "./css-global/form-global.css"
 
 import AppRoutes from './infrastructure/routes/AppRoutes.jsx'
 
