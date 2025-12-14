@@ -22,7 +22,8 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         price: "",
         availableSeats: "",
         totalSeats: "",
-        date: new Date(),
+        dateDeparture: "",
+        dateArrival: "",
         company: "",
         driver: ""
     });
@@ -39,7 +40,8 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         price: "",
         availableSeats: "",
         totalSeats: "",
-        date: new Date(),
+        dateDeparture: "",
+        dateArrival: "",
         company: "",
         driver: ""
     };
@@ -56,27 +58,29 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         price: "",
         availableSeats: "",
         totalSeats: "",
-        date: new Date(),
+        dateDeparture: "",
+        dateArrival: "",
         company: "",
         driver: ""
     });
 
     const validationMap = {
         type: "typeTravel",
-        departureTime: "time",
+        departureTime: "departureTime",
         durationTravel: "time",
-        arrivalTime: "time",
+        arrivalTime: "arrivalTime",
         originCity: "select",
         originAddress: "text",
         destinyCity: "select",
         destinyAddress: "text",
         price: "price",
         totalSeats: "totalSeats",
-        date: "date",
-        driver: "name"
+        dateDeparture: "dateDeparture",
+        dateArrival: "dateArrival",
+        driver: "select"
     };
 
-     const handleInputChange = (attribute, value) => {
+    const handleInputChange = (attribute, value) => {
         const field = validationMap[attribute];
 
 
@@ -84,6 +88,7 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
             ...prev,
             [attribute]: value
         }));
+
 
         const validation = validationsUtils.validateField(field, value);
 
@@ -95,11 +100,13 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         }));
     };
 
-     const handleRegisterTravel = () => {
+    const handleRegisterTravel = () => {
         const newErrors = {};
 
         const finalTravel = {
             ...travel,
+            dateDeparture: new Date(travel.dateDeparture),
+            dateArrival: new Date(travel.dateArrival),
             company: "Travel Bus",
             availableSeats: travel.totalSeats,
         };
@@ -107,7 +114,7 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
 
         Object.entries(validationMap).forEach(([attribute, field]) => {
             const validation =
-                validationsUtils.validateField(field, finalTravel[attribute]) ||
+                validationsUtils.validateField(field, travel[attribute]) ||
                 { valid: false, message: "Campo inválido" };
 
             if (!validation.valid) {
@@ -124,7 +131,7 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         window.alert("Usuário cadastrado!");
 
         setTravel(emptyTravel);
-        
+
         handleToggleAddModal();
     };
 
@@ -133,12 +140,17 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         <aside className={`modal-add-travel ${openAddModal ? "modal-add-travel-show" : "modal-add-travel-hidden"}`}>
             <ModalHeaderAddTravel activeTab={activeTab} setActiveTab={setActiveTab}></ModalHeaderAddTravel>
 
-            {activeTab === "form" && <ModalFormAddTravel />}
+            {activeTab === "form" && <ModalFormAddTravel
+                handleInputChange={handleInputChange}
+                handleRegisterTravel={handleRegisterTravel}
+                travel={travel}
+                errors={errors}
+            />}
             {activeTab === "preview" && <ModalPreviewAddTravel />}
 
             <div id="group-button-add-travel">
                 <button id="cancel-button-add-travel" onClick={handleToggleAddModal}>Cancelar</button>
-                <button id="continue-button-add-travel">Continuar</button>
+                <button id="continue-button-add-travel" onClick={handleRegisterTravel}>Continuar</button>
 
             </div>
         </aside>

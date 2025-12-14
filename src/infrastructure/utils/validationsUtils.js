@@ -5,8 +5,8 @@ export class validationsUtils {
         if (!trimmed) return { valid: false, message: "Campo obrigatório" };
 
         const lettersOnly = trimmed.replace(/\s+/g, '');
-        if (lettersOnly.length < 5) return { valid: false, message: "Deve conter pelo menos 5 letras" };
-        if (lettersOnly.length > 50) return { valid: false, message: "Deve conter no máximo 50 letras" };
+        if (lettersOnly.length < 5) return { valid: false, message: "Deve conter pelo menos 5 caracteres" };
+        if (lettersOnly.length > 50) return { valid: false, message: "Deve conter no máximo 50 caracteres" };
 
         const words = trimmed.split(/\s+/);
         if (words.length < 2) return { valid: false, message: "Nome completo deve conter sobrenome" };
@@ -20,14 +20,14 @@ export class validationsUtils {
 
     static validateCPF(value) {
         if (!value) return { valid: false, message: "Campo obrigatório" };
-      
+
         const cpf = value.replace(/\D/g, "");
         if (cpf.length !== 11) return { valid: false, message: "CPF precisa ter 11 dígitos" };
 
         return { valid: true, message: "" };
     }
 
- 
+
     static validateSelect(value) {
         if (!value || value === "" || value === "default")
             return { valid: false, message: "Selecione uma opção" };
@@ -69,6 +69,95 @@ export class validationsUtils {
         return { valid: true, message: "" };
     }
 
+    static validateText(value) {
+        const trimmed = typeof value === "string" ? value.trim() : "";
+        if (!trimmed) return { valid: false, message: "Campo obrigatório" };
+
+        const lettersOnly = trimmed.replace(/\s+/g, '');
+        if (lettersOnly.length < 5) return { valid: false, message: "Deve conter pelo menos 5 caracteres" };
+        if (lettersOnly.length > 50) return { valid: false, message: "Deve conter no máximo 50 caracteres" };
+
+        return { valid: true, message: "" };
+    }
+
+    static validateDateDeparture(value) {
+        if (!value) {
+            return { valid: false, message: "Data de saída obrigatória" };
+        }
+
+        const selectedDate = new Date(value);
+        selectedDate.setHours(0, 0, 0, 0);
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (selectedDate < today) {
+            return {
+                valid: false,
+                message: "A data de saída deve ser hoje ou uma data futura"
+            };
+        }
+
+        return { valid: true, message: "" };
+    }
+
+    static validateDateArrival(value) {
+        if (!value) {
+            return { valid: false, message: "Data de chegada obrigatória" };
+        }
+
+        const selectedDate = new Date(value);
+        selectedDate.setHours(0, 0, 0, 0);
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (selectedDate < today) {
+            return {
+                valid: false,
+                message: "A data de chegada deve ser hoje ou uma data futura"
+            };
+        }
+
+        return { valid: true, message: "" };
+    }
+
+    static validateDepartureTime(value) {
+        return this.validateTimeNotNow(value, "Horário de saída");
+    }
+
+    static validateArrivalTime(value) {
+        return this.validateTimeNotNow(value, "Horário de chegada");
+    }
+
+
+
+    static validateTimeNotNow(value, label) {
+        if (!value) {
+            return { valid: false, message: "Campo obrigatório" };
+        }
+
+        const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
+        if (!timeRegex.test(value)) {
+            return { valid: false, message: "Horário inválido" };
+        }
+
+        const now = new Date();
+        const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+
+        if (value === currentTime) {
+            return {
+                valid: false,
+                message: `${label} não pode ser o horário atual`
+            };
+        }
+
+        return { valid: true, message: "" };
+    }
+
+
+
+
     static validateField(fieldName, value) {
         switch (fieldName) {
             case "name":
@@ -86,9 +175,24 @@ export class validationsUtils {
             case "password":
                 return this.validatePassword(value);
 
-
-            case "select": 
+            case "select":
                 return this.validateSelect(value);
+
+            case "text":
+                return this.validateText(value);
+
+            case "dateDeparture":
+                return this.validateDateDeparture(value);
+
+            case "dateArrival":
+                return this.validateDateArrival(value);
+
+            case "departureTime":
+                return this.validateDepartureTime(value);
+
+            case "arrivalTime":
+                return this.validateArrivalTime(value);
+
 
             default:
                 return { valid: true, message: "" };

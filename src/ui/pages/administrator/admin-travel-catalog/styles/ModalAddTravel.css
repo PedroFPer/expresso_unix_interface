@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-.modal-add-travel{
+.modal-add-travel {
+
     display: grid;
     grid-template-rows: 15% 75% 10%;
     grid-template-columns: 100%;
@@ -36,20 +37,20 @@
     background: white;
 }
 
-#modal-header-add-travel{
+#modal-header-add-travel {
     grid-area: 1/1/2/2;
 }
 
-#modal-form-add-travel{
+#modal-form-add-travel {
     grid-area: 2/1/3/2;
-    
+
 }
 
-#modal-preview-add-travel{
+#modal-preview-add-travel {
     grid-area: 2/1/3/2;
 }
 
-#group-button-add-travel{
+#group-button-add-travel {
     width: 100%;
     height: 100%;
 
@@ -65,8 +66,8 @@
 
 }
 
-#cancel-button-add-travel{
-     width: 100%;
+#cancel-button-add-travel {
+    width: 100%;
     height: 2.5em;
 
     grid-area: 1/2/2/3;
@@ -84,7 +85,7 @@
     margin-left: auto;
 }
 
-#continue-button-add-travel{
+#continue-button-add-travel {
     width: 100%;
     height: 2.5em;
 
