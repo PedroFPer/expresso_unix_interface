@@ -8,7 +8,7 @@ export default function ItineraryCard({ travelInfo }) {
     return (
         <section id="itinerary-card">
             {segments.map((segment, index) => {
-                const formattedDate = formatUtils.toShortDate(segment.date);
+                const formattedDate = formatUtils.toShortDate(segment.dateDeparture);
 
                 return (
                     <div className="itinerary-segment" key={index}>

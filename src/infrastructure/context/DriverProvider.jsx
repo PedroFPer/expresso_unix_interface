@@ -21,7 +21,8 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                dateDeparture: new Date(2025, 11, 23),
+                dateArrival: new Date(2025, 11, 23),
                 company: "Travel Bus",
                 driver: "Daniel Frascisco"
             },
@@ -37,7 +38,8 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                dateDeparture: new Date(2025, 11, 23),
+                dateArrival: new Date(2025, 11, 23),
                 company: "Travel Bus",
                 driver: "Lucas Moreira"
             },
@@ -53,7 +55,8 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                dateDeparture: new Date(2025, 11, 23),
+                dateArrival: new Date(2025, 11, 23),
                 company: "Travel Bus",
                 driver: "Mariana Alves"
             },
@@ -69,7 +72,8 @@ export function DriverProvider({ children }) {
                 price: 80.00,
                 availableSeats: 20,
                 totalSeats: 40,
-                date: new Date(2025, 12, 25),
+                dateDeparture: new Date(2025, 11, 23),
+                dateArrival: new Date(2025, 11, 23),
                 company: "Travel Bus",
                 driver: "Thiago Pereira"
             }
@@ -83,7 +87,7 @@ export function DriverProvider({ children }) {
 
         const defaultPassengerList = {
             idManifestList: 1,
-            isFinalized: false, // indica se a lista já foi finalizada
+            isFinalized: false, 
             passengers: [
                 { id: 1, name: "Pedro Ferreira", isPresent: "Ausente" },
                 { id: 2, name: "Lucas Andrade", isPresent: "Ausente" },
