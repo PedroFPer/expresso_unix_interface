@@ -2,12 +2,12 @@ import { useState, useContext } from "react";
 import ModalHeaderAddTravel from "./ModalHeaderAddTravel";
 import ModalFormAddTravel from "./ModalFormAddTravel"
 import ModalPreviewAddTravel from "./ModalPreviewAddTravel";
-import { AdminContext } from "../../../../../infrastructure/context/AdminProvider";
+import { TravelContext } from "../../../../../infrastructure/context/TravelProvider";
 import { validationsUtils } from "../../../../../infrastructure/utils/validationsUtils";
 import "../styles/ModalAddTravel.css"
 
 export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
-    const { travelInfo, setTravelInfo } = useContext(AdminContext);
+    const { travelInfo, setTravelInfo } = useContext(TravelContext);
 
     const [travel, setTravel] = useState({
         type: "",
@@ -103,6 +103,7 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         const newErrors = {};
 
         const finalTravel = {
+            id: travelInfo.length + 1, 
             ...travel,
             dateDeparture: new Date(travel.dateDeparture),
             dateArrival: new Date(travel.dateArrival),
@@ -125,15 +126,15 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
 
         if (Object.keys(newErrors).length > 0) return;
 
+
         setTravelInfo(prev => [...prev, finalTravel]);
 
-        window.alert("Usuário cadastrado!");
+        window.alert("Viagem cadastrada!");
 
         setTravel(emptyTravel);
 
         handleToggleAddModal();
     };
-
 
     return (
         <aside className={`modal-add-travel ${openAddModal ? "modal-add-travel-show" : "modal-add-travel-hidden"}`}>

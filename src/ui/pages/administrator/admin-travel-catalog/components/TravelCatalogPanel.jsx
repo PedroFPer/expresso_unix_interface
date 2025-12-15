@@ -13,6 +13,17 @@ export default function TravelCatalogPanel({ travelInfo, handleToggleAddModal })
     const [searchDestination, setSearchDestination] = useState("");
     const [searchDate, setSearchDate] = useState("");
 
+    const handleCopyUrl = async (travelId) => {
+        const url = `http://localhost:5173/expresso_unix_interface/customer/travel-summary/${travelId}`;
+
+        try {
+            await navigator.clipboard.writeText(url);
+            alert("Link copiado!");
+        } catch (error) {
+            console.error("Erro ao copiar URL", error);
+        }
+    };
+
 
 
 
@@ -114,7 +125,11 @@ export default function TravelCatalogPanel({ travelInfo, handleToggleAddModal })
                                     <p>R$ {formatUtils.toCurrencyBRL(travel.price)}</p>
                                 </div>
 
-                                <button className="btn-no-style">
+                                <button
+                                    type="button"
+                                    className="btn-no-style"
+                                    onClick={() => handleCopyUrl(travel.id)}
+                                >
                                     <div className="icon-copy">
                                         <i className="bi bi-copy"></i>
                                     </div>

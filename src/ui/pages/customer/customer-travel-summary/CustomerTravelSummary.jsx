@@ -1,39 +1,50 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
-import ItineraryCard from "../../../common-components/components/ItineraryCard"
-import InfoCardModel from "../../../common-components/components/InfoCardModel"
-import HeaderMobileResume from "./Components/HeaderMobileResume"
-import { CustomerContext } from '../../../../infrastructure/context/CustomerProvider';
-import { formatUtils } from '../../../../infrastructure/utils/formatUtils';
-import "./styles/TravelSummary.css"
+import ItineraryCard from "../../../common-components/components/ItineraryCard";
+import InfoCardModel from "../../../common-components/components/InfoCardModel";
+import HeaderMobileResume from "./Components/HeaderMobileResume";
+import { TravelContext } from "../../../../infrastructure/context/TravelProvider";
+import { formatUtils } from "../../../../infrastructure/utils/formatUtils";
+import "./styles/TravelSummary.css";
 
 export default function TravelSummary() {
-    const { travelInfo } = useContext(CustomerContext);
-    const priceTravel = formatUtils.toCurrencyBRL(travelInfo?.[0]?.price);
+  const { id } = useParams();
+  const { travelInfo } = useContext(TravelContext);
 
-    const infoCardPrice = {
-        titleCard: "Valor Unitário",
-        describe:  `R$ ${priceTravel}`
-    }
-    const infoCardAvailableSeats = {
-        titleCard: "Assentos Disponiveis",
-        describe: travelInfo?.[0]?.availableSeats
-    }
 
-    return (
-        <div id="resume-travel">
-            <HeaderMobileResume />
 
-            <div id="scroll-content-resume-travel">
-                <ItineraryCard travelInfo={travelInfo} />
-                <InfoCardModel infoCard={infoCardPrice} />
-                <InfoCardModel infoCard={infoCardAvailableSeats} />
-            </div>
+  const travel = travelInfo.find(trip => trip.id === id);
 
-            <Link
-                to={"/customer/passenger-registration"}
-                className="btn btn-primary btn-custom"
-            >Continuar</Link>
-        </div>
-    )
+  if (!travel) {
+    return <div>Carregando...</div>;
+  }
+
+  const infoCardPrice = {
+    titleCard: "Valor Unitário",
+    describe: formatUtils.toCurrencyBRL(travel.price)
+  };
+
+  const infoCardAvailableSeats = {
+    titleCard: "Assentos Disponíveis",
+    describe: travel.availableSeats
+  };
+
+  return (
+    <div id="resume-travel">
+      <HeaderMobileResume />
+
+      <div id="scroll-content-resume-travel">
+        <ItineraryCard travelInfo={travel} />
+        <InfoCardModel infoCard={infoCardPrice} />
+        <InfoCardModel infoCard={infoCardAvailableSeats} />
+      </div>
+
+      <Link
+        to={`/customer/${travel.id}/passenger-registration`}
+        className="btn btn-primary btn-custom"
+      >
+        Continuar
+      </Link>
+    </div>
+  );
 }

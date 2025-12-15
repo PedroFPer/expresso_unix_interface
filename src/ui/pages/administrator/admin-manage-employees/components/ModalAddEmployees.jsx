@@ -60,7 +60,7 @@ export default function ModalAddEmployees({ openAddModal, handleToggleAddModal }
 
         const finalEmployee = {
             ...employee,
-            id: crypto.randomUUID(),
+            id: employees.length + 1, 
             password: "Senha@123",
             status: "Ativo"
         };
@@ -80,6 +80,7 @@ export default function ModalAddEmployees({ openAddModal, handleToggleAddModal }
 
         if (Object.keys(newErrors).length > 0) return;
 
+   
         setEmployees(prev => [...prev, finalEmployee]);
 
         window.alert("Usuário cadastrado!");

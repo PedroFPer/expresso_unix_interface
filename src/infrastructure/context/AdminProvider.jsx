@@ -4,11 +4,10 @@ export const AdminContext = createContext();
 
 export function AdminProvider({ children }) {
     const [adminInfo, setAdminInfo] = useState({
-        email: "",
-        password: ""
+        email: "admin@email.com",
+        password: "Dragon2023"
     });
 
-    const [travelInfo, setTravelInfo] = useState([]);
 
     const [employees, setEmployees] = useState([{
         id: "",
@@ -20,76 +19,7 @@ export function AdminProvider({ children }) {
     }])
 
     useEffect(() => {
-        const defaultTravelInfo = [
-            {
-                type: "ida",
-                departureTime: "07:00",
-                durationTravel: "2:00",
-                arrivalTime: "09:00",
-                originCity: "Feira de Santana, BA",
-                originAddress: "R. Augusto dos Anjos, E - Rua Nova, 40301-110",
-                destinyCity: "Salvador, BA",
-                destinyAddress: "Praça da Sé, 406 – Pelourinho, 40020-210",
-                price: 80.00,
-                availableSeats: 20,
-                totalSeats: 40,
-                dateDeparture: new Date(2025, 11, 23),
-                dateArrival: new Date(2025, 11, 23),
-                company: "Travel Bus",
-                driver: "Daniel Frascisco"
-            },
-            {
-                type: "volta",
-                departureTime: "19:00",
-                durationTravel: "2:00",
-                arrivalTime: "21:00",
-                originCity: "Salvador, BA",
-                originAddress: "Praça da Sé, 406 – Pelourinho, 40020-210",
-                destinyCity: "Feira de Santana, BA",
-                destinyAddress: "R. Augusto dos Anjos, E - Rua Nova, 40301-110",
-                price: 80.00,
-                availableSeats: 20,
-                totalSeats: 40,
-                dateDeparture: new Date(2025, 11, 23),
-                dateArrival: new Date(2025, 11, 23),
-                company: "Travel Bus",
-                driver: "Lucas Moreira"
-            },
-            {
-                type: "volta",
-                departureTime: "19:00",
-                durationTravel: "2:00",
-                arrivalTime: "21:00",
-                originCity: "Salvador, BA",
-                originAddress: "Praça da Sé, 406 – Pelourinho, 40020-210",
-                destinyCity: "Feira de Santana, BA",
-                destinyAddress: "R. Augusto dos Anjos, E - Rua Nova, 40301-110",
-                price: 80.00,
-                availableSeats: 20,
-                totalSeats: 40,
-                dateDeparture: new Date(2025, 11, 23),
-                dateArrival: new Date(2025, 11, 23),
-                company: "Travel Bus",
-                driver: "Mariana Alves"
-            },
-            {
-                type: "volta",
-                departureTime: "19:00",
-                durationTravel: "2:00",
-                arrivalTime: "21:00",
-                originCity: "Salvador, BA",
-                originAddress: "Praça da Sé, 406 – Pelourinho, 40020-210",
-                destinyCity: "Feira de Santana, BA",
-                destinyAddress: "R. Augusto dos Anjos, E - Rua Nova, 40301-110",
-                price: 80.00,
-                availableSeats: 20,
-                totalSeats: 40,
-                dateDeparture: new Date(2025, 11, 23),
-                dateArrival: new Date(2025, 11, 23),
-                company: "Travel Bus",
-                driver: "Thiago Pereira"
-            }
-        ];
+
 
         const defaultEmployees = [
             { id: crypto.randomUUID(), name: "Pedro Pereira Oliveira Souza", email: "PedroOliveiraTravel@gmail.com", role: "Adm", status: "Ativo" },
@@ -99,7 +29,6 @@ export function AdminProvider({ children }) {
         ];
 
 
-        setTravelInfo(defaultTravelInfo);
 
         setEmployees(defaultEmployees);
     }, []);
@@ -112,8 +41,6 @@ export function AdminProvider({ children }) {
             value={{
                 adminInfo,
                 setAdminInfo,
-                travelInfo,
-                setTravelInfo,
                 employees,
                 setEmployees
             }}

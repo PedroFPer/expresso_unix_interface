@@ -1,7 +1,7 @@
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils"
 import "../styles/DriverFormCard.css"
 
-export default function DriverFormCard({ driverCredentials, handleInputChange, handleLogin, errors }) {
+export default function DriverFormCard({ driverCredentialsInput, handleInputChange, handleLogin, errors }) {
 
 
     return (
@@ -13,7 +13,7 @@ export default function DriverFormCard({ driverCredentials, handleInputChange, h
                         type="text"
                         className="form-input"
                         placeholder="Exemplo: Email@email.com"
-                        value={maskUtils.limitText(driverCredentials.email)}
+                        value={maskUtils.limitText(driverCredentialsInput.email)}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                     />
                     <p className="input-error">
@@ -27,7 +27,7 @@ export default function DriverFormCard({ driverCredentials, handleInputChange, h
                         type= "password"
                         className="form-input"
                         placeholder="********"
-                        value={maskUtils.limitText( driverCredentials.password)}
+                        value={maskUtils.limitText( driverCredentialsInput.password)}
                         onChange={(e) => handleInputChange("password", e.target.value)}
                     />
                     

@@ -1,18 +1,20 @@
 import { useParams } from "react-router-dom"
-import { useState, useContext } from "react";
-import {DriverContext} from "../../../../infrastructure/context/DriverProvider"
+import { useContext } from "react";
+import {TravelContext} from "../../../../infrastructure/context/TravelProvider"
 import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
 import InfoCardModel from "../../../common-components/components/InfoCardModel"
 import ItineraryCard from "../../../common-components/components/ItineraryCard"
 import TripManifestCard from "./Components/TripManifestCard";
-import TripChatCard from "./Components/TripChatCard";
 import "./styles/DriverTripsResume.css"
 
 export default function DriverTripsResume() {
     const { id } = useParams();
-    const { passengerList,  travelInfo, setTravelInfo } = useContext(DriverContext);
+    const { travelInfo } = useContext(TravelContext);
 
-    const travel =travelInfo[id];
+    console.log(travelInfo);
+
+    const travel = travelInfo.find(trip => trip.id === id);
+
 
       if (!travel) {
         return <div>Carregando...</div>;
@@ -35,7 +37,6 @@ export default function DriverTripsResume() {
                 <InfoCardModel infoCard = {infoCard} />
                 <TripManifestCard 
                 travel = {travel}
-                passengerList ={passengerList}
                  />
             </div>
         </div>

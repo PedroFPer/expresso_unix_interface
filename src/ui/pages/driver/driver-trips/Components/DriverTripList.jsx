@@ -48,7 +48,7 @@ export default function DriverTripList({ travelInfo }) {
 
                         return (
                             <Link
-                                to={`trips-resume/${index}`}
+                                to={`trips-resume/${travel.id}`}
                                 className="trip-item"
                                 key={"futureTrips-" + index}
                             >

@@ -2,7 +2,7 @@ import { useState} from "react";
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils";
 import "../styles/AdminFormCard.css";
 
-export default function AdminFormCard({ adminInfo, handleLogin, handleInputChange, errors }) {
+export default function AdminFormCard({ adminInfoInput, handleLogin, handleInputChange, errors }) {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
@@ -16,7 +16,7 @@ export default function AdminFormCard({ adminInfo, handleLogin, handleInputChang
                             type="email"
                             className="text-field"
                             placeholder="email@email.com"
-                            value={maskUtils.limitText(adminInfo.email)}
+                            value={maskUtils.limitText(adminInfoInput.email)}
                             onChange={(e) => handleInputChange("email", e.target.value)}
                         />
                         <p className="input-error-desktop">
@@ -32,7 +32,7 @@ export default function AdminFormCard({ adminInfo, handleLogin, handleInputChang
                                 type={showPassword ? "text" : "password"}
                                 className="text-field"
                                 placeholder="********"
-                                value={maskUtils.limitText(adminInfo.password)}
+                                value={maskUtils.limitText(adminInfoInput.password)}
                                 onChange={(e) => handleInputChange("password", e.target.value)}
                             />
                             <i
