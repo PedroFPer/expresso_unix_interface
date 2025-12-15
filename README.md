@@ -10,10 +10,8 @@ O sistema é dividido em três módulos principais, que se comunicam entre si:
 
 Utilizado internamente pela empresa, é responsável por:
 - Criação e gerenciamento de viagens
-- Cadastro e controle de veículos
 - Cadastro e gestão de motoristas
 - Gerenciamento de reservas
-- Emissão de relatórios operacionais e gerenciais
 
 ## 📱 Plataforma do Motorista (Mobile)
 
@@ -28,4 +26,3 @@ Plataforma web voltada aos passageiros, oferecendo:
 - Consulta de horários disponíveis
 - Agendamento e reserva de passagens
 - Pagamento online
-- Acompanhamento de reservas
