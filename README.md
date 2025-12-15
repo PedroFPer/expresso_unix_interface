@@ -17,12 +17,11 @@ Utilizado internamente pela empresa, é responsável por:
 
 Aplicação mobile destinada aos motoristas, permitindo:
 - Consulta de viagens atribuídas
-- Visualização de horários e rotas
-- Acesso a informações operacionais em tempo real
+- Registro de presença dos passageiros
+- Acesso offline a informações operacionais
 
 ## 🌐 Plataforma do Cliente (Web)
 
 Plataforma web voltada aos passageiros, oferecendo:
-- Consulta de horários disponíveis
 - Agendamento e reserva de passagens
 - Pagamento online
