@@ -63,5 +63,40 @@ export class maskUtils {
         return `${day}/${month}/${year}`;
     }
 
+    static maskCurrencyBRL(value) {
+        if (value === null || value === undefined || value === "") {
+            return "R$ ";
+        }
+
+        let digits = value.toString().replace(/\D/g, "");
+
+        if (digits === "") {
+            return "R$ ";
+        }
+
+        if (digits.length <= 2) {
+            return `R$ ${digits}`;
+        }
+
+        const cents = digits.slice(-2);
+        const reais = digits.slice(0, -2);
+
+        const reaisFormatted = reais.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+        return `R$ ${reaisFormatted},${cents}`;
+    }
+
+    static unmaskCurrencyBRL(value) {
+        if (!value) return "";
+
+        return value
+            .toString()
+            .replace(/\D/g, ""); 
+    }
+
+
+
+
+
 
 }

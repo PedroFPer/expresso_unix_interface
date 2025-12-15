@@ -3,7 +3,7 @@
 .modal-add-travel {
 
     display: grid;
-    grid-template-rows: 15% 75% 10%;
+    grid-template-rows: 10% 80% 10%;
     grid-template-columns: 100%;
 }
 

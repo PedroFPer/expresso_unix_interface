@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ModalHeaderEditEmployees from "./ModalHeaderEditEmployees";
 import ModalFormEditEmployees from "./ModalFormEditEmployees"
+import { AdminContext } from "../../../../../infrastructure/context/AdminProvider";
 import { validationsUtils } from "../../../../../infrastructure/utils/validationsUtils";
 import "../styles/ModalEditEmployees.css"
 
 export default function ModalEditEmployees({ openEditModal, handleToggleEditModal, selectedEmployee }) {
+    const { employees, setEmployees } = useContext(AdminContext);
 
     const [editableEmployee, setEditableEmployee] = useState({
         id: "",
@@ -27,9 +29,6 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
             });
         }
     }, [selectedEmployee]);
-
-
-
 
 
     const [errors, setErrors] = useState({
@@ -59,11 +58,9 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
         }));
     };
 
+
     const handleEditEmployee = () => {
         const newErrors = {};
-
-
-
 
         Object.entries(validationMap).forEach(([attribute, field]) => {
             const validation =
@@ -79,10 +76,15 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
 
         if (Object.keys(newErrors).length > 0) return;
 
-        window.alert("Usuário cadastrado!");
+        setEmployees(prev =>
+            prev.map(employee =>
+                employee.id === editableEmployee.id
+                    ? { ...employee, ...editableEmployee }
+                    : employee
+            )
+        );
 
-         console.log(editableEmployee);
-
+        window.alert("Alterações Salvas!");
         handleToggleEditModal();
     };
 
@@ -94,7 +96,7 @@ export default function ModalEditEmployees({ openEditModal, handleToggleEditModa
                 handleEditEmployee={handleEditEmployee}
                 editableEmployee={editableEmployee}
                 errors={errors}>
-                </ModalFormEditEmployees>
+            </ModalFormEditEmployees>
             <div id="group-button-edit-employees">
                 <button id="cancel-button-edit-employees" onClick={handleToggleEditModal}>Cancelar</button>
                 <button id="continue-button-edit-employees" onClick={handleEditEmployee} >Continuar</button>

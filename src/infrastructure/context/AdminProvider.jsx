@@ -94,7 +94,7 @@ export function AdminProvider({ children }) {
         const defaultEmployees = [
             { id: crypto.randomUUID(), name: "Pedro Pereira Oliveira Souza", email: "PedroOliveiraTravel@gmail.com", role: "Adm", status: "Ativo" },
             { id: crypto.randomUUID(), name: "Maria Silva", email: "MariaSilva@email.com", role: "Motorista", status: "Ativo" },
-            { id: crypto.randomUUID(), name: "João Santos", email: "JoaoSantos@email.com", role: "Gestor", status: "Inativo" },
+            { id: crypto.randomUUID(), name: "João Santos", email: "JoaoSantos@email.com", role: "Gestor", status: "Desligado" },
             { id: crypto.randomUUID(), name: "Ana Costa", email: "AnaCosta@email.com", role: "Motorista", status: "Ativo" }
         ];
 

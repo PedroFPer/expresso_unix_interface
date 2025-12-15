@@ -10,7 +10,7 @@ import "./styles/DriverTripsResume.css"
 
 export default function DriverTripsResume() {
     const { id } = useParams();
-    const { travelInfo, setTravelInfo } = useContext(DriverContext);
+    const { passengerList,  travelInfo, setTravelInfo } = useContext(DriverContext);
 
     const travel =travelInfo[id];
 
@@ -33,8 +33,10 @@ export default function DriverTripsResume() {
             <div id="scroll-content-driver-trips-resume">
                 <ItineraryCard travelInfo={travel} />
                 <InfoCardModel infoCard = {infoCard} />
-                <TripManifestCard travel = {travel} />
-                <TripChatCard travel={travel} />
+                <TripManifestCard 
+                travel = {travel}
+                passengerList ={passengerList}
+                 />
             </div>
         </div>
     )

@@ -155,6 +155,53 @@ export class validationsUtils {
         return { valid: true, message: "" };
     }
 
+    static validatePrice(value) {
+        if (!value) {
+            return { valid: false, message: "Preço obrigatório" };
+        }
+
+        // Remove tudo que não for número, ponto ou vírgula
+        const normalized = value
+            .replace(/[^\d,.-]/g, "")
+            .replace(",", ".");
+
+        const price = Number(normalized);
+
+        if (isNaN(price)) {
+            return { valid: false, message: "Preço inválido" };
+        }
+
+        if (price <= 0) {
+            return { valid: false, message: "O preço deve ser maior que zero" };
+        }
+
+        return { valid: true, message: "" };
+    }
+
+
+    static validateSeats(value) {
+        if (value === "" || value === null || value === undefined) {
+            return { valid: false, message: "Número de assentos obrigatório" };
+        }
+
+        const seats = Number(value);
+
+        if (isNaN(seats)) {
+            return { valid: false, message: "Número inválido" };
+        }
+
+        if (!Number.isInteger(seats)) {
+            return { valid: false, message: "Deve ser um número inteiro" };
+        }
+
+        if (seats <= 0) {
+            return { valid: false, message: "Deve ser maior que zero" };
+        }
+
+        return { valid: true, message: "" };
+    }
+
+
 
 
 
@@ -192,6 +239,13 @@ export class validationsUtils {
 
             case "arrivalTime":
                 return this.validateArrivalTime(value);
+
+            case "price":
+                return this.validatePrice(value);
+
+            case "totalSeats":
+                return this.validateSeats(value);
+
 
 
             default:

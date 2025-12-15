@@ -7,7 +7,6 @@ import { validationsUtils } from "../../../../../infrastructure/utils/validation
 import "../styles/ModalAddTravel.css"
 
 export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
-    const [activeTab, setActiveTab] = useState("form");
     const { travelInfo, setTravelInfo } = useContext(AdminContext);
 
     const [travel, setTravel] = useState({
@@ -138,15 +137,14 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
 
     return (
         <aside className={`modal-add-travel ${openAddModal ? "modal-add-travel-show" : "modal-add-travel-hidden"}`}>
-            <ModalHeaderAddTravel activeTab={activeTab} setActiveTab={setActiveTab}></ModalHeaderAddTravel>
+            <ModalHeaderAddTravel ></ModalHeaderAddTravel>
 
-            {activeTab === "form" && <ModalFormAddTravel
+            <ModalFormAddTravel
                 handleInputChange={handleInputChange}
                 handleRegisterTravel={handleRegisterTravel}
                 travel={travel}
                 errors={errors}
-            />}
-            {activeTab === "preview" && <ModalPreviewAddTravel />}
+            />
 
             <div id="group-button-add-travel">
                 <button id="cancel-button-add-travel" onClick={handleToggleAddModal}>Cancelar</button>
