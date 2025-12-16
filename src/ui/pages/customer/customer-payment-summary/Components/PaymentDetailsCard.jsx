@@ -1,8 +1,8 @@
 import {formatUtils} from "../../../../../infrastructure/utils/formatUtils"
 import "../styles/PaymentDetailsCard.css"
 
-export default function PaymentDetailsCard({travelInfo}) {
-    const priceTravel = formatUtils.toCurrencyBRL(travelInfo?.[0]?.price);
+export default function PaymentDetailsCard({travel}) {
+    const priceTravel = formatUtils.toCurrencyBRL(travel.price);
 
     return (
         <section id="payment-details-card">

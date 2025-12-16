@@ -1,13 +1,14 @@
 import { useState, useContext } from "react";
 import ModalHeaderAddTravel from "./ModalHeaderAddTravel";
 import ModalFormAddTravel from "./ModalFormAddTravel"
-import ModalPreviewAddTravel from "./ModalPreviewAddTravel";
 import { TravelContext } from "../../../../../infrastructure/context/TravelProvider";
+import { AdminContext } from "../../../../../infrastructure/context/AdminProvider";
 import { validationsUtils } from "../../../../../infrastructure/utils/validationsUtils";
 import "../styles/ModalAddTravel.css"
 
 export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
     const { travelInfo, setTravelInfo } = useContext(TravelContext);
+    const { employees } = useContext(AdminContext);
 
     const [travel, setTravel] = useState({
         type: "",
@@ -103,7 +104,9 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         const newErrors = {};
 
         const finalTravel = {
-            id: travelInfo.length + 1, 
+            id: travelInfo.length === 0 
+    ? 0 
+    : Math.max(...travelInfo.map(t => t.id)) + 1, 
             ...travel,
             dateDeparture: new Date(travel.dateDeparture),
             dateArrival: new Date(travel.dateArrival),
@@ -143,6 +146,7 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
             <ModalFormAddTravel
                 handleInputChange={handleInputChange}
                 handleRegisterTravel={handleRegisterTravel}
+                employees={employees}
                 travel={travel}
                 errors={errors}
             />

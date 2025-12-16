@@ -156,23 +156,20 @@ export class validationsUtils {
     }
 
     static validatePrice(value) {
-        if (!value) {
+        if (!value || typeof value !== "string") {
             return { valid: false, message: "Preço obrigatório" };
         }
 
-        // Remove tudo que não for número, ponto ou vírgula
-        const normalized = value
-            .replace(/[^\d,.-]/g, "")
-            .replace(",", ".");
 
-        const price = Number(normalized);
+        const priceRegex = /^\d+(\.\d{2})$/;
 
-        if (isNaN(price)) {
-            return { valid: false, message: "Preço inválido" };
-        }
+    
 
-        if (price <= 0) {
-            return { valid: false, message: "O preço deve ser maior que zero" };
+        if (value === "0.00") {
+            return {
+                valid: false,
+                message: "O preço deve ser maior que zero"
+            };
         }
 
         return { valid: true, message: "" };

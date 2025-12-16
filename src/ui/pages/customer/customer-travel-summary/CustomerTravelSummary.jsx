@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import ItineraryCard from "../../../common-components/components/ItineraryCard";
 import InfoCardModel from "../../../common-components/components/InfoCardModel";
 import HeaderMobileResume from "./Components/HeaderMobileResume";
@@ -10,14 +10,34 @@ import "./styles/TravelSummary.css";
 export default function TravelSummary() {
   const { id } = useParams();
   const { travelInfo } = useContext(TravelContext);
+  const [travel, setTravel] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  
+
+  useEffect(() => {
+    if (travelInfo.length === 0) {
+      setLoading(true); 
+      return;
+    }
+
+    const foundTravel = travelInfo.find(trip => trip.id === Number(id));
+    setTravel(foundTravel || null);
+    setLoading(false);
+  }, [travelInfo, id]);
 
 
 
-  const travel = travelInfo.find(trip => trip.id === id);
-
-  if (!travel) {
+  if (loading) {
     return <div>Carregando...</div>;
   }
+
+  if (!travel) {
+    return <div>Viagem não encontrada</div>;
+  }
+
+  console.log(travelInfo)
+  console.log(travel)
 
   const infoCardPrice = {
     titleCard: "Valor Unitário",
@@ -34,7 +54,7 @@ export default function TravelSummary() {
       <HeaderMobileResume />
 
       <div id="scroll-content-resume-travel">
-        <ItineraryCard travelInfo={travel} />
+        <ItineraryCard travel={travel} />
         <InfoCardModel infoCard={infoCardPrice} />
         <InfoCardModel infoCard={infoCardAvailableSeats} />
       </div>

@@ -1,6 +1,6 @@
 import "../styles/PayeeInfo.css"
 
-export default function PayeeInfo(){
+export default function PayeeInfo({travel}){
     return(
         <section id="payee-info">
             <h3>Dados do Favorecido</h3>
@@ -12,7 +12,7 @@ export default function PayeeInfo(){
 
                     <div className="summary-item-pix-payment">
                         <strong>Valor Total</strong>
-                        <p>R$ 160,00</p>
+                        <p>R$ {travel.price}</p>
                     </div>
         </section>
     )

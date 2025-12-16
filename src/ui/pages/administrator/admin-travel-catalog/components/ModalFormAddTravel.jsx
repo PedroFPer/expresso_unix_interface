@@ -1,8 +1,16 @@
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils"
 import "../styles/ModalFormAddTravel.css"
 
-export default function ModalFormAddTravel({ handleInputChange, handleRegisterTravel, travel, errors }) {
+export default function ModalFormAddTravel({ handleInputChange, handleRegisterTravel, employees, travel, errors }) {
+    const getAvailableDrivers = () => {
+        if (!employees || employees.length === 0) return [];
 
+        return employees.filter(
+            (employee) =>
+                employee.role === "Motorista" &&
+                employee.status === "Ativo"
+        );
+    };
 
     return (
         <form id="modal-form-add-travel" onSubmit={handleRegisterTravel}>
@@ -20,6 +28,7 @@ export default function ModalFormAddTravel({ handleInputChange, handleRegisterTr
                         <option value="Salvador, BA">Salvador, BA</option>
                         <option value="Cachoeira, BA">Cachoeira, BA</option>
                         <option value="Alagonhias, BA">Alagonhias, BA</option>
+                        <option value="Feira de Santana, BA">Feira de Santana, BA</option>
                     </select>
 
                     <p className="input-error">
@@ -36,6 +45,7 @@ export default function ModalFormAddTravel({ handleInputChange, handleRegisterTr
                         <option value="Salvador, BA">Salvador, BA</option>
                         <option value="Cachoeira, BA">Cachoeira, BA</option>
                         <option value="Alagonhias, BA">Alagonhias, BA</option>
+                        <option value="Feira de Santana, BA">Feira de Santana, BA</option>
                     </select>
 
                     <p className="input-error">
@@ -143,6 +153,7 @@ export default function ModalFormAddTravel({ handleInputChange, handleRegisterTr
 
             <div className="input-row-full">
                 <label>Motorista Responsável<span>(Obrigatório)</span></label>
+
                 <select
                     value={travel.driver}
                     onChange={(e) =>
@@ -150,16 +161,22 @@ export default function ModalFormAddTravel({ handleInputChange, handleRegisterTr
                     }
                 >
                     <option value="">Escolha o Motorista</option>
-                    <option value="Lucas Moreira">Lucas Moreira</option>
-                    <option value="Maria Mariana">Maria Mariana</option>
-                    <option value="Rodrigo Rodil">Rodrigo Rodil</option>
+
+                    {getAvailableDrivers().map((driver) => (
+                        <option key={driver.id} value={driver.name}>
+                            {driver.name}
+                        </option>
+                    ))}
                 </select>
+
                 <p className="input-error">
                     {errors.driver || "\u00A0"}
                 </p>
             </div>
 
-            
+
+
+
 
         </form>
     )

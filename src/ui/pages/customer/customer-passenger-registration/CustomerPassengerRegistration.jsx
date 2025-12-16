@@ -1,15 +1,19 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile.jsx";
 import PassengerFormCard from "./Components/PassengerFormCard.jsx";
-import {validationsUtils} from "../../../../infrastructure/utils/validationsUtils.js"
+
+import { validationsUtils } from "../../../../infrastructure/utils/validationsUtils.js";
 import { CustomerContext } from "../../../../infrastructure/context/CustomerProvider.jsx";
+
 import "./styles/PassengerRegistration.css";
 
 export default function PassengerRegistration() {
-    const { travelInfo, travelerInfo, setTravelerInfo } = useContext(CustomerContext);
-
+    const { travelerInfo, setTravelerInfo } = useContext(CustomerContext);
+    const { id } = useParams();
     const navigate = useNavigate();
+
     const textHeader = "Dados do Passageiro";
 
     const [errors, setErrors] = useState({
@@ -50,7 +54,7 @@ export default function PassengerRegistration() {
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length === 0) {
-            navigate("/customer/payment-summary");
+            navigate(`/customer/${id}/payment-summary`);
         }
     };
 

@@ -64,36 +64,22 @@ export class maskUtils {
     }
 
     static maskCurrencyBRL(value) {
-        if (value === null || value === undefined || value === "") {
-            return "R$ ";
-        }
+        if (!value) return "0.00";
 
-        let digits = value.toString().replace(/\D/g, "");
+        const digits = value.toString().replace(/\D/g, "");
 
-        if (digits === "") {
-            return "R$ ";
-        }
+        const number = (Number(digits) / 100).toFixed(2);
 
-        if (digits.length <= 2) {
-            return `R$ ${digits}`;
-        }
 
-        const cents = digits.slice(-2);
-        const reais = digits.slice(0, -2);
-
-        const reaisFormatted = reais.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-        return `R$ ${reaisFormatted},${cents}`;
+        return number;
     }
 
     static unmaskCurrencyBRL(value) {
         if (!value) return "";
 
-        return value
-            .toString()
-            .replace(/\D/g, ""); 
-    }
 
+        return value.replace(/[^\d.]/g, "");
+    }
 
 
 
