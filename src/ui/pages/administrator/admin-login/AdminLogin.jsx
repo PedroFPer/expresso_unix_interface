@@ -73,6 +73,7 @@ export default function AdminLogin() {
         <WelcomePanel logoExpressoUnix={logoExpressoUnix} />
 
         <AdminFormCard
+          logoExpressoUnix={logoExpressoUnix}
           adminInfoInput={adminInfoInput}
           handleInputChange={handleInputChange}
           handleLogin={handleLogin}

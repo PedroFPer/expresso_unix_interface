@@ -2,7 +2,7 @@ import { useState} from "react";
 import { maskUtils } from "../../../../../infrastructure/utils/maskUtils";
 import "../styles/AdminFormCard.css";
 
-export default function AdminFormCard({ adminInfoInput, handleLogin, handleInputChange, errors }) {
+export default function AdminFormCard({ logoExpressoUnix, adminInfoInput, handleLogin, handleInputChange, errors }) {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
