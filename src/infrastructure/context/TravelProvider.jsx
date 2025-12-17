@@ -41,7 +41,7 @@ export function TravelProvider({ children }) {
                 dateDeparture: new Date(2025, 11, 24),
                 dateArrival: new Date(2025, 11, 24),
                 company: "Travel Bus",
-                driver: "Daniel Francisco",
+                driver: "Maria Silva",
                 passengerManifest: createPassengerManifest()
             },
             {
@@ -60,7 +60,7 @@ export function TravelProvider({ children }) {
                 dateDeparture: new Date(2025, 11, 24),
                 dateArrival: new Date(2025, 11, 24),
                 company: "Travel Bus",
-                driver: "Lucas Moreira",
+                driver: "Maria Silva",
                 passengerManifest: createPassengerManifest()
             },
             {
@@ -79,7 +79,7 @@ export function TravelProvider({ children }) {
                 dateDeparture: new Date(2025, 11, 25),
                 dateArrival: new Date(2025, 11, 25),
                 company: "Travel Bus",
-                driver: "Mariana Alves",
+                driver: "Maria Silva",
                 passengerManifest: createPassengerManifest()
             },
             {
@@ -98,7 +98,7 @@ export function TravelProvider({ children }) {
                 dateDeparture: new Date(2025, 11, 25),
                 dateArrival: new Date(2025, 11, 25),
                 company: "Travel Bus",
-                driver: "Thiago Pereira",
+                driver: "Ana Costa",
                 passengerManifest: createPassengerManifest()
             },
             {
@@ -117,7 +117,7 @@ export function TravelProvider({ children }) {
                 dateDeparture: new Date(2025, 11, 26),
                 dateArrival: new Date(2025, 11, 26),
                 company: "Travel Bus",
-                driver: "Rafael Martins",
+                driver: "Ana Costa",
                 passengerManifest: createPassengerManifest()
             },
             {
@@ -136,7 +136,7 @@ export function TravelProvider({ children }) {
                 dateDeparture: new Date(2025, 11, 26),
                 dateArrival: new Date(2025, 11, 26),
                 company: "Travel Bus",
-                driver: "Fernanda Lima",
+                driver: "Ana Costa",
                 passengerManifest: createPassengerManifest()
             },
             {
@@ -155,7 +155,7 @@ export function TravelProvider({ children }) {
                 dateDeparture: new Date(2025, 11, 28),
                 dateArrival: new Date(2025, 11, 28),
                 company: "Travel Bus",
-                driver: "João Henrique",
+                driver: "Ana Costa",
                 passengerManifest: createPassengerManifest()
             }
         ];

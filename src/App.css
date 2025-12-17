@@ -8,12 +8,12 @@
     padding: 0%;
 
     display: grid;
-    place-content: center;
+    place-items: center;
 }
 
 #home-page{
-    width: 25em;
-    height: 20em;
+    width: 30%;
+    height: 50%;
 
     display: grid;
     place-items: center;

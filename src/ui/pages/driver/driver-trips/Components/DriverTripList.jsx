@@ -7,12 +7,16 @@ export default function DriverTripList({ travelInfo }) {
 
     const today = new Date().setHours(0, 0, 0, 0);
 
-    const dailyTrips = travelInfo.filter(t =>
-        new Date(t.dateDeparture).setHours(0, 0, 0, 0) === today
+    const driverTrips = travelInfo.filter(
+        travel => travel.driver === "Maria Silva"
     );
 
-    const activeTrips = travelInfo.filter(t => {
-        const tripDate = new Date(t.dateDeparture).setHours(0, 0, 0, 0);
+    const dailyTrips = driverTrips.filter(travel =>
+        new Date(travel.dateDeparture).setHours(0, 0, 0, 0) === today
+    );
+
+    const activeTrips = driverTrips.filter(travel => {
+        const tripDate = new Date(travel.dateDeparture).setHours(0, 0, 0, 0);
         return tripDate > today;
     });
 
@@ -23,16 +27,20 @@ export default function DriverTripList({ travelInfo }) {
                 <div id="active-today-trips">
                     <h3>Viagens do Dia</h3>
 
-                    {dailyTrips.map((travel, index) => {
-                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.dateDeparture);
+                    {dailyTrips.map((travel) => {
+                        const formattedDateTrip =
+                            formatUtils.getDayAndMonth(travel.dateDeparture);
 
                         return (
                             <Link
-                                to={`trips-resume/${index}`}
+                                to={`trips-resume/${travel.id}`}
                                 className="trip-item"
-                                key={"todayTrips-" + index}
+                                key={`todayTrips-${travel.id}`}
                             >
-                                <TripCard travel={travel} formattedDateTrip={formattedDateTrip} />
+                                <TripCard
+                                    travel={travel}
+                                    formattedDateTrip={formattedDateTrip}
+                                />
                             </Link>
                         );
                     })}
@@ -43,20 +51,28 @@ export default function DriverTripList({ travelInfo }) {
                 <div id="active-future-trips">
                     <h3>Viagens Ativas</h3>
 
-                    {activeTrips.map((travel, index) => {
-                        const formattedDateTrip = formatUtils.getDayAndMonth(travel.dateDeparture);
+                    {activeTrips.map((travel) => {
+                        const formattedDateTrip =
+                            formatUtils.getDayAndMonth(travel.dateDeparture);
 
                         return (
                             <Link
                                 to={`trips-resume/${travel.id}`}
                                 className="trip-item"
-                                key={"futureTrips-" + index}
+                                key={`futureTrips-${travel.id}`}
                             >
-                                <TripCard travel={travel} formattedDateTrip={formattedDateTrip} />
+                                <TripCard
+                                    travel={travel}
+                                    formattedDateTrip={formattedDateTrip}
+                                />
                             </Link>
                         );
                     })}
                 </div>
+            )}
+
+            {driverTrips.length === 0 && (
+                <p>Nenhuma viagem atribuída a este motorista.</p>
             )}
 
         </section>
