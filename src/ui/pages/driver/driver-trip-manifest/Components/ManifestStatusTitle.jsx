@@ -1,8 +1,8 @@
 import "../styles/ManifestStatusTitle.css"
 
-export default function ManifestStatusTitle({ passengerList }) {
-    const status = passengerList.isFinalized ? "Concluido" : "Pendente";
-    const color = passengerList.isFinalized ? "green" : "red";
+export default function ManifestStatusTitle({ passengerManifest }) {
+    const status = passengerManifest.isFinalized ? "Concluido" : "Pendente";
+    const color = passengerManifest.isFinalized ? "green" : "red";
 
     return (
         <div id="manifest-status-title">

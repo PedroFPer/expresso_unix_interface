@@ -156,16 +156,17 @@ export class validationsUtils {
     }
 
     static validatePrice(value) {
-        if (!value || typeof value !== "string") {
+        if (!value) {
             return { valid: false, message: "Preço obrigatório" };
         }
 
+        if (!/^\d+$/.test(value)) {
+            return { valid: false, message: "Preço inválido" };
+        }
 
-        const priceRegex = /^\d+(\.\d{2})$/;
+        const cents = Number(value);
 
-    
-
-        if (value === "0.00") {
+        if (Number.isNaN(cents) || cents <= 0) {
             return {
                 valid: false,
                 message: "O preço deve ser maior que zero"
@@ -174,6 +175,7 @@ export class validationsUtils {
 
         return { valid: true, message: "" };
     }
+
 
 
     static validateSeats(value) {

@@ -122,7 +122,7 @@ export default function TravelCatalogPanel({ travelInfo, handleToggleAddModal })
 
                                 <div>
                                     <strong>PREÇO</strong>
-                                    <p>R$ {formatUtils.toCurrencyBRL(travel.price)}</p>
+                                    <p>{maskUtils.maskCurrencyBRL(travel.price)}</p>
                                 </div>
 
                                 <button

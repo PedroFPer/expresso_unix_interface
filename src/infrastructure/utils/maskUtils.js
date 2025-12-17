@@ -64,22 +64,33 @@ export class maskUtils {
     }
 
     static maskCurrencyBRL(value) {
-        if (!value) return "0.00";
+        const digits = String(value || "")
+            .replace(/\D/g, "")
+            .slice(0, 12);
 
-        const digits = value.toString().replace(/\D/g, "");
+        if (!digits) {
+            return "R$ ";
+        }
 
-        const number = (Number(digits) / 100).toFixed(2);
+        if (digits.length <= 2) {
+            return `R$ .${digits}`;
+        }
 
+        const integerPart = digits.slice(0, -2);
+        const decimalPart = digits.slice(-2);
 
-        return number;
+        return `R$ ${integerPart}.${decimalPart}`;
     }
+
 
     static unmaskCurrencyBRL(value) {
         if (!value) return "";
 
-
-        return value.replace(/[^\d.]/g, "");
+        return value
+            .replace(/^R\$\s?/, "")
+            .replace(/\./g, "");
     }
+
 
 
 

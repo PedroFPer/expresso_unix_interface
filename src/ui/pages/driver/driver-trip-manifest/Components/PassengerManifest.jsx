@@ -5,12 +5,17 @@ import qrCodeDefault from "../../../../../assets/qr-code-default.png";
 import { formatUtils } from "../../../../../infrastructure/utils/formatUtils";
 import "../styles/PassengerManifest.css";
 
-export default function PassengerManifest({passengerManifest, travelId, setTravelInfo}) {
+export default function PassengerManifest({
+  travel,
+  setTravel,
+  setTravelInfo 
+}) {
   const sheetRef = useRef(null);
   const [search, setSearch] = useState("");
   const [openQr, setOpenQr] = useState(false);
 
-  const passengersArray = passengerManifest?.passengers || [];
+  const passengerManifest = travel.passengerManifest;
+  const passengersArray = passengerManifest.passengers;
 
   const sortedList = [...passengersArray].sort((a, b) =>
     a.name.localeCompare(b.name)
@@ -23,37 +28,39 @@ export default function PassengerManifest({passengerManifest, travelId, setTrave
   );
 
 
-  const handleTogglePresence = (passengerId) => {
-    if (passengerManifest?.isFinalized) return;
-
+  const syncTravelInfo = (updatedTravel) => {
     setTravelInfo(prev =>
-      prev.map(trip =>
-        trip.id === travelId
-          ? {
-              ...trip,
-              passengerManifest: {
-                ...trip.passengerManifest,
-                passengers: trip.passengerManifest.passengers.map(p =>
-                  p.id === passengerId
-                    ? {
-                        ...p,
-                        isPresent:
-                          p.isPresent === "Presente" ? "Ausente" : "Presente"
-                      }
-                    : p
-                )
-              }
-            }
-          : trip
+      prev.map(t =>
+        t.id === updatedTravel.id ? updatedTravel : t
       )
     );
   };
 
+  const handleTogglePresence = (passengerId) => {
+    if (passengerManifest.isFinalized) return;
+
+    setTravel(prevTravel => {
+      const updatedTravel = {
+        ...prevTravel,
+        passengerManifest: {
+          ...prevTravel.passengerManifest,
+          passengers: prevTravel.passengerManifest.passengers.map(p =>
+            p.id === passengerId
+              ? { ...p, isPresent: !p.isPresent }
+              : p
+          )
+        }
+      };
+
+      syncTravelInfo(updatedTravel); 
+      return updatedTravel;
+    });
+  };
 
   const handleQrRead = (decodedText) => {
     if (!decodedText) return;
 
-    const passenger = passengerManifest.passengers.find(
+    const passenger = passengersArray.find(
       p => p.id.toString() === decodedText.toString()
     );
 
@@ -64,21 +71,19 @@ export default function PassengerManifest({passengerManifest, travelId, setTrave
     setOpenQr(false);
   };
 
-
   const handleFinalizeManifest = () => {
-    setTravelInfo(prev =>
-      prev.map(trip =>
-        trip.id === travelId
-          ? {
-              ...trip,
-              passengerManifest: {
-                ...trip.passengerManifest,
-                isFinalized: true
-              }
-            }
-          : trip
-      )
-    );
+    setTravel(prevTravel => {
+      const updatedTravel = {
+        ...prevTravel,
+        passengerManifest: {
+          ...prevTravel.passengerManifest,
+          isFinalized: true
+        }
+      };
+
+      syncTravelInfo(updatedTravel); 
+      return updatedTravel;
+    });
 
     handleClose();
   };
@@ -105,8 +110,8 @@ export default function PassengerManifest({passengerManifest, travelId, setTrave
             <li className="passenger-item" key={passenger.id}>
               <input
                 type="checkbox"
-                checked={passenger.isPresent === "Presente"}
-                disabled={passengerManifest?.isFinalized}
+                checked={passenger.isPresent}
+                disabled={passengerManifest.isFinalized}
                 onChange={() => handleTogglePresence(passenger.id)}
               />
 
@@ -134,7 +139,7 @@ export default function PassengerManifest({passengerManifest, travelId, setTrave
           onClick={() => sheetRef.current?.open()}
           id="btn-open-finalize-manifest"
           className="btn"
-          disabled={passengerManifest?.isFinalized}
+          disabled={passengerManifest.isFinalized}
         >
           Finalizar Chamada
         </button>
@@ -163,7 +168,6 @@ export default function PassengerManifest({passengerManifest, travelId, setTrave
               id="btn-cancel-finish-manifest"
               className="btn"
               onClick={handleClose}
-              onTouchStart={handleClose}
             >
               Cancelar
             </button>

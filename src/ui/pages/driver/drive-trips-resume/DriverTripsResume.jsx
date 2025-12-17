@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import { useContext } from "react";
-import {TravelContext} from "../../../../infrastructure/context/TravelProvider"
+import { useState, useEffect, useContext } from "react";
+import { TravelContext } from "../../../../infrastructure/context/TravelProvider"
 import HeaderBaseMobile from "../../../common-components/components/HeaderBaseMobile"
 import InfoCardModel from "../../../common-components/components/InfoCardModel"
 import ItineraryCard from "../../../common-components/components/ItineraryCard"
@@ -10,34 +10,51 @@ import "./styles/DriverTripsResume.css"
 export default function DriverTripsResume() {
     const { id } = useParams();
     const { travelInfo } = useContext(TravelContext);
-
-    console.log(travelInfo);
-
-    const travel = travelInfo.find(trip => trip.id === id);
+    const [travel, setTravel] = useState(null);
+    const [loading, setLoading] = useState(true);
 
 
-      if (!travel) {
+
+    useEffect(() => {
+        if (travelInfo.length === 0) {
+            setLoading(true);
+            return;
+        }
+
+        const foundTravel = travelInfo.find(trip => trip.id === Number(id));
+        setTravel(foundTravel || null);
+        setLoading(false);
+    }, [travelInfo, id]);
+
+
+
+    if (loading) {
         return <div>Carregando...</div>;
     }
 
+    if (!travel) {
+        return <div>Viagem não encontrada</div>;
+    }
+
+
     const textHeader = "Detalhes da Viagem";
 
-    const infoCard ={
+    const infoCard = {
         titleCard: "Motorista",
         describe: travel.driver
     }
 
-    
+
 
     return (
         <div id="driver-trips-resume">
             <HeaderBaseMobile textHeader={textHeader} />
             <div id="scroll-content-driver-trips-resume">
-                <ItineraryCard travelInfo={travel} />
-                <InfoCardModel infoCard = {infoCard} />
-                <TripManifestCard 
-                travel = {travel}
-                 />
+                <ItineraryCard travel={travel} />
+                <InfoCardModel infoCard={infoCard} />
+                <TripManifestCard
+                    travel={travel}
+                />
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import ItineraryCard from "../../../common-components/components/ItineraryCard";
 import InfoCardModel from "../../../common-components/components/InfoCardModel";
 import HeaderMobileResume from "./Components/HeaderMobileResume";
 import { TravelContext } from "../../../../infrastructure/context/TravelProvider";
-import { formatUtils } from "../../../../infrastructure/utils/formatUtils";
+import {maskUtils} from "../../../../infrastructure/utils/maskUtils"
 import "./styles/TravelSummary.css";
 
 export default function TravelSummary() {
@@ -41,7 +41,7 @@ export default function TravelSummary() {
 
   const infoCardPrice = {
     titleCard: "Valor Unitário",
-    describe: formatUtils.toCurrencyBRL(travel.price)
+    describe: maskUtils.maskCurrencyBRL(travel.price)
   };
 
   const infoCardAvailableSeats = {

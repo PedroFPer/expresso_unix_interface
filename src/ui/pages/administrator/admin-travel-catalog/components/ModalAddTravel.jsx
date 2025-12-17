@@ -89,6 +89,8 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
             [attribute]: value
         }));
 
+        console.log(value);
+
 
         const validation = validationsUtils.validateField(field, value);
 
@@ -104,9 +106,9 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         const newErrors = {};
 
         const finalTravel = {
-            id: travelInfo.length === 0 
-    ? 0 
-    : Math.max(...travelInfo.map(t => t.id)) + 1, 
+            id: travelInfo.length === 0
+                ? 0
+                : Math.max(...travelInfo.map(t => t.id)) + 1,
             ...travel,
             dateDeparture: new Date(travel.dateDeparture),
             dateArrival: new Date(travel.dateArrival),

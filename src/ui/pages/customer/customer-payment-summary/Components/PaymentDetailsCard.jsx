@@ -1,15 +1,15 @@
-import {formatUtils} from "../../../../../infrastructure/utils/formatUtils"
+import {maskUtils} from "../../../../../infrastructure/utils/maskUtils"
 import "../styles/PaymentDetailsCard.css"
 
 export default function PaymentDetailsCard({travel}) {
-    const priceTravel = formatUtils.toCurrencyBRL(travel.price);
+    const priceTravel = maskUtils.maskCurrencyBRL(travel.price);
 
     return (
         <section id="payment-details-card">
             <h3>Resumo da Compra</h3>
             <div className="summary-item-payment-details">
                 <strong>Valor Unitário</strong>
-                <p>R${priceTravel}</p>
+                <p>{priceTravel}</p>
             </div>
 
             <div className="summary-item-payment-details" >
@@ -19,7 +19,7 @@ export default function PaymentDetailsCard({travel}) {
 
             <div id="summary-total" className="summary-item-payment-details">
                 <strong>Valor à Vista</strong>
-                <p>R${priceTravel}</p>
+                <p>{priceTravel}</p>
             </div>
         </section>
     )
