@@ -1,14 +1,14 @@
 import { useState, useContext } from "react";
 import ModalHeaderAddTravel from "./ModalHeaderAddTravel";
 import ModalFormAddTravel from "./ModalFormAddTravel"
-import ModalPreviewAddTravel from "./ModalPreviewAddTravel";
+import { TravelContext } from "../../../../../infrastructure/context/TravelProvider";
 import { AdminContext } from "../../../../../infrastructure/context/AdminProvider";
 import { validationsUtils } from "../../../../../infrastructure/utils/validationsUtils";
 import "../styles/ModalAddTravel.css"
 
 export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
-    const [activeTab, setActiveTab] = useState("form");
-    const { travelInfo, setTravelInfo } = useContext(AdminContext);
+    const { travelInfo, setTravelInfo } = useContext(TravelContext);
+    const { employees } = useContext(AdminContext);
 
     const [travel, setTravel] = useState({
         type: "",
@@ -89,6 +89,8 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
             [attribute]: value
         }));
 
+        console.log(value);
+
 
         const validation = validationsUtils.validateField(field, value);
 
@@ -104,6 +106,9 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
         const newErrors = {};
 
         const finalTravel = {
+            id: travelInfo.length === 0
+                ? 0
+                : Math.max(...travelInfo.map(t => t.id)) + 1,
             ...travel,
             dateDeparture: new Date(travel.dateDeparture),
             dateArrival: new Date(travel.dateArrival),
@@ -126,27 +131,27 @@ export default function ModalAddTravel({ openAddModal, handleToggleAddModal }) {
 
         if (Object.keys(newErrors).length > 0) return;
 
+
         setTravelInfo(prev => [...prev, finalTravel]);
 
-        window.alert("Usuário cadastrado!");
+        window.alert("Viagem cadastrada!");
 
         setTravel(emptyTravel);
 
         handleToggleAddModal();
     };
 
-
     return (
         <aside className={`modal-add-travel ${openAddModal ? "modal-add-travel-show" : "modal-add-travel-hidden"}`}>
-            <ModalHeaderAddTravel activeTab={activeTab} setActiveTab={setActiveTab}></ModalHeaderAddTravel>
+            <ModalHeaderAddTravel ></ModalHeaderAddTravel>
 
-            {activeTab === "form" && <ModalFormAddTravel
+            <ModalFormAddTravel
                 handleInputChange={handleInputChange}
                 handleRegisterTravel={handleRegisterTravel}
+                employees={employees}
                 travel={travel}
                 errors={errors}
-            />}
-            {activeTab === "preview" && <ModalPreviewAddTravel />}
+            />
 
             <div id="group-button-add-travel">
                 <button id="cancel-button-add-travel" onClick={handleToggleAddModal}>Cancelar</button>

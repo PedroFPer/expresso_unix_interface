@@ -16,6 +16,10 @@
 #passenger-manifest form{
     width: 100%;
     border: 0em;
+
+     display: grid;
+    place-items: start center;
+    gap: 1em;
 }
 
 
@@ -118,7 +122,7 @@
 }
 
 #btn-open-finalize-manifest{
-     width: 90%;
+    width: 90%;
     height: 3.5em;
 
     display: grid;

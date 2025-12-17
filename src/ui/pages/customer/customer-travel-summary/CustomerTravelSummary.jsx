@@ -1,39 +1,70 @@
-import { Link } from 'react-router-dom'
-import { useContext } from "react";
-import ItineraryCard from "../../../common-components/components/ItineraryCard"
-import InfoCardModel from "../../../common-components/components/InfoCardModel"
-import HeaderMobileResume from "./Components/HeaderMobileResume"
-import { CustomerContext } from '../../../../infrastructure/context/CustomerProvider';
-import { formatUtils } from '../../../../infrastructure/utils/formatUtils';
-import "./styles/TravelSummary.css"
+import { Link, useParams } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
+import ItineraryCard from "../../../common-components/components/ItineraryCard";
+import InfoCardModel from "../../../common-components/components/InfoCardModel";
+import HeaderMobileResume from "./Components/HeaderMobileResume";
+import { TravelContext } from "../../../../infrastructure/context/TravelProvider";
+import {maskUtils} from "../../../../infrastructure/utils/maskUtils"
+import "./styles/TravelSummary.css";
 
 export default function TravelSummary() {
-    const { travelInfo } = useContext(CustomerContext);
-    const priceTravel = formatUtils.toCurrencyBRL(travelInfo?.[0]?.price);
+  const { id } = useParams();
+  const { travelInfo } = useContext(TravelContext);
+  const [travel, setTravel] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    const infoCardPrice = {
-        titleCard: "Valor Unitário",
-        describe:  `R$ ${priceTravel}`
+  
+
+  useEffect(() => {
+    if (travelInfo.length === 0) {
+      setLoading(true); 
+      return;
     }
-    const infoCardAvailableSeats = {
-        titleCard: "Assentos Disponiveis",
-        describe: travelInfo?.[0]?.availableSeats
-    }
 
-    return (
-        <div id="resume-travel">
-            <HeaderMobileResume />
+    const foundTravel = travelInfo.find(trip => trip.id === Number(id));
+    setTravel(foundTravel || null);
+    setLoading(false);
+  }, [travelInfo, id]);
 
-            <div id="scroll-content-resume-travel">
-                <ItineraryCard travelInfo={travelInfo} />
-                <InfoCardModel infoCard={infoCardPrice} />
-                <InfoCardModel infoCard={infoCardAvailableSeats} />
-            </div>
 
-            <Link
-                to={"/customer/passenger-registration"}
-                className="btn btn-primary btn-custom"
-            >Continuar</Link>
-        </div>
-    )
+
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (!travel) {
+    return <div>Viagem não encontrada</div>;
+  }
+
+  console.log(travelInfo)
+  console.log(travel)
+
+  const infoCardPrice = {
+    titleCard: "Valor Unitário",
+    describe: maskUtils.maskCurrencyBRL(travel.price)
+  };
+
+  const infoCardAvailableSeats = {
+    titleCard: "Assentos Disponíveis",
+    describe: travel.availableSeats
+  };
+
+  return (
+    <div id="resume-travel">
+      <HeaderMobileResume />
+
+      <div id="scroll-content-resume-travel">
+        <ItineraryCard travel={travel} />
+        <InfoCardModel infoCard={infoCardPrice} />
+        <InfoCardModel infoCard={infoCardAvailableSeats} />
+      </div>
+
+      <Link
+        to={`/customer/${travel.id}/passenger-registration`}
+        className="btn btn-primary btn-custom"
+      >
+        Continuar
+      </Link>
+    </div>
+  );
 }
