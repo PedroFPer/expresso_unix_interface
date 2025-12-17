@@ -12,10 +12,10 @@ export default function DriverLogin() {
     const navigate = useNavigate();
 
 
-    const driverCredentialsTest = {
-        email: "Name@email.com",
-        password: "Dragon2023"
-    }
+    const [driverCredentialsInput, setDriverCredentialsInput] = useState({
+        email: "",
+        password: ""
+    });
 
     const [errors, setErrors] = useState({
         email: "",
@@ -23,7 +23,7 @@ export default function DriverLogin() {
     });
 
     const handleInputChange = (field, value) => {
-        setDriverCredentials(prev => ({
+        setDriverCredentialsInput(prev => ({
             ...prev,
             [field]: value,
         }));
@@ -38,13 +38,13 @@ export default function DriverLogin() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        
+
         const fields = ["email", "password"];
         const newErrors = {};
 
         fields.forEach(field => {
             const validation =
-                validationsUtils.validateField(field, driverCredentials[field]) ||
+                validationsUtils.validateField(field, driverCredentialsInput[field]) ||
                 { valid: false, message: "Campo inválido" };
 
             if (!validation.valid) {
@@ -54,7 +54,7 @@ export default function DriverLogin() {
 
         setErrors(newErrors);
 
-        const isEqualLogin = isEqual(driverCredentialsTest, driverCredentials);
+        const isEqualLogin = isEqual(driverCredentialsInput, driverCredentials);
 
         if (Object.keys(newErrors).length !== 0) {
             return;
@@ -76,7 +76,7 @@ export default function DriverLogin() {
         <div id="driver-login">
             <HeaderDriverLogin />
             <DriverFormCard
-                driverCredentials={driverCredentials}
+                driverCredentialsInput={driverCredentialsInput}
                 handleInputChange={handleInputChange}
                 handleLogin={handleLogin}
                 errors={errors} />

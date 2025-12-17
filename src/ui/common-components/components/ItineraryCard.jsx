@@ -2,13 +2,18 @@ import lineTravelSmall from "../../../assets/line-travel-card-small.png"
 import { formatUtils } from "../../../infrastructure/utils/formatUtils";
 import "../styles/ItineraryCard.css"
 
-export default function ItineraryCard({ travelInfo }) {
-    const segments = Array.isArray(travelInfo) ? travelInfo : [travelInfo];
+export default function ItineraryCard({ travel }) {
+    if (!travel) return null;
+
+    const segments = Array.isArray(travel) ? travel : [travel];
 
     return (
         <section id="itinerary-card">
             {segments.map((segment, index) => {
-                const formattedDate = formatUtils.toShortDate(segment.dateDeparture);
+                if (!segment) return null;
+
+                const formattedDate =
+                    formatUtils.toShortDate(segment.dateDeparture);
 
                 return (
                     <div className="itinerary-segment" key={index}>

@@ -63,5 +63,37 @@ export class maskUtils {
         return `${day}/${month}/${year}`;
     }
 
+    static maskCurrencyBRL(value) {
+        const digits = String(value || "")
+            .replace(/\D/g, "")
+            .slice(0, 12);
+
+        if (!digits) {
+            return "R$ ";
+        }
+
+        if (digits.length <= 2) {
+            return `R$ .${digits}`;
+        }
+
+        const integerPart = digits.slice(0, -2);
+        const decimalPart = digits.slice(-2);
+
+        return `R$ ${integerPart}.${decimalPart}`;
+    }
+
+
+    static unmaskCurrencyBRL(value) {
+        if (!value) return "";
+
+        return value
+            .replace(/^R\$\s?/, "")
+            .replace(/\./g, "");
+    }
+
+
+
+
+
 
 }

@@ -3,11 +3,11 @@ import SideBar from "../../../common-components/components/SideBar";
 import HeaderTravelCatalog from "./components/HeaderTravelCatalog"
 import TravelCatalogPanel from "./components/TravelCatalogPanel"
 import ModalAddTravel from "./components/ModalAddTravel"
-import { AdminContext } from "../../../../infrastructure/context/AdminProvider";
+import { TravelContext } from "../../../../infrastructure/context/TravelProvider";
 import "./styles/AdminTravelCatalog.css"
 
 export default function AdminTravelCatalog() {
-  const { travelInfo, setTravelInfo } = useContext(AdminContext);
+  const { travelInfo, setTravelInfo } = useContext(TravelContext);
 
   const [sideBarIsOpen, setSideBarIsOpen] = useState(true);
   const [openAddModal, setOpenAddModal] = useState(false);

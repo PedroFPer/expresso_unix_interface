@@ -2,20 +2,20 @@ import logoExpressoUnix from "../../../../assets/LogoExpressoUnix.png";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import isEqual from "lodash/isEqual";
-import AdminFormCard from "./Components/AdminFormCard"
-import WelcomePanel from "./Components/WelcomePanel"
-import { AdminContext } from "../../../../infrastructure/context/AdminProvider"
+import AdminFormCard from "./Components/AdminFormCard";
+import WelcomePanel from "./Components/WelcomePanel";
+import { AdminContext } from "../../../../infrastructure/context/AdminProvider";
 import { validationsUtils } from "../../../../infrastructure/utils/validationsUtils";
 import "./styles/AdminLogin.css";
 
 export default function AdminLogin() {
-  const { adminInfo, setAdminInfo } = useContext(AdminContext);
+  const { adminInfo } = useContext(AdminContext);
   const navigate = useNavigate();
 
-  const adminInfoTeste = {
-    email: "admin@email.com",
-    password: "Dragon2023"
-  }
+  const [adminInfoInput, setAdminInfoInput] = useState({
+    email: "",
+    password: ""
+  });
 
   const [errors, setErrors] = useState({
     email: "",
@@ -23,7 +23,7 @@ export default function AdminLogin() {
   });
 
   const handleInputChange = (field, value) => {
-    setAdminInfo(prev => ({
+    setAdminInfoInput(prev => ({
       ...prev,
       [field]: value,
     }));
@@ -44,7 +44,7 @@ export default function AdminLogin() {
 
     fields.forEach(field => {
       const validation =
-        validationsUtils.validateField(field, adminInfo[field]) ||
+        validationsUtils.validateField(field, adminInfoInput[field]) ||
         { valid: false, message: "Campo inválido" };
 
       if (!validation.valid) {
@@ -54,34 +54,26 @@ export default function AdminLogin() {
 
     setErrors(newErrors);
 
-    const isEqualLogin = isEqual(adminInfoTeste, adminInfo);
-
     if (Object.keys(newErrors).length !== 0) {
       return;
     }
 
-    console.log(adminInfoTeste, adminInfo)
+    const isEqualLogin = isEqual(adminInfoInput, adminInfo);
 
     if (isEqualLogin) {
       navigate("/admin/manage-employees");
     } else {
       window.alert("Usuário não encontrado");
-      return;
     }
-
-  }
+  };
 
   return (
     <div id="admin-login">
       <section id="login-panel">
-        <WelcomePanel
-          logoExpressoUnix={logoExpressoUnix}
-        />
+        <WelcomePanel logoExpressoUnix={logoExpressoUnix} />
 
         <AdminFormCard
-        logoExpressoUnix={logoExpressoUnix}
-          adminInfo={adminInfo}
-          setAdminInfo={setAdminInfo}
+          adminInfoInput={adminInfoInput}
           handleInputChange={handleInputChange}
           handleLogin={handleLogin}
           errors={errors}
@@ -90,4 +82,3 @@ export default function AdminLogin() {
     </div>
   );
 }
-
