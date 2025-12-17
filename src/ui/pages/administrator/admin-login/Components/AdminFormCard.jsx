@@ -7,6 +7,11 @@ export default function AdminFormCard({ adminInfoInput, handleLogin, handleInput
 
     return (
             <section id="right-panel">
+
+                <figure id="system-logo-rigth">
+                    <img src={logoExpressoUnix} alt="" />
+                </figure>
+
                 <h2 id="login-title">Faça seu login</h2>
 
                 <form id="form-login-admin">
@@ -44,6 +49,7 @@ export default function AdminFormCard({ adminInfoInput, handleLogin, handleInput
                             {errors.password || "\u00A0"}
                         </p>
                     </div>
+
 
 
                     <button id="btn-login-admin" className="btn" onClick={handleLogin}>
